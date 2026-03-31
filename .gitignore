@@ -30,3 +30,4 @@ Thumbs.db
 *.swp
 
 .vercel
+global_agent_memory.db

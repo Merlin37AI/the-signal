@@ -1,6 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import { BlurFade } from '@/components/ui/animations/blur-fade'
+import { MagicCard } from '@/components/ui/animations/magic-card'
+import { TextAnimate } from '@/components/ui/animations/text-animate'
 
 const testimonials = [
   {
@@ -30,12 +33,12 @@ const faqs = [
     a: "If the Diagnostic doesn't identify at least 5× its cost in quantifiable annual savings, you receive a full refund. No caveats, no small print. The guarantee applies to the PEAK13 Snapshot engagement.",
   },
   {
-    q: 'We\'ve already tried AI tools and they didn\'t stick — will this be different?',
+    q: "We've already tried AI tools and they didn't stick — will this be different?",
     a: "Yes — because we start with diagnosis, not tools. The Diagnostic finds where AI creates genuine value in your specific business before we recommend a single piece of software. Tool failure almost always comes from buying before understanding.",
   },
   {
     q: 'Do we need to be technically advanced?',
-    a: "Not at all. I bridge the gap between your business goals and the technology. You tell me what good looks like operationally — I design, build, and implement the systems. Your team doesn't need to understand the tech; they just need to use it.",
+    a: "Not at all. I bridge the gap between your business goals and the technology. You tell me what you want to achieve operationally — I design, build, and implement the systems. Your team doesn't need to understand the tech; they just need to use it.",
   },
   {
     q: 'What size of business do you work with?',
@@ -50,12 +53,12 @@ const faqs = [
 export default function ResultsAboutTestimonialsPage() {
   return (
     <>
-      {/* ---- About Gary ---- */}
+      {/* ── About Gary ── */}
       <section id="about" className="zone-surface section-pad border-b border-border">
         <div className="container-lg">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Photo */}
-            <div className="reveal order-2 md:order-1">
+            <BlurFade delay={0.1} className="order-2 md:order-1">
               <div className="relative w-full max-w-sm mx-auto md:mx-0 aspect-[4/5] rounded-2xl overflow-hidden bg-border">
                 <Image
                   src="/gary-headshot.jpg"
@@ -65,194 +68,240 @@ export default function ResultsAboutTestimonialsPage() {
                   sizes="(max-width: 768px) 80vw, 40vw"
                 />
               </div>
-            </div>
+            </BlurFade>
 
             {/* Bio */}
             <div className="order-1 md:order-2">
-              <p className="eyebrow eyebrow-light mb-5 reveal">About Gary</p>
-              <h2
-                className="font-heading font-extrabold text-ink leading-[1.05] mb-6 reveal reveal-delay-1"
-                style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)' }}
-              >
-                8 years building systems
-                <br />
-                that actually work.
-              </h2>
-              <div className="space-y-4 text-muted text-base leading-relaxed font-body reveal reveal-delay-2">
-                <p>
-                  I spent 8 years inside enterprise IT and operational transformation — at the
-                  Maritime &amp; Coastguard Agency, Control Risks, and several high-growth
-                  businesses — designing the systems, processes, and governance frameworks
-                  that made complex organisations run better.
-                </p>
-                <p>
-                  I founded PEAK13 Consulting because I kept seeing the same pattern: smart
-                  business owners getting sold AI they didn&apos;t need, by people who&apos;d
-                  never actually implemented it. I do things differently — diagnose first,
-                  recommend second, build only what makes measurable sense.
-                </p>
-                <p>
-                  I&apos;m a systems thinker with a coaching background. I believe most operational
-                  problems are people and process problems wearing a technology mask — and I
-                  bring that lens to every engagement.
-                </p>
-                <p>
-                  Based in Dubai. Work across the UAE and UK. Remote and in-person.
-                </p>
-              </div>
-
-              {/* Certs strip */}
-              <div className="mt-8 reveal reveal-delay-3">
-                <p className="text-xs text-muted/60 uppercase tracking-widest font-body mb-3">Credentials</p>
-                <div className="flex flex-wrap gap-2">
-                  {['ITIL 4 Foundation', 'Six Sigma Green Belt', 'AI in Business — UPenn', 'Micro MBA Cum Laude', 'CompTIA Security+', 'CPD Business Strategist'].map((c) => (
-                    <span key={c} className="text-xs font-body font-medium text-muted border border-border rounded-full px-3 py-1.5">
-                      {c}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-4 reveal reveal-delay-4">
-                <a
-                  href="https://www.linkedin.com/in/gary-quigley"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost-light text-sm"
+              <BlurFade delay={0.05}>
+                <p className="eyebrow eyebrow-light mb-5">About Gary</p>
+              </BlurFade>
+              <BlurFade delay={0.15}>
+                <h2
+                  className="font-heading font-extrabold text-ink leading-[1.05] mb-6"
+                  style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)' }}
                 >
-                  Connect on LinkedIn →
-                </a>
-                <a href="#contact" className="btn-primary text-sm">
-                  Work with Gary
-                </a>
-              </div>
+                  8 years building systems
+                  <br />
+                  that actually work.
+                </h2>
+              </BlurFade>
+              <BlurFade delay={0.25}>
+                <div className="space-y-4 text-muted text-base leading-relaxed font-body">
+                  <p>
+                    I spent 8 years inside enterprise IT and operational transformation — at the
+                    Maritime &amp; Coastguard Agency, Control Risks, and several high-growth
+                    businesses — designing the systems, processes, and governance frameworks
+                    that made complex organisations run better.
+                  </p>
+                  <p>
+                    I founded PEAK13 Consulting because I kept seeing the same pattern: smart
+                    business owners getting sold AI they didn&apos;t need, by people who&apos;d
+                    never actually implemented it. I do things differently — diagnose first,
+                    recommend second, build only what makes measurable sense.
+                  </p>
+                  <p>
+                    I&apos;m a systems thinker with a coaching background. I believe most operational
+                    problems are people and process problems wearing a technology mask — and I
+                    bring that lens to every engagement.
+                  </p>
+                  <p>Based in Dubai. Work across the UAE and UK. Remote and in-person.</p>
+                </div>
+              </BlurFade>
+
+              {/* Certs */}
+              <BlurFade delay={0.35}>
+                <div className="mt-8">
+                  <p className="text-xs text-muted/60 uppercase tracking-widest font-body mb-3">Credentials</p>
+                  <div className="flex flex-wrap gap-2">
+                    {['ITIL 4 Foundation', 'Six Sigma Green Belt', 'AI in Business — UPenn', 'Micro MBA Cum Laude', 'CompTIA Security+', 'CPD Business Strategist'].map((c) => (
+                      <span key={c} className="text-xs font-body font-medium text-muted border border-border rounded-full px-3 py-1.5">
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </BlurFade>
+
+              <BlurFade delay={0.45}>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/gary-quigley"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-ghost-light text-sm"
+                  >
+                    Connect on LinkedIn →
+                  </a>
+                  <a href="#contact" className="btn-primary text-sm">
+                    Work with Gary
+                  </a>
+                </div>
+              </BlurFade>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ---- Testimonials ---- */}
+      {/* ── Testimonials ── */}
       <section id="testimonials" className="zone-dark section-pad border-b border-dark-b">
         <div className="container-lg">
           <div className="mb-14">
-            <p className="eyebrow eyebrow-dark mb-5 reveal">Testimonials</p>
-            <h2
-              className="font-heading font-extrabold text-white leading-[1.05] reveal reveal-delay-1"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
-            >
-              What clients say.
-            </h2>
+            <BlurFade delay={0.05}>
+              <p className="eyebrow eyebrow-dark mb-5">Testimonials</p>
+            </BlurFade>
+            <BlurFade delay={0.15}>
+              <h2
+                className="font-heading font-extrabold text-white leading-[1.05]"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+              >
+                What clients say.
+              </h2>
+            </BlurFade>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className={`card-dark flex flex-col reveal reveal-delay-${i + 1}`}>
-                <p className="text-4xl text-accent font-heading leading-none mb-4 select-none">&ldquo;</p>
-                <p className="text-white/70 text-base leading-relaxed font-body flex-1 mb-6">{t.quote}</p>
-                <div className="border-t border-dark-b pt-4">
-                  <p className="font-heading font-bold text-white text-sm">{t.name}</p>
-                  <p className="text-dark-m text-xs font-body mt-0.5">{t.company}</p>
+              <BlurFade key={i} delay={0.1 + i * 0.15} className="flex flex-col">
+                <div className="relative card-dark flex flex-col h-full group/magic">
+                  <MagicCard
+                    className="absolute inset-0 rounded-[inherit]"
+                    gradientColor="#1e1e1e"
+                    gradientOpacity={0.75}
+                    gradientSize={180}
+                  />
+                  <div className="relative z-10 flex flex-col flex-1">
+                    <p className="text-4xl text-accent font-heading leading-none mb-4 select-none">&ldquo;</p>
+                    <p className="text-white/70 text-base leading-relaxed font-body flex-1 mb-6">{t.quote}</p>
+                    <div className="border-t border-dark-b pt-4">
+                      <p className="font-heading font-bold text-white text-sm">{t.name}</p>
+                      <p className="text-dark-m text-xs font-body mt-0.5">{t.company}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </BlurFade>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ---- FAQ ---- */}
+      {/* ── FAQ ── */}
       <section id="faq" className="zone-light section-pad border-b border-border">
         <div className="container-lg">
           <div className="grid md:grid-cols-[1fr_2fr] gap-16">
             <div>
-              <p className="eyebrow eyebrow-light mb-5 reveal">FAQ</p>
-              <h2
-                className="font-heading font-extrabold text-ink leading-tight reveal reveal-delay-1"
-                style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
-              >
-                Common questions.
-              </h2>
-              <p className="text-muted text-base mt-4 font-body leading-relaxed reveal reveal-delay-2">
-                Anything else? Book a free Snapshot Call and ask me directly.
-              </p>
-              <a href="#contact" className="btn-primary mt-8 inline-flex reveal reveal-delay-3">
-                Book a Snapshot Call →
-              </a>
+              <BlurFade delay={0.05}>
+                <p className="eyebrow eyebrow-light mb-5">FAQ</p>
+              </BlurFade>
+              <BlurFade delay={0.15}>
+                <h2
+                  className="font-heading font-extrabold text-ink leading-tight"
+                  style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
+                >
+                  Common questions.
+                </h2>
+              </BlurFade>
+              <BlurFade delay={0.25}>
+                <p className="text-muted text-base mt-4 font-body leading-relaxed">
+                  Anything else? Book a free Snapshot Call and ask me directly.
+                </p>
+              </BlurFade>
+              <BlurFade delay={0.35}>
+                <a href="#contact" className="btn-primary mt-8 inline-flex">
+                  Book a Snapshot Call →
+                </a>
+              </BlurFade>
             </div>
 
-            <div className="reveal reveal-delay-2">
+            <BlurFade delay={0.2} className="space-y-0">
               {faqs.map((faq, i) => (
                 <FAQItem key={i} q={faq.q} a={faq.a} />
               ))}
-            </div>
+            </BlurFade>
           </div>
         </div>
       </section>
 
-      {/* ---- Final CTA ---- */}
+      {/* ── Final CTA ── */}
       <section id="contact" className="zone-dark noise-overlay section-pad">
         <div className="container-md text-center">
-          <p className="eyebrow eyebrow-dark mb-6 reveal">Ready to start?</p>
-          <h2
-            className="font-heading font-extrabold text-white leading-[1.0] mb-6 reveal reveal-delay-1"
-            style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)' }}
-          >
-            Find out what
-            <br />
-            <span className="text-accent">your operations are costing you.</span>
-          </h2>
-          <p className="text-dark-m text-lg font-body max-w-lg mx-auto mb-10 leading-relaxed reveal reveal-delay-2">
-            Book a free 30-minute Snapshot Call. No pitch, no jargon — just an honest conversation
-            about where AI can create real value in your accountancy firm or property management business.
-          </p>
+          <BlurFade delay={0.05}>
+            <p className="eyebrow eyebrow-dark mb-6">Ready to start?</p>
+          </BlurFade>
 
-          <div className="flex flex-wrap gap-4 justify-center mb-14 reveal reveal-delay-3">
-            <a
-              href="https://calendly.com/quigleygary/signal-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-base px-10 py-4"
+          <div className="mb-6">
+            <TextAnimate
+              as="h2"
+              by="word"
+              animation="blurInUp"
+              delay={0.1}
+              duration={0.55}
+              className="font-heading font-extrabold text-white leading-[1.0] block"
+              style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)' } as React.CSSProperties}
             >
-              Book a Free Snapshot Call →
-            </a>
-            <a href="mailto:quigleygary@hotmail.com" className="btn-ghost-dark text-base px-10 py-4">
-              Send an Email
-            </a>
+              Find out what
+            </TextAnimate>
+            <TextAnimate
+              as="h2"
+              by="word"
+              animation="blurInUp"
+              delay={0.3}
+              duration={0.55}
+              className="font-heading font-extrabold text-accent leading-[1.0] block"
+              style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)' } as React.CSSProperties}
+            >
+              your operations are costing you.
+            </TextAnimate>
           </div>
 
-          {/* Guarantee reminder */}
-          <div className="mb-14 reveal reveal-delay-4">
+          <BlurFade delay={0.5}>
+            <p className="text-dark-m text-lg font-body max-w-lg mx-auto mb-10 leading-relaxed">
+              Book a free 30-minute Snapshot Call. No pitch, no jargon — just an honest conversation
+              about where AI can create real value in your accountancy firm or property management business.
+            </p>
+          </BlurFade>
+
+          <BlurFade delay={0.6} className="mb-14">
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a
+                href="https://calendly.com/quigleygary/signal-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-base px-10 py-4"
+              >
+                Book a Free Snapshot Call →
+              </a>
+              <a href="mailto:quigleygary@hotmail.com" className="btn-ghost-dark text-base px-10 py-4">
+                Send an Email
+              </a>
+            </div>
+          </BlurFade>
+
+          <BlurFade delay={0.7} className="mb-14">
             <div className="guarantee-badge inline-flex">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
               5× ROI Guarantee — if we don&apos;t identify at least 5× your investment in savings, you don&apos;t pay.
             </div>
-          </div>
+          </BlurFade>
 
-          {/* Contact links */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/30 font-body reveal reveal-delay-4">
-            <a
-              href="https://www.linkedin.com/in/gary-quigley"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white/70 transition-colors"
-            >
-              LinkedIn
-            </a>
-            <span>·</span>
-            <a href="mailto:quigleygary@hotmail.com" className="hover:text-white/70 transition-colors">
-              quigleygary@hotmail.com
-            </a>
-            <span>·</span>
-            <span>Dubai, UAE &amp; UK</span>
-          </div>
+          <BlurFade delay={0.75}>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/30 font-body">
+              <a href="https://www.linkedin.com/in/gary-quigley" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">LinkedIn</a>
+              <span>·</span>
+              <a href="mailto:quigleygary@hotmail.com" className="hover:text-white/70 transition-colors">quigleygary@hotmail.com</a>
+              <span>·</span>
+              <span>Dubai, UAE &amp; UK</span>
+            </div>
+          </BlurFade>
 
-          {/* Footer */}
-          <div className="mt-20 pt-8 border-t border-white/10 reveal reveal-delay-5">
-            <p className="text-xs text-white/20 font-body">
-              PEAK13 Consulting · © {new Date().getFullYear()} Gary Quigley · All rights reserved
-            </p>
-          </div>
+          <BlurFade delay={0.85}>
+            <div className="mt-20 pt-8 border-t border-white/10">
+              <p className="text-xs text-white/20 font-body">
+                PEAK13 Consulting · © {new Date().getFullYear()} Gary Quigley · All rights reserved
+              </p>
+            </div>
+          </BlurFade>
         </div>
       </section>
     </>

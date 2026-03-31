@@ -101,6 +101,25 @@ body {
 }
 .noise-overlay > * { position: relative; z-index: 1; }
 
+/* ── Marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - var(--gap) / 2)); }
+}
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+/* ── Border beam ── */
+@keyframes border-beam-angle {
+  to { --angle: 360deg; }
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 /* ── PEAK13 diagnostic diagram ── */
 .diagnostic-step {
   @apply flex flex-col items-center text-center;
