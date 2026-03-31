@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0A0F0A;
-  --teal: #1D9E75;
-  --teal-light: #5DCAA5;
-  --teal-muted: #9FE1CB;
+  --bg: #FAFAF8;
+  --surface: #F0EDE8;
+  --border: #E2DDD8;
+  --ink: #0A0A0A;
+  --muted: #6B6560;
+  --accent: #E8400C;
+  --dark: #111111;
 }
 
 * {
@@ -17,90 +20,86 @@
 
 html {
   background-color: var(--bg);
-  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--bg);
-  color: #ffffff;
+  color: var(--ink);
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
-  cursor: none; /* Hide native cursor — custom dot handles it */
-}
-
-/* Show native cursor on touch devices */
-@media (hover: none) {
-  body { cursor: auto; }
-}
-
-/* Custom teal cursor dot */
-#cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background: var(--teal);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
-  mix-blend-mode: screen;
-}
-
-#cursor-dot.hovered {
-  width: 28px;
-  height: 28px;
-  background: var(--teal-muted);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-/* Section utility */
-.section-full {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* ---- Scroll reveal utility ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ---- Shared section padding ---- */
+.section-pad {
+  @apply px-6 md:px-12 lg:px-20 py-20 md:py-28;
 }
 
-/* Teal glow utility */
-.teal-glow {
-  box-shadow: 0 0 40px rgba(29, 158, 117, 0.35);
+.container-lg {
+  @apply max-w-6xl mx-auto;
 }
 
-/* Reduced motion — replace canvas with static gradient */
-@media (prefers-reduced-motion: reduce) {
-  #waveform-canvas {
-    display: none !important;
-  }
-  .static-waveform {
-    display: block !important;
-  }
+.container-md {
+  @apply max-w-4xl mx-auto;
 }
 
-.static-waveform {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(180deg, #0A0F0A 0%, #0d1f19 50%, #0A0F0A 100%);
-  z-index: 0;
+/* ---- Label / eyebrow ---- */
+.eyebrow {
+  @apply text-xs font-semibold tracking-[0.15em] uppercase text-accent font-body;
 }
 
-/* Prose helpers */
-.label-tag {
-  @apply inline-block text-xs font-semibold tracking-widest uppercase text-teal border border-teal/30 px-3 py-1 rounded-full mb-4;
+/* ---- Section divider ---- */
+.section-rule {
+  @apply border-t border-border;
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, var(--teal-muted) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ---- Buttons ---- */
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-ink text-bg font-heading font-bold text-sm px-7 py-3.5 rounded-full hover:bg-accent transition-colors duration-200;
+}
+
+.btn-outline {
+  @apply inline-flex items-center gap-2 border border-ink text-ink font-heading font-bold text-sm px-7 py-3.5 rounded-full hover:bg-ink hover:text-bg transition-colors duration-200;
+}
+
+.btn-accent {
+  @apply inline-flex items-center gap-2 bg-accent text-white font-heading font-bold text-sm px-7 py-3.5 rounded-full hover:bg-[#c93209] transition-colors duration-200;
+}
+
+/* ---- Stat callout ---- */
+.stat-big {
+  @apply font-heading font-bold text-5xl md:text-6xl text-accent leading-none;
+}
+
+/* ---- Card base ---- */
+.card {
+  @apply bg-surface border border-border rounded-2xl p-8;
+}
+
+/* ---- FAQ accordion ---- */
+.faq-item {
+  @apply border-t border-border;
 }

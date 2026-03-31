@@ -1,72 +1,87 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
-interface NavProps {
-  onCTA: () => void
-}
-
-const navLinks = [
-  { label: 'Story', href: '#origin' },
+const links = [
   { label: 'Services', href: '#services' },
-  { label: 'Proof', href: '#proof' },
-  { label: 'Contact', href: '#signal' },
+  { label: 'How it works', href: '#how-it-works' },
+  { label: 'Results', href: '#results' },
+  { label: 'About', href: '#about' },
 ]
 
-export default function Nav({ onCTA }: NavProps) {
+export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    const fn = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', fn, { passive: true })
+    return () => window.removeEventListener('scroll', fn)
   }, [])
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        scrolled ? 'bg-bg/80 backdrop-blur-md border-b border-teal/10' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-bg/95 backdrop-blur-sm border-b border-border shadow-sm' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="container-lg section-pad py-0 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#hero"
-          className="font-heading font-bold text-white tracking-widest text-sm uppercase"
-        >
-          PEAK<span className="text-teal">13</span>
+        <a href="#" className="flex items-center gap-2.5 group">
+          <span className="font-heading font-extrabold text-ink text-lg tracking-tight">
+            Gary <span className="text-accent">Quigley</span>
+          </span>
         </a>
 
-        {/* Links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map(({ label, href }) => (
-            <li key={href}>
-              <a
-                href={href}
-                className="text-sm text-teal-muted/70 hover:text-white transition-colors duration-200 font-body tracking-wide"
-              >
-                {label}
-              </a>
-            </li>
+        {/* Desktop links */}
+        <nav className="hidden md:flex items-center gap-8">
+          {links.map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              className="text-sm text-muted hover:text-ink transition-colors duration-150 font-body"
+            >
+              {label}
+            </a>
           ))}
-        </ul>
+        </nav>
 
-        {/* CTA */}
-        <button
-          onClick={onCTA}
-          className="hidden md:block text-sm font-semibold text-bg bg-teal hover:bg-teal-light px-5 py-2 rounded-full transition-colors duration-200 teal-glow"
-        >
-          Book a Signal Call
-        </button>
+        {/* Desktop CTA */}
+        <a href="#contact" className="hidden md:inline-flex btn-accent text-sm">
+          Book a Free Call
+        </a>
 
-        {/* Mobile CTA */}
+        {/* Mobile menu button */}
         <button
-          onClick={onCTA}
-          className="md:hidden text-xs font-semibold text-bg bg-teal hover:bg-teal-light px-4 py-2 rounded-full transition-colors duration-200"
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 text-ink"
+          aria-label="Menu"
         >
-          Book a Call
+          <div className={`w-5 h-0.5 bg-ink mb-1.5 transition-all ${open ? 'rotate-45 translate-y-2' : ''}`} />
+          <div className={`w-5 h-0.5 bg-ink mb-1.5 transition-all ${open ? 'opacity-0' : ''}`} />
+          <div className={`w-5 h-0.5 bg-ink transition-all ${open ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
-      </nav>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-bg border-t border-border px-6 pb-6 pt-4 flex flex-col gap-4">
+          {links.map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="text-base text-ink font-body py-1"
+            >
+              {label}
+            </a>
+          ))}
+          <a href="#contact" onClick={() => setOpen(false)} className="btn-accent mt-2 justify-center">
+            Book a Free Call
+          </a>
+        </div>
+      )}
     </header>
   )
 }
