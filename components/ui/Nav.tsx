@@ -1,12 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 
 const links = [
+  { label: 'How It Works', href: '#diagnostic' },
   { label: 'Services', href: '#services' },
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Results', href: '#results' },
+  { label: 'Case Studies', href: '#results' },
   { label: 'About', href: '#about' },
 ]
 
@@ -15,21 +14,28 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40)
+    const fn = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', fn, { passive: true })
+    fn()
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-bg/95 backdrop-blur-sm border-b border-border shadow-sm' : 'bg-transparent'
+        scrolled
+          ? 'bg-bg/95 backdrop-blur-sm border-b border-border shadow-sm'
+          : 'bg-transparent'
       }`}
     >
       <div className="container-lg section-pad py-0 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <span className="font-heading font-extrabold text-ink text-lg tracking-tight">
+        <a href="#" className="flex items-center gap-2.5">
+          <span
+            className={`font-heading font-extrabold text-lg tracking-tight transition-colors duration-300 ${
+              scrolled ? 'text-ink' : 'text-white'
+            }`}
+          >
             Gary <span className="text-accent">Quigley</span>
           </span>
         </a>
@@ -40,7 +46,11 @@ export default function Nav() {
             <a
               key={href}
               href={href}
-              className="text-sm text-muted hover:text-ink transition-colors duration-150 font-body"
+              className={`text-sm transition-colors duration-150 font-body ${
+                scrolled
+                  ? 'text-muted hover:text-ink'
+                  : 'text-white/70 hover:text-white'
+              }`}
             >
               {label}
             </a>
@@ -48,19 +58,19 @@ export default function Nav() {
         </nav>
 
         {/* Desktop CTA */}
-        <a href="#contact" className="hidden md:inline-flex btn-accent text-sm">
+        <a href="#contact" className="hidden md:inline-flex btn-primary text-sm px-5 py-2.5">
           Book a Free Call
         </a>
 
         {/* Mobile menu button */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-ink"
-          aria-label="Menu"
+          className={`md:hidden p-2 transition-colors duration-300 ${scrolled ? 'text-ink' : 'text-white'}`}
+          aria-label="Toggle menu"
         >
-          <div className={`w-5 h-0.5 bg-ink mb-1.5 transition-all ${open ? 'rotate-45 translate-y-2' : ''}`} />
-          <div className={`w-5 h-0.5 bg-ink mb-1.5 transition-all ${open ? 'opacity-0' : ''}`} />
-          <div className={`w-5 h-0.5 bg-ink transition-all ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          <div className={`w-5 h-0.5 bg-current mb-1.5 transition-all duration-200 ${open ? 'rotate-45 translate-y-2' : ''}`} />
+          <div className={`w-5 h-0.5 bg-current mb-1.5 transition-all duration-200 ${open ? 'opacity-0' : ''}`} />
+          <div className={`w-5 h-0.5 bg-current transition-all duration-200 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
@@ -77,7 +87,11 @@ export default function Nav() {
               {label}
             </a>
           ))}
-          <a href="#contact" onClick={() => setOpen(false)} className="btn-accent mt-2 justify-center">
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="btn-primary mt-2 justify-center text-center"
+          >
             Book a Free Call
           </a>
         </div>

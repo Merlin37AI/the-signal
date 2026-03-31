@@ -2,105 +2,56 @@
 
 import Image from 'next/image'
 
-// Results section
-const results = [
-  { stat: '25%', desc: 'reduction in mission-critical downtime', context: 'Enterprise transformation, 1,500-user global org' },
-  { stat: '95%', desc: 'first-call resolution rate', context: 'IT support estate — highest in the team within 6 months' },
-  { stat: '50%', desc: 'drop in phishing incidents', context: 'Cybersecurity awareness programme from scratch' },
-  { stat: '1,000+', desc: 'device deployment playbook', context: 'Process I designed was scaled across an entire agency' },
-  { stat: '40%', desc: 'cross-programme alignment lift', context: '100% of redesigned service models adopted by project board' },
-  { stat: '2×', desc: 'Positive Impact Award winner', context: 'Awarded at Control Risks for enterprise delivery performance' },
-]
-
-const certs = [
-  'ITIL 4 Foundation — PeopleCert',
-  'Six Sigma Green Belt — GLSS',
-  'AI in Business Specialization — University of Pennsylvania',
-  'Micro MBA Cum Laude — MBA ASAP',
-  'CompTIA Security+ / Network+ / A+',
-  'CPD Business Strategist',
-]
-
 const testimonials = [
   {
-    quote: "Gary doesn't just audit — he maps the whole system and shows you exactly where the leverage is. The clarity was worth the engagement alone.",
-    name: 'CEO',
+    quote: "Gary doesn't just audit — he maps the whole system and shows you exactly where the leverage is. We found £110K in the first two weeks. The clarity alone was worth the engagement.",
+    name: 'Managing Partner',
+    company: 'Accountancy Firm, London UK',
+  },
+  {
+    quote: "I've had AI consultants before who gave me a deck full of buzzwords. Gary gave me a roadmap I could actually execute on in week one. No theory. No jargon. Just a clear plan.",
+    name: 'Director',
     company: 'Property Management Company, Dubai UAE',
   },
   {
-    quote: "I've had AI consultants before who gave me a deck full of buzzwords. Gary gave me a roadmap I could actually execute on week one.",
+    quote: "What set Gary apart was that he actually understands operations — not just AI. He spoke our language, found things we hadn't seen in years of running the business, and built systems that stuck.",
     name: 'Founder',
-    company: 'Professional Services Agency, London UK',
-  },
-  {
-    quote: "What stood out was Gary's ability to translate complex AI concepts into plain business outcomes. My team actually understood the strategy for the first time.",
-    name: 'Operations Director',
-    company: 'SaaS Business, UAE',
+    company: 'Professional Services Firm, UAE',
   },
 ]
 
 const faqs = [
   {
-    q: 'What exactly does a fractional AI advisor do?',
-    a: "I act as your part-time Chief AI Officer. That means leading your AI strategy, evaluating tools and vendors, building automations, managing adoption across your team, and reporting on outcomes — without the full-time salary commitment.",
+    q: 'What does the Snapshot Call involve?',
+    a: "It's a free 30-minute call where I ask you about your business, your team, and your current processes. No pitch. No slide deck. I use it to understand whether the PEAK13 Diagnostic is right for you — and I'll tell you honestly if it isn't.",
   },
   {
-    q: "How is this different from hiring an AI agency?",
-    a: "Agencies sell deliverables — decks, builds, campaigns. I sell outcomes. I'm embedded in your business, aligned to your goals, and accountable to your results. No handover document and disappear.",
+    q: 'How does the 5× ROI Guarantee work?',
+    a: "If the Diagnostic doesn't identify at least 5× its cost in quantifiable annual savings, you receive a full refund. No caveats, no small print. The guarantee applies to the PEAK13 Snapshot engagement.",
   },
   {
-    q: "Do I need any technical knowledge to work with you?",
-    a: "None. I bridge the gap between business objectives and technical implementation. You tell me what you want to achieve; I translate that into a strategy and build it.",
+    q: 'We\'ve already tried AI tools and they didn\'t stick — will this be different?',
+    a: "Yes — because we start with diagnosis, not tools. The Diagnostic finds where AI creates genuine value in your specific business before we recommend a single piece of software. Tool failure almost always comes from buying before understanding.",
   },
   {
-    q: "What size of business do you work with?",
-    a: "Primarily service businesses with 5–50 staff — coaches, consultants, agencies, SaaS, and professional services. Enough complexity to benefit from AI, small enough that fractional makes financial sense.",
+    q: 'Do we need to be technically advanced?',
+    a: "Not at all. I bridge the gap between your business goals and the technology. You tell me what good looks like operationally — I design, build, and implement the systems. Your team doesn't need to understand the tech; they just need to use it.",
   },
   {
-    q: "How quickly can we get started?",
-    a: "Typically within 2 weeks of an initial call. We start with a scoping call, I send a proposal, and if we're aligned we kick off the audit phase immediately.",
+    q: 'What size of business do you work with?',
+    a: "Primarily accountancy firms with 5–35 partners and staff, and property management companies with 10–50 staff, based in the UK or UAE. Large enough to have complex workflows, small enough that fractional advisory makes financial sense.",
+  },
+  {
+    q: 'How quickly can we get started?',
+    a: "Typically within 2 weeks of your Snapshot Call. We align on scope, I send a short proposal, and if we're ready to go the Diagnostic kicks off that week.",
   },
 ]
 
 export default function ResultsAboutTestimonialsPage() {
   return (
     <>
-      {/* ---- Results ---- */}
-      <section id="results" className="section-pad bg-bg border-b border-border">
-        <div className="container-lg">
-          <div className="mb-14">
-            <p className="eyebrow mb-4 reveal">Track Record</p>
-            <h2 className="font-heading font-extrabold text-4xl md:text-5xl text-ink max-w-xl reveal reveal-delay-1">
-              Proof in numbers.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
-            {results.map((r, i) => (
-              <div key={r.stat} className={`reveal reveal-delay-${(i % 3) + 1}`}>
-                <p className="stat-big mb-1">{r.stat}</p>
-                <p className="font-heading font-semibold text-ink text-base mb-1">{r.desc}</p>
-                <p className="text-xs text-muted font-body leading-relaxed">{r.context}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Certs */}
-          <div className="reveal reveal-delay-2">
-            <p className="text-xs text-muted/60 uppercase tracking-widest font-body mb-4">Certifications</p>
-            <div className="flex flex-wrap gap-2">
-              {certs.map((c) => (
-                <span key={c} className="text-xs font-body font-medium text-muted border border-border rounded-full px-3 py-1.5">
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---- About ---- */}
-      <section id="about" className="section-pad bg-surface border-b border-border">
+      {/* ---- About Gary ---- */}
+      <section id="about" className="zone-surface section-pad border-b border-border">
         <div className="container-lg">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Photo */}
@@ -108,7 +59,7 @@ export default function ResultsAboutTestimonialsPage() {
               <div className="relative w-full max-w-sm mx-auto md:mx-0 aspect-[4/5] rounded-2xl overflow-hidden bg-border">
                 <Image
                   src="/gary-headshot.jpg"
-                  alt="Gary Quigley — Fractional AI Consultant"
+                  alt="Gary Quigley — Fractional AI Consultant, PEAK13 Consulting"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 80vw, 40vw"
@@ -118,33 +69,56 @@ export default function ResultsAboutTestimonialsPage() {
 
             {/* Bio */}
             <div className="order-1 md:order-2">
-              <p className="eyebrow mb-4 reveal">About Gary</p>
-              <h2 className="font-heading font-extrabold text-4xl md:text-5xl text-ink mb-6 reveal reveal-delay-1">
-                8 years building things that actually work.
+              <p className="eyebrow eyebrow-light mb-5 reveal">About Gary</p>
+              <h2
+                className="font-heading font-extrabold text-ink leading-[1.05] mb-6 reveal reveal-delay-1"
+                style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)' }}
+              >
+                8 years building systems
+                <br />
+                that actually work.
               </h2>
               <div className="space-y-4 text-muted text-base leading-relaxed font-body reveal reveal-delay-2">
                 <p>
-                  I spent 8 years inside enterprise IT and transformation — at the Maritime &amp; Coastguard Agency,
-                  Control Risks, and several high-growth businesses — designing the systems, processes, and
-                  governance frameworks that made complex organisations run better.
+                  I spent 8 years inside enterprise IT and operational transformation — at the
+                  Maritime &amp; Coastguard Agency, Control Risks, and several high-growth
+                  businesses — designing the systems, processes, and governance frameworks
+                  that made complex organisations run better.
                 </p>
                 <p>
-                  I founded PEAK13 Consulting because I kept seeing the same pattern: smart business owners
-                  getting sold AI they didn&apos;t need, by people who&apos;d never actually implemented it.
-                  I do things differently — I audit first, recommend second, and build only what makes
-                  measurable sense.
+                  I founded PEAK13 Consulting because I kept seeing the same pattern: smart
+                  business owners getting sold AI they didn&apos;t need, by people who&apos;d
+                  never actually implemented it. I do things differently — diagnose first,
+                  recommend second, build only what makes measurable sense.
                 </p>
                 <p>
-                  I&apos;m based in Dubai, work with clients across the UAE and UK, and operate remotely and
-                  in-person depending on the engagement.
+                  I&apos;m a systems thinker with a coaching background. I believe most operational
+                  problems are people and process problems wearing a technology mask — and I
+                  bring that lens to every engagement.
+                </p>
+                <p>
+                  Based in Dubai. Work across the UAE and UK. Remote and in-person.
                 </p>
               </div>
-              <div className="mt-8 flex flex-wrap gap-4 reveal reveal-delay-3">
+
+              {/* Certs strip */}
+              <div className="mt-8 reveal reveal-delay-3">
+                <p className="text-xs text-muted/60 uppercase tracking-widest font-body mb-3">Credentials</p>
+                <div className="flex flex-wrap gap-2">
+                  {['ITIL 4 Foundation', 'Six Sigma Green Belt', 'AI in Business — UPenn', 'Micro MBA Cum Laude', 'CompTIA Security+', 'CPD Business Strategist'].map((c) => (
+                    <span key={c} className="text-xs font-body font-medium text-muted border border-border rounded-full px-3 py-1.5">
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-4 reveal reveal-delay-4">
                 <a
                   href="https://www.linkedin.com/in/gary-quigley"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline text-sm"
+                  className="btn-ghost-light text-sm"
                 >
                   Connect on LinkedIn →
                 </a>
@@ -158,23 +132,26 @@ export default function ResultsAboutTestimonialsPage() {
       </section>
 
       {/* ---- Testimonials ---- */}
-      <section id="testimonials" className="section-pad bg-bg border-b border-border">
+      <section id="testimonials" className="zone-dark section-pad border-b border-dark-b">
         <div className="container-lg">
           <div className="mb-14">
-            <p className="eyebrow mb-4 reveal">Testimonials</p>
-            <h2 className="font-heading font-extrabold text-4xl md:text-5xl text-ink max-w-xl reveal reveal-delay-1">
+            <p className="eyebrow eyebrow-dark mb-5 reveal">Testimonials</p>
+            <h2
+              className="font-heading font-extrabold text-white leading-[1.05] reveal reveal-delay-1"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+            >
               What clients say.
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className={`card flex flex-col reveal reveal-delay-${i + 1}`}>
+              <div key={i} className={`card-dark flex flex-col reveal reveal-delay-${i + 1}`}>
                 <p className="text-4xl text-accent font-heading leading-none mb-4 select-none">&ldquo;</p>
-                <p className="text-ink text-base leading-relaxed font-body flex-1 mb-6">{t.quote}</p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-heading font-bold text-ink text-sm">{t.name}</p>
-                  <p className="text-muted text-xs font-body mt-0.5">{t.company}</p>
+                <p className="text-white/70 text-base leading-relaxed font-body flex-1 mb-6">{t.quote}</p>
+                <div className="border-t border-dark-b pt-4">
+                  <p className="font-heading font-bold text-white text-sm">{t.name}</p>
+                  <p className="text-dark-m text-xs font-body mt-0.5">{t.company}</p>
                 </div>
               </div>
             ))}
@@ -183,23 +160,26 @@ export default function ResultsAboutTestimonialsPage() {
       </section>
 
       {/* ---- FAQ ---- */}
-      <section id="faq" className="section-pad bg-surface border-b border-border">
+      <section id="faq" className="zone-light section-pad border-b border-border">
         <div className="container-lg">
           <div className="grid md:grid-cols-[1fr_2fr] gap-16">
             <div>
-              <p className="eyebrow mb-4 reveal">FAQ</p>
-              <h2 className="font-heading font-extrabold text-4xl text-ink reveal reveal-delay-1">
+              <p className="eyebrow eyebrow-light mb-5 reveal">FAQ</p>
+              <h2
+                className="font-heading font-extrabold text-ink leading-tight reveal reveal-delay-1"
+                style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
+              >
                 Common questions.
               </h2>
-              <p className="text-muted text-base mt-4 font-body reveal reveal-delay-2">
-                Anything else? Book a free 30-min call and ask me directly.
+              <p className="text-muted text-base mt-4 font-body leading-relaxed reveal reveal-delay-2">
+                Anything else? Book a free Snapshot Call and ask me directly.
               </p>
               <a href="#contact" className="btn-primary mt-8 inline-flex reveal reveal-delay-3">
-                Book a Call →
+                Book a Snapshot Call →
               </a>
             </div>
 
-            <div className="space-y-0 reveal reveal-delay-2">
+            <div className="reveal reveal-delay-2">
               {faqs.map((faq, i) => (
                 <FAQItem key={i} q={faq.q} a={faq.a} />
               ))}
@@ -209,29 +189,44 @@ export default function ResultsAboutTestimonialsPage() {
       </section>
 
       {/* ---- Final CTA ---- */}
-      <section id="contact" className="section-pad bg-dark">
+      <section id="contact" className="zone-dark noise-overlay section-pad">
         <div className="container-md text-center">
-          <p className="eyebrow mb-6 reveal" style={{ color: '#E8400C' }}>
-            Ready to start?
-          </p>
-          <h2 className="font-heading font-extrabold text-5xl md:text-6xl text-white mb-6 reveal reveal-delay-1">
-            Let&apos;s find where AI
+          <p className="eyebrow eyebrow-dark mb-6 reveal">Ready to start?</p>
+          <h2
+            className="font-heading font-extrabold text-white leading-[1.0] mb-6 reveal reveal-delay-1"
+            style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)' }}
+          >
+            Find out what
             <br />
-            fits your business.
+            <span className="text-accent">your operations are costing you.</span>
           </h2>
-          <p className="text-white/50 text-lg font-body max-w-lg mx-auto mb-10 leading-relaxed reveal reveal-delay-2">
-            Book a free 30-minute call. No pitch, no jargon — just an honest conversation
-            about what AI can actually do for your business right now.
+          <p className="text-dark-m text-lg font-body max-w-lg mx-auto mb-10 leading-relaxed reveal reveal-delay-2">
+            Book a free 30-minute Snapshot Call. No pitch, no jargon — just an honest conversation
+            about where AI can create real value in your accountancy firm or property management business.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center mb-12 reveal reveal-delay-3">
+
+          <div className="flex flex-wrap gap-4 justify-center mb-14 reveal reveal-delay-3">
             <a
               href="https://calendly.com/quigleygary/signal-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-accent text-base px-10 py-4"
+              className="btn-primary text-base px-10 py-4"
             >
-              Book a Free 30-Min Call →
+              Book a Free Snapshot Call →
             </a>
+            <a href="mailto:quigleygary@hotmail.com" className="btn-ghost-dark text-base px-10 py-4">
+              Send an Email
+            </a>
+          </div>
+
+          {/* Guarantee reminder */}
+          <div className="mb-14 reveal reveal-delay-4">
+            <div className="guarantee-badge inline-flex">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              5× ROI Guarantee — if we don&apos;t identify at least 5× your investment in savings, you don&apos;t pay.
+            </div>
           </div>
 
           {/* Contact links */}
@@ -253,9 +248,9 @@ export default function ResultsAboutTestimonialsPage() {
           </div>
 
           {/* Footer */}
-          <div className="mt-20 pt-8 border-t border-white/10">
+          <div className="mt-20 pt-8 border-t border-white/10 reveal reveal-delay-5">
             <p className="text-xs text-white/20 font-body">
-              PEAK13 Consulting Ltd · © {new Date().getFullYear()} Gary Quigley · All rights reserved
+              PEAK13 Consulting · © {new Date().getFullYear()} Gary Quigley · All rights reserved
             </p>
           </div>
         </div>
@@ -264,10 +259,9 @@ export default function ResultsAboutTestimonialsPage() {
   )
 }
 
-// Inline FAQ accordion component
 function FAQItem({ q, a }: { q: string; a: string }) {
   return (
-    <details className="faq-item group py-5">
+    <details className="group border-b border-border py-5 last:border-0">
       <summary className="flex items-start justify-between gap-4 cursor-pointer list-none font-heading font-bold text-ink text-base leading-snug hover:text-accent transition-colors duration-150">
         {q}
         <span className="shrink-0 w-5 h-5 rounded-full border border-border flex items-center justify-center text-muted text-xs mt-0.5 group-open:rotate-45 transition-transform duration-200">

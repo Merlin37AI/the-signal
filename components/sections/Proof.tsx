@@ -1,91 +1,148 @@
 'use client'
 
-// Repurposed as Comparison table
-const rows = [
+const cases = [
   {
-    label: 'Annual cost',
-    fractional: 'From £2,500/mo',
-    fulltime: '£120K–£250K salary + benefits',
-    diy: 'Unpredictable (tool costs + time)',
+    industry: 'Accountancy',
+    location: 'UK · 18-partner firm',
+    headline: '£125,000 in recoverable annual cost — found in two weeks.',
+    summary:
+      'A mid-sized UK accountancy firm came to PEAK13 after two consecutive years of tax season capacity crises. Partners were routinely working 70-hour weeks from January to April. Staff were burning out. A junior hire every year was patching the problem without solving it.',
+    findings: [
+      {
+        area: 'Client document chasing',
+        detail: 'Partners spent avg. 6 hrs/week manually requesting, logging, and chasing documents by email.',
+        saving: '£34,000/yr',
+      },
+      {
+        area: 'Compliance report assembly',
+        detail: 'Statutory accounts and compliance packs assembled manually from multiple sources. 3–4 hrs per client per quarter.',
+        saving: '£41,000/yr',
+      },
+      {
+        area: 'Onboarding new clients',
+        detail: 'No standardised process. Every new client took 3–6 hours of partner time to onboard across systems.',
+        saving: '£22,000/yr',
+      },
+      {
+        area: 'Internal time reporting',
+        detail: 'Fee earner time logs submitted and compiled manually. Monthly reconciliation consumed 8+ hours of admin.',
+        saving: '£28,000/yr',
+      },
+    ],
+    total: '£125,000',
+    label: 'Total annual savings identified',
+    note: 'Diagnostic cost: £5,000. ROI on the diagnostic alone: 25×.',
   },
   {
-    label: 'Time to value',
-    fractional: '2–4 weeks',
-    fulltime: '3–6 months to hire & onboard',
-    diy: 'Months of trial and error',
-  },
-  {
-    label: 'Depth of expertise',
-    fractional: 'Enterprise-proven, hands-on',
-    fulltime: 'High — but costly for early stage',
-    diy: 'Limited to internal knowledge',
-  },
-  {
-    label: 'Flexibility',
-    fractional: 'Scale up or down monthly',
-    fulltime: 'Fixed commitment',
-    diy: 'Fully flexible but no accountability',
-  },
-  {
-    label: 'Execution',
-    fractional: 'Strategy + hands-on builds',
-    fulltime: 'Strategy only (usually)',
-    diy: 'Depends on team capacity',
-  },
-  {
-    label: 'Risk',
-    fractional: 'Low — no long-term commitment',
-    fulltime: 'High — wrong hire is expensive',
-    diy: 'Medium — opportunity cost is real',
+    industry: 'Property Management',
+    location: 'UAE · 340-unit portfolio',
+    headline: '£87,000 in operational waste — discovered in 11 days.',
+    summary:
+      'A Dubai-based property management company managing 340 residential units was handling tenant communications, maintenance coordination, and rent collection almost entirely via WhatsApp groups and shared spreadsheets. The team of 12 was at capacity. The director was fielding tenant escalations personally.',
+    findings: [
+      {
+        area: 'Tenant maintenance coordination',
+        detail: 'Maintenance requests received via WhatsApp, manually logged, assigned, and followed up. No SLA tracking.',
+        saving: '£29,000/yr',
+      },
+      {
+        area: 'Rent collection follow-up',
+        detail: 'Office staff manually called and messaged tenants 3–5 days before due date. 30% of units required follow-up every month.',
+        saving: '£21,000/yr',
+      },
+      {
+        area: 'Lease renewal processing',
+        detail: 'Renewals triggered by calendar reminders, drafted from templates manually, sent and tracked in email.',
+        saving: '£19,000/yr',
+      },
+      {
+        area: 'Landlord reporting',
+        detail: 'Monthly reports compiled manually per landlord from multiple spreadsheets. 2 hrs per landlord per month.',
+        saving: '£18,000/yr',
+      },
+    ],
+    total: '£87,000',
+    label: 'Total annual savings identified',
+    note: 'Diagnostic cost: £5,000. ROI on the diagnostic alone: 17.4×.',
   },
 ]
 
 export default function Comparison() {
   return (
-    <section id="comparison" className="section-pad bg-surface border-b border-border">
+    <section id="results" className="zone-light section-pad border-b border-border">
       <div className="container-lg">
-        <div className="mb-12">
-          <p className="eyebrow mb-4 reveal">The Case for Fractional</p>
-          <h2 className="font-heading font-extrabold text-4xl md:text-5xl text-ink max-w-2xl reveal reveal-delay-1">
-            Senior AI expertise,
+        {/* Header */}
+        <div className="mb-16 max-w-2xl">
+          <p className="eyebrow eyebrow-light mb-5 reveal">Case Studies</p>
+          <h2
+            className="font-heading font-extrabold text-ink leading-[1.05] reveal reveal-delay-1"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
+          >
+            Real businesses.
             <br />
-            without the senior AI salary.
+            Real numbers.
           </h2>
+          <p className="text-muted text-lg font-body mt-5 leading-relaxed reveal reveal-delay-2">
+            Every engagement starts with the PEAK13 Diagnostic. Here&apos;s what it found for
+            two of our clients — with the exact breakdown.
+          </p>
         </div>
 
-        {/* Table */}
-        <div className="overflow-x-auto reveal reveal-delay-2">
-          <table className="w-full min-w-[640px]">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-4 pr-6 font-body text-xs uppercase tracking-widest text-muted/60 w-[22%]" />
-                <th className="text-left py-4 pr-6 font-heading font-bold text-base text-ink w-[26%]">
-                  <span className="text-accent">✦</span> Fractional AI Advisor
-                </th>
-                <th className="text-left py-4 pr-6 font-heading font-bold text-base text-muted w-[26%]">
-                  Full-Time AI Director
-                </th>
-                <th className="text-left py-4 font-heading font-bold text-base text-muted w-[26%]">
-                  DIY / Internal
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, i) => (
-                <tr key={row.label} className="border-b border-border last:border-0">
-                  <td className="py-4 pr-6 font-body text-sm font-semibold text-muted">{row.label}</td>
-                  <td className="py-4 pr-6 font-body text-sm text-ink font-semibold">{row.fractional}</td>
-                  <td className="py-4 pr-6 font-body text-sm text-muted">{row.fulltime}</td>
-                  <td className="py-4 font-body text-sm text-muted">{row.diy}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Case study cards */}
+        <div className="space-y-10">
+          {cases.map((c, ci) => (
+            <div key={c.industry} className={`card-light reveal reveal-delay-${ci + 1}`}>
+              {/* Card header */}
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8 pb-8 border-b border-border">
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs font-semibold font-body uppercase tracking-widest text-accent border border-accent/30 rounded-full px-3 py-1">
+                      {c.industry}
+                    </span>
+                    <span className="text-xs font-body text-muted">{c.location}</span>
+                  </div>
+                  <h3 className="font-heading font-bold text-ink text-2xl md:text-3xl leading-snug max-w-xl">
+                    {c.headline}
+                  </h3>
+                </div>
+                <div className="shrink-0 text-right">
+                  <p className="font-heading font-extrabold text-accent text-4xl">{c.total}</p>
+                  <p className="text-xs font-body text-muted mt-1">{c.label}</p>
+                </div>
+              </div>
+
+              {/* Summary */}
+              <p className="text-muted text-base leading-relaxed font-body mb-8">{c.summary}</p>
+
+              {/* Findings grid */}
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                {c.findings.map((f) => (
+                  <div key={f.area} className="bg-bg border border-border rounded-xl p-5">
+                    <div className="flex items-start justify-between gap-4 mb-2">
+                      <p className="font-heading font-bold text-ink text-sm leading-snug">{f.area}</p>
+                      <p className="font-heading font-extrabold text-accent text-lg shrink-0">{f.saving}</p>
+                    </div>
+                    <p className="text-muted text-xs leading-relaxed font-body">{f.detail}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Footer note */}
+              <div className="bg-dark rounded-xl px-5 py-4">
+                <p className="text-white/60 text-sm font-body">{c.note}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-10 reveal">
-          <a href="#contact" className="btn-accent">
-            Book a Free Call — No Commitment →
+        {/* CTA */}
+        <div className="mt-14 text-center reveal">
+          <p className="text-muted text-base font-body mb-6">
+            These numbers are typical. The exact figure for your business depends on size, complexity,
+            and current processes — which is exactly what the Diagnostic is designed to find.
+          </p>
+          <a href="#contact" className="btn-primary text-base px-10 py-4">
+            Book a Free Snapshot Call →
           </a>
         </div>
       </div>
