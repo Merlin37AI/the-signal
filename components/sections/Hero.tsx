@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="zone-dark noise-overlay min-h-screen flex flex-col justify-center section-pad pt-32 pb-20 border-b border-dark-b"
+      className="zone-dark noise-overlay min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-36 pb-24 md:pb-28 border-b border-dark-b"
     >
       <div className="container-lg">
         {/* Eyebrow */}

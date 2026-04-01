@@ -4,6 +4,7 @@ import CredibilityBar from '@/components/sections/Origin'
 import PainPoints from '@/components/sections/Discovery'
 import HowItWorks from '@/components/sections/Career'
 import Services from '@/components/sections/Services'
+import ImageBreak from '@/components/sections/ImageBreak'
 import Comparison from '@/components/sections/Proof'
 import ResultsAboutTestimonialsPage from '@/components/sections/SignalCTA'
 
@@ -17,6 +18,7 @@ export default function Home() {
         <PainPoints />
         <HowItWorks />
         <Services />
+        <ImageBreak />
         <Comparison />
         <ResultsAboutTestimonialsPage />
       </main>

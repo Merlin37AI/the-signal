@@ -2,6 +2,15 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['three', '@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        pathname: '/photos/**',
+      },
+    ],
+  },
   async headers() {
     return [
       {
@@ -20,7 +29,7 @@ const nextConfig = {
               "font-src 'self' https://fonts.gstatic.com",
               "frame-src https://calendly.com",
               "connect-src 'self'",
-              "img-src 'self' data: blob:",
+              "img-src 'self' data: blob: https://images.pexels.com",
             ].join('; '),
           },
         ],
