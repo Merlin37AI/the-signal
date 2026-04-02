@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design 05 — Organic Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #1A1814;
+    --surface: #211E19;
+    --card: #272320;
+    --border: rgba(255,255,255,0.07);
+    --text: #E8E2D9;
+    --muted: rgba(232,226,217,0.45);
+    --faint: rgba(232,226,217,0.12);
+    --gold: #C9A96E;
+    --gold-light: #DFC08A;
+    --accent: #8B6B3E;
+  }
+
+  html { background: var(--bg); }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    font-weight: 300;
+  }
+
+  /* Noise texture overlay */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 64px;
+    display: flex; align-items: center;
+    padding: 0 56px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(26,24,20,0.92);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 1.1rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold);
+    margin-right: auto;
+  }
+
+  .nav-links {
+    display: flex; gap: 40px; margin-right: 48px;
+  }
+  .nav-link {
+    font-size: 0.72rem; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-link:hover { color: var(--text); }
+
+  .nav-cta {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem; font-weight: 400;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 9px 24px;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover {
+    background: var(--accent);
+    color: var(--text);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    padding: 64px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+
+  /* Radial glow */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 20%; left: 30%;
+    width: 600px; height: 600px;
+    background: radial-gradient(ellipse, rgba(201,169,110,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    padding: 80px 72px 80px 56px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border-right: 1px solid var(--border);
+    position: relative; z-index: 1;
+  }
+
+  .eyebrow-organic {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 48px;
+  }
+  .eyebrow-line {
+    width: 32px; height: 1px; background: var(--gold); opacity: 0.6;
+  }
+  .eyebrow-text {
+    font-size: 0.68rem; font-weight: 400;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(3.5rem, 7vw, 7.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-h1 .outline {
+    -webkit-text-stroke: 1px rgba(232,226,217,0.3);
+    color: transparent;
+  }
+
+  .hero-sub-organic {
+    font-size: 0.95rem; color: var(--muted);
+    line-height: 1.85; max-width: 380px;
+    margin-bottom: 48px;
+  }
+
+  .cta-organic {
+    display: flex; align-items: center; gap: 24px;
+  }
+
+  .btn-gold {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--bg); background: var(--gold);
+    padding: 14px 36px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  .btn-ghost-organic {
+    font-size: 0.72rem; font-weight: 400;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    border-bottom: 1px solid var(--faint);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost-organic:hover { color: var(--text); border-color: var(--muted); }
+
+  /* Right side */
+  .hero-right {
+    padding: 80px 56px 80px 72px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative; z-index: 1;
+  }
+
+  .stats-organic {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .stat-organic {
+    background: var(--surface);
+    padding: 32px 28px;
+  }
+
+  .stat-organic-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1; letter-spacing: -0.02em;
+    color: var(--gold); display: block;
+    margin-bottom: 8px;
+  }
+
+  .stat-organic-l {
+    font-size: 0.68rem; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .hero-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.05rem;
+    color: var(--muted); line-height: 1.75;
+    padding-left: 20px;
+    border-left: 1px solid var(--gold);
+  }
+
+  /* ── DIVIDER ── */
+  .divider-text {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 56px;
+    display: flex; align-items: center; gap: 48px;
+    overflow: hidden;
+  }
+
+  .divider-item {
+    font-size: 0.68rem; font-weight: 400;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); white-space: nowrap;
+    display: flex; align-items: center; gap: 16px;
+  }
+
+  .divider-dot {
+    width: 3px; height: 3px; border-radius: 50%;
+    background: var(--gold); opacity: 0.5;
+  }
+
+  /* ── PAIN ── */
+  .section-organic {
+    border-top: 1px solid var(--border);
+    padding: 96px 56px;
+  }
+
+  .section-intro {
+    display: grid; grid-template-columns: 1fr 2fr;
+    gap: 80px; margin-bottom: 72px;
+  }
+
+  .section-label {
+    font-size: 0.68rem; font-weight: 400;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    width: 24px; height: 1px; background: var(--gold); opacity: 0.5;
+  }
+
+  .section-title-organic {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.15; letter-spacing: -0.01em;
+  }
+
+  .section-title-organic em { font-style: italic; color: var(--gold); }
+
+  .pain-list-organic { display: flex; flex-direction: column; gap: 0; }
+
+  .pain-organic {
+    display: grid; grid-template-columns: 80px 1fr 160px;
+    gap: 40px; align-items: start;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pain-organic:last-child { border-bottom: none; }
+
+  .pain-organic-idx {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem; font-weight: 300; font-style: italic;
+    color: var(--gold); opacity: 0.7;
+    padding-top: 4px;
+  }
+
+  .pain-organic-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    letter-spacing: -0.01em; margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .pain-organic-body {
+    font-size: 0.85rem; color: var(--muted); line-height: 1.8;
+  }
+
+  .pain-organic-cost {
+    text-align: right;
+  }
+
+  .pain-organic-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: 2.2rem;
+    color: var(--gold); letter-spacing: -0.02em;
+    display: block; line-height: 1;
+  }
+
+  .pain-organic-unit {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-top: 4px;
+  }
+
+  /* ── SERVICES ── */
+  .services-organic {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+    margin: 0 56px;
+  }
+
+  .svc-organic {
+    background: var(--surface);
+    padding: 48px 40px;
+    position: relative;
+  }
+
+  .svc-organic.featured {
+    background: var(--card);
+  }
+
+  /* Top accent line */
+  .svc-organic.featured::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .svc-tier {
+    font-size: 0.65rem; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 28px; display: block;
+  }
+
+  .svc-organic-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 1.8rem;
+    line-height: 1.15; letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+
+  .svc-organic-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: 1.4rem;
+    color: var(--gold); margin-bottom: 20px;
+  }
+
+  .svc-organic-desc {
+    font-size: 0.83rem; color: var(--muted); line-height: 1.8;
+  }
+
+  .svc-organic-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 32px;
+    font-size: 0.7rem; font-weight: 400;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .svc-organic-cta:hover { gap: 16px; }
+
+  /* ── FOOTER ── */
+  .footer-organic {
+    margin-top: 96px;
+    padding: 96px 56px;
+    border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 3fr 2fr;
+    gap: 80px; align-items: center;
+    position: relative;
+  }
+
+  .footer-organic::before {
+    content: '';
+    position: absolute; top: 50%; left: 40%;
+    width: 500px; height: 500px;
+    transform: translateY(-50%);
+    background: radial-gradient(ellipse, rgba(201,169,110,0.04) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .footer-h-organic {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1.1; letter-spacing: -0.02em;
+  }
+
+  .footer-h-organic em { font-style: italic; color: var(--gold); }
+
+  .footer-organic-side {
+    display: flex; flex-direction: column; gap: 20px;
+    align-items: flex-start;
+  }
+
+  .footer-btn-organic {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--bg); background: var(--gold);
+    padding: 16px 40px; text-decoration: none;
+    display: inline-block; transition: background 0.2s;
+  }
+  .footer-btn-organic:hover { background: var(--gold-light); }
+
+  .footer-note-organic {
+    font-size: 0.68rem; color: var(--muted);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding: 24px 56px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 0.68rem; color: var(--faint);
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:12px;left:12px;z-index:9999;font-family:-apple-system,sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,0.6);padding:7px 14px;text-decoration:none;backdrop-filter:blur(6px);border-radius:3px;">← Back</a>
+
+<nav>
+  <span class="nav-logo">PEAK13</span>
+  <div class="nav-links">
+    <a href="#" class="nav-link">Services</a>
+    <a href="#" class="nav-link">Approach</a>
+    <a href="#" class="nav-link">Results</a>
+  </div>
+  <a href="#" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="eyebrow-organic">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">Fractional AI Advisory</span>
+      </div>
+      <h1 class="hero-h1">
+        The cost of<br>
+        <em>chaos</em> is<br>
+        <span class="outline">measurable.</span>
+      </h1>
+      <p class="hero-sub-organic">
+        We audit your operations, put a number on the waste,
+        and build the AI systems to eliminate it.
+        In two weeks. With a guarantee.
+      </p>
+    </div>
+    <div class="cta-organic">
+      <a href="#" class="btn-gold">Book a Free Snapshot</a>
+      <a href="#" class="btn-ghost-organic">See how it works →</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stats-organic">
+      <div class="stat-organic">
+        <span class="stat-organic-n">£127K</span>
+        <span class="stat-organic-l">Avg. savings per audit</span>
+      </div>
+      <div class="stat-organic">
+        <span class="stat-organic-n">14</span>
+        <span class="stat-organic-l">Days to roadmap</span>
+      </div>
+      <div class="stat-organic">
+        <span class="stat-organic-n">25×</span>
+        <span class="stat-organic-l">Peak ROI achieved</span>
+      </div>
+      <div class="stat-organic">
+        <span class="stat-organic-n">8+</span>
+        <span class="stat-organic-l">Years enterprise background</span>
+      </div>
+    </div>
+
+    <p class="hero-quote">
+      "Every PEAK13 engagement begins with evidence.
+      We audit first, quantify the waste,
+      then design the solution — in that order, every time."
+    </p>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider-text">
+  <div class="divider-item">
+    <span class="divider-dot"></span>
+    Accountancy firms
+  </div>
+  <div class="divider-item">
+    <span class="divider-dot"></span>
+    Property management
+  </div>
+  <div class="divider-item">
+    <span class="divider-dot"></span>
+    United Kingdom
+  </div>
+  <div class="divider-item">
+    <span class="divider-dot"></span>
+    United Arab Emirates
+  </div>
+  <div class="divider-item">
+    <span class="divider-dot"></span>
+    5× ROI Guarantee
+  </div>
+  <div class="divider-item">
+    <span class="divider-dot"></span>
+    Est. 2024
+  </div>
+</div>
+
+<!-- PAIN SECTION -->
+<section class="section-organic">
+  <div class="section-intro">
+    <div>
+      <p class="section-label" style="margin-bottom: 24px;">01 / The problem</p>
+    </div>
+    <h2 class="section-title-organic">
+      Where the money<br>
+      <em>actually</em> goes.
+    </h2>
+  </div>
+
+  <div class="pain-list-organic">
+    <div class="pain-organic">
+      <div class="pain-organic-idx">i.</div>
+      <div>
+        <p class="pain-organic-title">Your highest-paid people are doing £12/hr work.</p>
+        <p class="pain-organic-body">Partners chasing documents. Managers copy-pasting rent reminders. Senior capacity consumed by manual processes a well-configured system handles in seconds.</p>
+      </div>
+      <div class="pain-organic-cost">
+        <span class="pain-organic-n">£45K</span>
+        <p class="pain-organic-unit">est. annual waste</p>
+      </div>
+    </div>
+    <div class="pain-organic">
+      <div class="pain-organic-idx">ii.</div>
+      <div>
+        <p class="pain-organic-title">Tax season shouldn't be a capacity crisis.</p>
+        <p class="pain-organic-body">The same manual processes that caused last year's crunch are still running. That's not a staffing problem — it's a systems problem you've been paying for repeatedly.</p>
+      </div>
+      <div class="pain-organic-cost">
+        <span class="pain-organic-n">£20K</span>
+        <p class="pain-organic-unit">est. annual cost</p>
+      </div>
+    </div>
+    <div class="pain-organic">
+      <div class="pain-organic-idx">iii.</div>
+      <div>
+        <p class="pain-organic-title">Coordination via WhatsApp is a liability.</p>
+        <p class="pain-organic-body">No audit trail. No accountability. The moment something goes wrong legally, you'll wish you had a system — not a chat thread with 200 messages.</p>
+      </div>
+      <div class="pain-organic-cost">
+        <span class="pain-organic-n">£30K</span>
+        <p class="pain-organic-unit">est. annual risk</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="border-top: 1px solid var(--border); padding: 96px 0;">
+  <div class="section-intro" style="padding: 0 56px; margin-bottom: 56px;">
+    <div>
+      <p class="section-label" style="margin-bottom: 24px;">02 / How we work</p>
+    </div>
+    <h2 class="section-title-organic">Three ways to<br><em>engage.</em></h2>
+  </div>
+
+  <div class="services-organic">
+    <div class="svc-organic">
+      <span class="svc-tier">One-time · 2 weeks</span>
+      <p class="svc-organic-name">PEAK13<br>Snapshot</p>
+      <p class="svc-organic-price">£5,000</p>
+      <p class="svc-organic-desc">Full operational audit. Quantified waste. Prioritised 90-day roadmap. Backed by the 5× ROI Guarantee — if we don't find it, you don't pay.</p>
+      <a href="#" class="svc-organic-cta">Start here →</a>
+    </div>
+    <div class="svc-organic featured">
+      <span class="svc-tier">Most popular · 6–10 weeks</span>
+      <p class="svc-organic-name">PEAK13<br>Build</p>
+      <p class="svc-organic-price">From £15,000</p>
+      <p class="svc-organic-desc">We build the top 3 automations from your Snapshot. Real systems, in your stack, with team training and a 90-day support window.</p>
+      <a href="#" class="svc-organic-cta">Book a call →</a>
+    </div>
+    <div class="svc-organic">
+      <span class="svc-tier">Ongoing · from 3 months</span>
+      <p class="svc-organic-name">PEAK13<br>Embedded</p>
+      <p class="svc-organic-price">From £6,000/mo</p>
+      <p class="svc-organic-desc">Embedded fractional AI advisory. I own your roadmap, manage builds, and ensure adoption sticks across your team.</p>
+      <a href="#" class="svc-organic-cta">Learn more →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-organic">
+    <div>
+      <h2 class="footer-h-organic">
+        Find out what<br>
+        your operations<br>
+        are <em>costing you.</em>
+      </h2>
+    </div>
+    <div class="footer-organic-side">
+      <a href="#" class="footer-btn-organic">Book a Free Snapshot Call</a>
+      <p class="footer-note-organic">
+        5× ROI Guarantee<br>
+        No commitment required<br>
+        UK & UAE · Est. 2024
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 PEAK13 Consulting</span>
+    <span class="footer-copy">Fractional AI Advisory · Accountancy & Property</span>
+  </div>
+</footer>
+
+</body>
+</html>

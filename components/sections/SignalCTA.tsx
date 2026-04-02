@@ -80,7 +80,7 @@ export default function ResultsAboutTestimonialsPage() {
                 {/* Yellow corner stamp */}
                 <div className="absolute bottom-0 left-0 bg-yellow border-t-[3px] border-r-[3px] border-ink px-4 py-3">
                   <p className="font-heading text-ink text-xl leading-none tracking-wide">GARY QUIGLEY</p>
-                  <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor · PEAK13</p>
+                  <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor · GDS</p>
                 </div>
               </div>
 
@@ -124,8 +124,8 @@ export default function ResultsAboutTestimonialsPage() {
                   <p>
                     I&apos;m currently AI Operations Lead at The Argenis Advisory — a business-first
                     AI consultancy serving global brands including Microsoft, NEOM, and Riyadh Air —
-                    and Fractional AI Advisor to Upgraded Landscaping in Dubai. I founded PEAK13
-                    Consulting to bring the same embedded, operations-first advisory to growing businesses.
+                    and Fractional AI Advisor to Upgraded Landscaping in Dubai. I founded Gary Does Strategy
+                    to bring the same embedded, operations-first advisory to growing businesses.
                   </p>
                   <p className="font-sub font-semibold text-xs tracking-[0.14em] uppercase text-muted/60">
                     Based in Dubai · Works across UAE and UK · Remote and in-person
@@ -152,7 +152,7 @@ export default function ResultsAboutTestimonialsPage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section id="testimonials" className="zone-dark border-b-[3px] border-ink">
+      <section id="testimonials" className="zone-dark noise-overlay border-b-[3px] border-ink">
         <div className="px-6 md:px-12 lg:px-20">
           <div className="section-header-bar border-dark-b">
             <span className="section-num-tag section-num-tag-inv">06</span>
@@ -248,7 +248,7 @@ export default function ResultsAboutTestimonialsPage() {
                 >
                   Book a Free Intro Call →
                 </a>
-                <a href="mailto:gary@peak13consulting.com" className="btn-ghost-dark">
+                <a href="mailto:gary@garydoesstrategy.com" className="btn-ghost-dark">
                   Send an Email
                 </a>
               </div>
@@ -294,9 +294,9 @@ export default function ResultsAboutTestimonialsPage() {
 
           {/* Footer */}
           <BlurFade delay={0.6} className="mt-20 pt-8 border-t-[2px] border-dark-b flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-heading text-xl text-yellow tracking-wide">PEAK13</p>
+            <p className="font-heading text-xl text-yellow tracking-wide">GDS</p>
             <p className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/20">
-              © {new Date().getFullYear()} Gary Quigley · PEAK13 Consulting · All rights reserved
+              © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy · All rights reserved
             </p>
           </BlurFade>
         </div>

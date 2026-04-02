@@ -61,7 +61,7 @@ export default function CTAModal({ type, onClose }: CTAModalProps) {
         <div className="px-8 pt-8 pb-6 border-b border-teal/10">
           <div className="flex items-start justify-between">
             <div>
-              <p className="label-tag">PEAK13 Consulting</p>
+              <p className="label-tag">Gary Does Strategy</p>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mt-2">{title}</h2>
               <p className="text-teal-muted/70 mt-2 text-sm leading-relaxed">{subtitle}</p>
             </div>

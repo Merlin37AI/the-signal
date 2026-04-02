@@ -5,9 +5,9 @@ import { BlurFade } from '@/components/ui/animations/blur-fade'
 import { Marquee } from '@/components/ui/animations/marquee'
 
 const orgs = [
-  'The Argenis Advisory', 'PEAK13 Consulting', 'Upgraded Landscaping',
+  'The Argenis Advisory', 'Gary Does Strategy', 'Upgraded Landscaping',
   'Maritime & Coastguard Agency', 'Control Risks', 'Griffon Hoverwork',
-  'The Argenis Advisory', 'PEAK13 Consulting', 'Upgraded Landscaping',
+  'The Argenis Advisory', 'Gary Does Strategy', 'Upgraded Landscaping',
   'Maritime & Coastguard Agency', 'Control Risks', 'Griffon Hoverwork',
 ]
 
@@ -102,7 +102,7 @@ export default function CredibilityBar() {
           <div className="relative h-64 overflow-hidden border-b-[3px] border-ink shrink-0">
             <Image
               src="/gary-headshot.jpg"
-              alt="Gary Quigley — Fractional AI Advisor, PEAK13 Consulting"
+              alt="Gary Quigley — Fractional AI Advisor, Gary Does Strategy"
               fill
               className="object-cover object-top"
               sizes="340px"
@@ -110,7 +110,7 @@ export default function CredibilityBar() {
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
             <div className="absolute bottom-0 left-0 bg-yellow border-t-[3px] border-r-[3px] border-ink px-4 py-2">
               <p className="font-heading text-ink text-lg leading-none tracking-wide">GARY QUIGLEY</p>
-              <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor · PEAK13</p>
+              <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor · GDS</p>
             </div>
           </div>
 

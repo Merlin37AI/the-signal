@@ -40,8 +40,8 @@ export default function ImageBreak() {
         className="absolute bottom-6 right-6 md:bottom-8 md:right-8 bg-yellow border-[3px] border-ink px-4 py-2"
         style={{ boxShadow: '4px 4px 0 #0F0F0F' }}
       >
-        <p className="font-heading text-ink text-xl leading-none tracking-wide">PEAK13</p>
-        <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisory</p>
+        <p className="font-heading text-ink text-xl leading-none tracking-wide">GDS</p>
+        <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Gary Does Strategy</p>
       </div>
     </div>
   )

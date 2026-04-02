@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design 04 — Brutalist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F0EDE8;
+    --ink: #0F0F0F;
+    --red: #D90000;
+    --yellow: #FFD600;
+    --border: 3px solid var(--ink);
+  }
+
+  html { background: var(--bg); }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--ink);
+    height: 56px;
+    display: flex; align-items: center;
+    padding: 0 32px;
+    gap: 0;
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem; letter-spacing: 0.08em;
+    color: var(--yellow);
+    margin-right: auto;
+  }
+
+  .nav-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-right: 32px;
+  }
+
+  .nav-cta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 0.75rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--red); color: #fff;
+    padding: 8px 20px; text-decoration: none;
+    transition: background 0.1s;
+  }
+  .nav-cta:hover { background: #FF1111; }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top: 56px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-bottom: var(--border);
+  }
+
+  .hero-ticker {
+    background: var(--red); color: #fff;
+    padding: 10px 32px;
+    overflow: hidden; white-space: nowrap;
+    border-bottom: var(--border);
+  }
+
+  .ticker-inner {
+    display: inline-flex; gap: 64px;
+    animation: ticker 18s linear infinite;
+  }
+
+  .ticker-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 0.8rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .hero-body {
+    display: grid;
+    grid-template-columns: 1fr 440px;
+  }
+
+  .hero-left {
+    padding: 56px 48px 56px 32px;
+    border-right: var(--border);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+
+  .hero-h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 12vw, 13rem);
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-h1 .stroke {
+    -webkit-text-stroke: 3px var(--ink);
+    color: transparent;
+  }
+
+  .hero-h1 .filled { color: var(--ink); }
+
+  .hero-h1 .box {
+    background: var(--yellow);
+    padding: 0 16px;
+    display: inline-block;
+  }
+
+  .hero-h1 .red { color: var(--red); }
+
+  .hero-bottom {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 32px;
+  }
+
+  .hero-sub {
+    font-size: 1rem; line-height: 1.65;
+    color: #3A3A3A; max-width: 400px;
+  }
+
+  .cta-block { flex-shrink: 0; }
+
+  .btn-brut {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 0.85rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--ink); color: var(--bg);
+    padding: 14px 28px; text-decoration: none;
+    display: inline-block;
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--red);
+    transition: box-shadow 0.1s, transform 0.1s;
+  }
+  .btn-brut:hover {
+    box-shadow: none;
+    transform: translate(4px, 4px);
+  }
+
+  /* Right panel: stacked stats */
+  .hero-right {
+    display: flex; flex-direction: column;
+  }
+
+  .stat-brut {
+    flex: 1;
+    border-bottom: var(--border);
+    padding: 24px 32px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+  }
+  .stat-brut:last-child { border-bottom: none; }
+
+  .stat-brut:nth-child(2) { background: var(--ink); }
+  .stat-brut:nth-child(2) .stat-n { color: var(--yellow); }
+  .stat-brut:nth-child(2) .stat-l { color: rgba(255,255,255,0.5); }
+
+  .stat-n {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1; letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .stat-n.red { color: var(--red); }
+
+  .stat-l {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; font-size: 0.7rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: #666;
+  }
+
+  /* Diagonal decorative mark */
+  .stat-brut::after {
+    content: '';
+    position: absolute; top: 12px; right: 12px;
+    width: 16px; height: 16px;
+    border: 2px solid var(--red);
+    transform: rotate(45deg);
+  }
+  .stat-brut:nth-child(2)::after { border-color: var(--yellow); }
+
+  /* ── PAIN ── */
+  .section-brut {
+    border-bottom: var(--border);
+    overflow: hidden;
+  }
+
+  .section-header-brut {
+    display: flex; align-items: center;
+    padding: 0 32px;
+    border-bottom: var(--border);
+    height: 56px;
+  }
+
+  .section-num-brut {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; letter-spacing: 0.08em;
+    color: var(--red); margin-right: 24px;
+    border-right: 2px solid var(--ink); padding-right: 24px;
+  }
+
+  .section-title-brut {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem; letter-spacing: 0.04em;
+  }
+
+  .section-title-brut .hi {
+    background: var(--yellow);
+    padding: 0 8px;
+  }
+
+  .pain-grid-brut {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pain-brut {
+    border-right: var(--border);
+    padding: 40px 32px;
+    position: relative;
+  }
+  .pain-brut:last-child { border-right: none; }
+
+  /* Big diagonal number */
+  .pain-bg-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8rem; line-height: 1;
+    color: rgba(0,0,0,0.05);
+    position: absolute; top: -8px; right: -8px;
+    pointer-events: none; user-select: none;
+    line-height: 1;
+  }
+
+  .pain-cost-brut {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    color: var(--red); line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .pain-title-brut {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1.1rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    line-height: 1.3; margin-bottom: 12px;
+  }
+
+  .pain-body-brut {
+    font-size: 0.85rem; color: #555; line-height: 1.65;
+  }
+
+  .pain-tag-brut {
+    display: inline-block; margin-bottom: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 0.65rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    background: var(--ink); color: var(--bg);
+    padding: 3px 10px;
+  }
+
+  /* ── SERVICES ── */
+  .services-brut {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+
+  .svc-brut {
+    border-right: var(--border);
+    padding: 40px 32px;
+  }
+  .svc-brut:last-child { border-right: none; }
+
+  .svc-brut.featured {
+    background: var(--ink); color: var(--bg);
+  }
+
+  .svc-name-brut {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: 0.03em; line-height: 1;
+    margin-bottom: 8px;
+  }
+  .svc-name-brut.inv { color: var(--yellow); }
+
+  .svc-type-brut {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; font-size: 0.65rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: #888; margin-bottom: 20px;
+  }
+  .svc-type-brut.inv { color: rgba(255,255,255,0.4); }
+
+  .svc-price-brut {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem; color: var(--red);
+    letter-spacing: 0.02em; margin-bottom: 16px;
+  }
+
+  .svc-desc-brut {
+    font-size: 0.85rem; line-height: 1.65; color: #555;
+  }
+  .svc-desc-brut.inv { color: rgba(255,255,255,0.5); }
+
+  .svc-cta-brut {
+    display: inline-block; margin-top: 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 0.75rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none;
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 2px;
+  }
+  .svc-cta-brut.inv { color: var(--yellow); border-color: var(--yellow); }
+
+  /* ── FOOTER ── */
+  .footer-brut {
+    background: var(--ink); color: var(--bg);
+    padding: 64px 32px;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 64px; align-items: center;
+    border-top: 6px solid var(--red);
+  }
+
+  .footer-h-brut {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    line-height: 0.9; letter-spacing: 0.02em;
+  }
+  .footer-h-brut .hi { color: var(--yellow); }
+  .footer-h-brut .red { color: var(--red); }
+
+  .footer-side-brut {
+    display: flex; flex-direction: column; gap: 16px;
+    align-items: flex-start;
+  }
+
+  .footer-btn-brut {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 0.85rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--red); color: #fff;
+    padding: 16px 32px; text-decoration: none;
+    display: inline-block;
+    border: 3px solid var(--red);
+    box-shadow: 4px 4px 0 var(--yellow);
+    transition: box-shadow 0.1s, transform 0.1s;
+  }
+  .footer-btn-brut:hover {
+    box-shadow: none;
+    transform: translate(4px, 4px);
+  }
+
+  .footer-note-brut {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:12px;left:12px;z-index:9999;font-family:-apple-system,sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,0.6);padding:7px 14px;text-decoration:none;backdrop-filter:blur(6px);border-radius:3px;">← Back</a>
+
+<nav>
+  <span class="nav-logo">PEAK13</span>
+  <span class="nav-tag">Fractional AI Advisory · UK & UAE · Est. 2024</span>
+  <a href="#" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- TICKER -->
+<div style="position: fixed; top: 56px; left: 0; right: 0; z-index: 99; border-bottom: 3px solid var(--ink);">
+  <div class="hero-ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">Operational Waste Identified: £127K Average</span>
+      <span class="ticker-item">✦</span>
+      <span class="ticker-item">14-Day Turnaround · Guaranteed</span>
+      <span class="ticker-item">✦</span>
+      <span class="ticker-item">5× ROI Guarantee on Every Audit</span>
+      <span class="ticker-item">✦</span>
+      <span class="ticker-item">Accountancy Firms · Property Management</span>
+      <span class="ticker-item">✦</span>
+      <span class="ticker-item">Operational Waste Identified: £127K Average</span>
+      <span class="ticker-item">✦</span>
+      <span class="ticker-item">14-Day Turnaround · Guaranteed</span>
+      <span class="ticker-item">✦</span>
+      <span class="ticker-item">5× ROI Guarantee on Every Audit</span>
+      <span class="ticker-item">✦</span>
+      <span class="ticker-item">Accountancy Firms · Property Management</span>
+      <span class="ticker-item">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 96px;">
+  <div class="hero-body">
+    <div class="hero-left">
+      <div>
+        <h1 class="hero-h1">
+          <span class="filled">THE</span><br>
+          <span class="stroke">COST</span><br>
+          <span class="box">OF</span><br>
+          <span class="red">CHAOS</span>
+        </h1>
+      </div>
+      <div class="hero-bottom">
+        <p class="hero-sub">
+          We audit your operations, put a number on the waste,
+          and build the AI systems to eliminate it.
+          In two weeks. With a guarantee.
+        </p>
+        <div class="cta-block">
+          <a href="#" class="btn-brut">Book a Free Snapshot →</a>
+          <p style="font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-top: 10px; font-weight: 600;">Accountancy · Property Management</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stat-brut">
+        <span class="stat-n red">£127K</span>
+        <span class="stat-l">Annual savings per audit</span>
+      </div>
+      <div class="stat-brut">
+        <span class="stat-n">14</span>
+        <span class="stat-l">Days to roadmap</span>
+      </div>
+      <div class="stat-brut">
+        <span class="stat-n red">25×</span>
+        <span class="stat-l">Peak ROI achieved</span>
+      </div>
+      <div class="stat-brut">
+        <span class="stat-n">8+</span>
+        <span class="stat-l">Years enterprise background</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="section-brut">
+  <div class="section-header-brut">
+    <span class="section-num-brut">01</span>
+    <h2 class="section-title-brut">Where the money <span class="hi">actually</span> goes.</h2>
+  </div>
+  <div class="pain-grid-brut">
+    <div class="pain-brut">
+      <span class="pain-bg-num">01</span>
+      <span class="pain-tag-brut">Capacity Drain</span>
+      <p class="pain-cost-brut">£45K</p>
+      <p class="pain-title-brut">Your highest-paid people are doing £12/hr work.</p>
+      <p class="pain-body-brut">Partners chasing documents. Managers copy-pasting rent reminders. Senior capacity consumed by manual processes.</p>
+    </div>
+    <div class="pain-brut">
+      <span class="pain-bg-num">02</span>
+      <span class="pain-tag-brut">Seasonal Crisis</span>
+      <p class="pain-cost-brut">£20K</p>
+      <p class="pain-title-brut">Tax season shouldn't be a capacity crisis.</p>
+      <p class="pain-body-brut">The same manual processes that caused last year's crunch are still running. That's not a staffing problem.</p>
+    </div>
+    <div class="pain-brut">
+      <span class="pain-bg-num">03</span>
+      <span class="pain-tag-brut">Legal Exposure</span>
+      <p class="pain-cost-brut">£30K</p>
+      <p class="pain-title-brut">Coordination via WhatsApp is a liability.</p>
+      <p class="pain-body-brut">No audit trail. No accountability. The moment something goes wrong legally, you'll wish you had a system.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section-brut">
+  <div class="section-header-brut">
+    <span class="section-num-brut">02</span>
+    <h2 class="section-title-brut">Three ways to <span class="hi">engage.</span></h2>
+  </div>
+  <div class="services-brut">
+    <div class="svc-brut">
+      <p class="svc-name-brut">PEAK13<br>Snapshot</p>
+      <p class="svc-type-brut">One-time · 2 weeks</p>
+      <p class="svc-price-brut">£5,000</p>
+      <p class="svc-desc-brut">Full operational audit. Quantified waste. Prioritised 90-day roadmap. Backed by the 5× ROI Guarantee.</p>
+      <a href="#" class="svc-cta-brut">Start here →</a>
+    </div>
+    <div class="svc-brut featured">
+      <p class="svc-name-brut inv">PEAK13<br>Build</p>
+      <p class="svc-type-brut inv">Most popular · 6–10 weeks</p>
+      <p class="svc-price-brut">From £15,000</p>
+      <p class="svc-desc-brut inv">We build the top 3 automations from your Snapshot. Real systems, in your stack, with team training and 90-day support.</p>
+      <a href="#" class="svc-cta-brut inv">Book a call →</a>
+    </div>
+    <div class="svc-brut">
+      <p class="svc-name-brut">PEAK13<br>Embedded</p>
+      <p class="svc-type-brut">Ongoing · from 3 months</p>
+      <p class="svc-price-brut">£6,000/mo</p>
+      <p class="svc-desc-brut">Embedded fractional AI advisory. I own your roadmap, manage builds, ensure adoption sticks.</p>
+      <a href="#" class="svc-cta-brut">Learn more →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-brut">
+  <div>
+    <h2 class="footer-h-brut">
+      FIND OUT<br>
+      <span class="hi">WHAT IT'S</span><br>
+      <span class="red">COSTING YOU.</span>
+    </h2>
+  </div>
+  <div class="footer-side-brut">
+    <a href="#" class="footer-btn-brut">Book a Free Snapshot Call →</a>
+    <p class="footer-note-brut">5× ROI Guarantee · No commitment required</p>
+  </div>
+</footer>
+
+</body>
+</html>

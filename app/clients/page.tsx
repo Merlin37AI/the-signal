@@ -100,7 +100,7 @@ export default function ClientsPage() {
         {/* Page header */}
         <div className="bg-ink border-b-[3px] border-ink px-6 md:px-12 lg:px-20 py-20 md:py-28">
           <p className="font-sub font-700 text-xs tracking-[0.22em] uppercase text-accent mb-6">
-            PEAK13 Consulting · Current Engagements
+            Gary Does Strategy · Current Engagements
           </p>
           <h1
             className="font-heading text-white leading-[0.92] tracking-wide mb-8"
@@ -283,7 +283,7 @@ export default function ClientsPage() {
         ))}
 
         {/* Bottom CTA */}
-        <section className="zone-dark border-t-[3px] border-accent px-6 md:px-12 lg:px-20 py-20">
+        <section className="zone-dark noise-overlay border-t-[3px] border-accent px-6 md:px-12 lg:px-20 py-20">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div>
               <p className="font-sub font-700 text-xs tracking-[0.22em] uppercase text-accent mb-4">

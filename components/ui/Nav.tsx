@@ -44,10 +44,10 @@ export default function Nav() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-0">
             <span className="font-heading text-xl tracking-wide text-yellow leading-none">
-              PEAK13
+              GDS
             </span>
             <span className="font-sub font-700 text-xs tracking-[0.18em] text-white/40 uppercase ml-3 hidden md:block">
-              Fractional AI Advisory
+              Gary Does Strategy
             </span>
           </a>
 

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design 01 — Editorial Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0A0A0A;
+    --paper: #F4F1EC;
+    --accent: #C8001E;
+    --rule: #D4CEBE;
+    --muted: #6B6560;
+  }
+
+  html { background: var(--paper); }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 52px;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; font-size: 1rem; letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nav-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nav-cta {
+    font-family: 'DM Mono', monospace; font-size: 0.7rem;
+    border: 1.5px solid var(--ink); padding: 6px 16px;
+    text-decoration: none; color: var(--ink); text-transform: uppercase;
+    letter-spacing: 0.08em; transition: all 0.15s;
+  }
+  .nav-cta:hover { background: var(--ink); color: var(--paper); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; padding: 120px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .hero-left {
+    border-right: 1px solid var(--rule);
+    padding-right: 56px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::before {
+    content: ''; width: 24px; height: 1px; background: var(--accent);
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+  .hero-headline em {
+    font-style: italic; color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1rem; color: var(--muted);
+    line-height: 1.7; max-width: 380px;
+    margin-top: 40px;
+  }
+
+  .hero-cta {
+    margin-top: 48px; display: flex; align-items: center; gap: 24px;
+  }
+  .cta-primary {
+    background: var(--ink); color: var(--paper);
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 14px 32px; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .cta-primary:hover { opacity: 0.75; }
+
+  /* ── RIGHT SIDE: GIANT NUMBERS ── */
+  .hero-right {
+    padding-left: 56px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+
+  .stat-editorial {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px; margin-bottom: 32px;
+  }
+  .stat-editorial:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .stat-number-big {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 9vw, 9rem);
+    font-weight: 900; line-height: 0.9;
+    color: var(--ink); letter-spacing: -0.04em;
+    display: block;
+  }
+  .stat-number-big.accent { color: var(--accent); }
+
+  .stat-label-editorial {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--muted);
+    margin-top: 8px; display: block;
+  }
+
+  /* ── SECTION: RULE LINES ── */
+  .section-rule {
+    padding: 80px 48px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .section-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; margin-bottom: 60px;
+  }
+
+  .section-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── PAIN CARDS: EDITORIAL LIST ── */
+  .pain-list { display: flex; flex-direction: column; gap: 0; }
+  .pain-item {
+    display: grid; grid-template-columns: 60px 1fr 200px;
+    gap: 24px; align-items: start;
+    padding: 28px 0; border-bottom: 1px solid var(--rule);
+  }
+  .pain-item:last-child { border-bottom: none; }
+
+  .pain-index {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem; color: var(--accent);
+    padding-top: 4px;
+  }
+
+  .pain-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 8px;
+  }
+  .pain-body { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+
+  .pain-cost {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900;
+    color: var(--accent); text-align: right;
+    letter-spacing: -0.03em;
+  }
+  .pain-cost-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    text-align: right; margin-top: 4px;
+  }
+
+  /* ── SERVICES: MAGAZINE GRID ── */
+  .services-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 0; border-top: 2px solid var(--ink);
+  }
+  .service-col {
+    border-right: 1px solid var(--rule); padding: 48px 40px;
+  }
+  .service-col:last-child { border-right: none; }
+  .service-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 20px;
+    display: block;
+  }
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700;
+    letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .service-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 900;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .service-desc {
+    font-size: 0.825rem; color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER CTA ── */
+  .footer-cta {
+    padding: 80px 48px;
+    background: var(--ink); color: var(--paper);
+    display: grid; grid-template-columns: 2fr 1fr;
+    align-items: center; gap: 48px;
+  }
+  .footer-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+  .footer-headline em { color: var(--accent); font-style: italic; }
+  .footer-cta-btn {
+    background: var(--paper); color: var(--ink);
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 16px 32px; text-decoration: none; display: inline-block;
+    transition: opacity 0.2s;
+  }
+  .footer-cta-btn:hover { opacity: 0.8; }
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:12px;left:12px;z-index:9999;font-family:-apple-system,sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,0.6);padding:7px 14px;text-decoration:none;backdrop-filter:blur(6px);border-radius:3px;">← Back</a>
+
+<nav>
+  <span class="nav-logo">PEAK13 Consulting</span>
+  <span class="nav-date">Fractional AI Advisory · UK & UAE · Est. 2024</span>
+  <a href="#" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="eyebrow">Fractional AI Advisory</div>
+      <h1 class="hero-headline">
+        The cost of chaos<br>
+        is <em>measurable.</em>
+      </h1>
+      <p class="hero-sub">
+        We audit your operations, put a number on the waste,
+        and build the AI systems to eliminate it.
+        In two weeks. With a guarantee.
+      </p>
+      <div class="hero-cta">
+        <a href="#" class="cta-primary">Book a Free Snapshot →</a>
+      </div>
+    </div>
+    <div class="eyebrow" style="margin-bottom:0">
+      Accountancy firms · Property management · UK & UAE
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-editorial">
+      <span class="stat-number-big accent">£127K</span>
+      <span class="stat-label-editorial">Average annual savings identified per audit</span>
+    </div>
+    <div class="stat-editorial">
+      <span class="stat-number-big">14</span>
+      <span class="stat-label-editorial">Days from intake to roadmap delivery</span>
+    </div>
+    <div class="stat-editorial">
+      <span class="stat-number-big accent">25×</span>
+      <span class="stat-label-editorial">Peak ROI achieved on diagnostic investment</span>
+    </div>
+    <div class="stat-editorial">
+      <span class="stat-number-big">8+</span>
+      <span class="stat-label-editorial">Years enterprise transformation background</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN SECTION -->
+<section class="section-rule">
+  <div class="section-header">
+    <div>
+      <p class="section-number">01 / The Problem</p>
+      <h2 class="section-title">Where the money<br>actually goes.</h2>
+    </div>
+  </div>
+
+  <div class="pain-list">
+    <div class="pain-item">
+      <div class="pain-index">01</div>
+      <div>
+        <p class="pain-title">Your highest-paid people are doing £12/hr work.</p>
+        <p class="pain-body">Partners chasing documents. Managers copy-pasting rent reminders. Senior capacity consumed by manual processes a well-configured system handles in seconds.</p>
+      </div>
+      <div>
+        <p class="pain-cost">£45K</p>
+        <p class="pain-cost-label">est. annual waste</p>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-index">02</div>
+      <div>
+        <p class="pain-title">Tax season shouldn't be a capacity crisis.</p>
+        <p class="pain-body">The same manual processes that caused last year's crunch are still running. That's not a staffing problem — it's a systems problem you've been paying for repeatedly.</p>
+      </div>
+      <div>
+        <p class="pain-cost">£20K</p>
+        <p class="pain-cost-label">est. annual cost</p>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-index">03</div>
+      <div>
+        <p class="pain-title">Coordination via WhatsApp is a liability.</p>
+        <p class="pain-body">No audit trail. No accountability. The moment something goes wrong legally, you'll wish you had a system — not a chat thread with 200 messages.</p>
+      </div>
+      <div>
+        <p class="pain-cost">£30K</p>
+        <p class="pain-cost-label">est. annual risk</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section-rule" style="padding: 0;">
+  <div class="services-grid">
+    <div class="service-col">
+      <span class="service-tag">One-time · 2 weeks</span>
+      <p class="service-name">PEAK13 Snapshot</p>
+      <p class="service-price">£5,000</p>
+      <p class="service-desc">Full operational audit. Quantified waste. Prioritised 90-day roadmap. Backed by the 5× ROI Guarantee — if we don't find it, you don't pay.</p>
+    </div>
+    <div class="service-col" style="background: var(--ink); color: var(--paper);">
+      <span class="service-tag" style="color: #C8001E;">Most popular · 6–10 weeks</span>
+      <p class="service-name" style="color: var(--paper)">PEAK13 Build</p>
+      <p class="service-price" style="color: #C8001E;">From £15,000</p>
+      <p class="service-desc" style="color: rgba(255,255,255,0.6)">We build the top 3 automations from your Snapshot. Real systems, in your stack, with team training and a 90-day support window.</p>
+    </div>
+    <div class="service-col">
+      <span class="service-tag">Ongoing · from 3 months</span>
+      <p class="service-name">PEAK13 Embedded</p>
+      <p class="service-price">From £6,000/mo</p>
+      <p class="service-desc">Embedded fractional AI advisory. I own your roadmap, manage builds, and ensure adoption sticks across your team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div>
+    <p class="footer-headline">
+      Find out what<br>
+      your operations<br>
+      are <em>costing you.</em>
+    </p>
+  </div>
+  <div>
+    <a href="#" class="footer-cta-btn">Book a Free Snapshot Call →</a>
+    <p style="font-family: 'DM Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.3); margin-top: 16px; letter-spacing: 0.08em; text-transform: uppercase;">
+      5× ROI Guarantee · No commitment required
+    </p>
+  </div>
+</section>
+
+</body>
+</html>

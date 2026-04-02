@@ -22,7 +22,7 @@ export default function Hero() {
         <div>
           <BlurFade delay={0.05}>
             <p className="eyebrow eyebrow-light mb-8">
-              Gary Quigley · Fractional AI Advisor · PEAK13 Consulting · Dubai &amp; UK
+              Gary Quigley · Fractional AI Advisor · Gary Does Strategy · Dubai &amp; UK
             </p>
           </BlurFade>
 

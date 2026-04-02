@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design 03 — Swiss Precision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700;900&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #FFFFFF;
+    --off: #F7F6F4;
+    --mid: #EBEBEB;
+    --gray: #A0A0A0;
+    --black: #0D0D0D;
+    --red: #E8001A;
+    --col: calc(100% / 12);
+  }
+
+  html, body { background: var(--white); color: var(--black); }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Grid system */
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--black);
+    height: 56px;
+    display: flex; align-items: center;
+    padding: 0 48px;
+    gap: 0;
+  }
+
+  .nav-mark {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900; font-size: 0.7rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    flex: 1;
+  }
+
+  .nav-desc {
+    font-size: 0.7rem; color: var(--gray);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    flex: 1; text-align: center;
+  }
+
+  .nav-right {
+    flex: 1; display: flex; justify-content: flex-end; align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--black); text-decoration: none;
+    border-bottom: 1px solid transparent; padding-bottom: 2px;
+    transition: border-color 0.15s;
+  }
+  .nav-link:hover { border-color: var(--red); }
+
+  .nav-cta {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--red); color: var(--white);
+    padding: 8px 20px; text-decoration: none;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top: 56px;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    border-bottom: 1px solid var(--black);
+  }
+
+  .hero-top {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    border-bottom: 1px solid var(--mid);
+  }
+
+  .hero-num-col {
+    grid-column: span 1;
+    border-right: 1px solid var(--mid);
+    padding: 48px 24px;
+    display: flex; align-items: flex-end;
+  }
+  .col-label {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.55rem; font-weight: 300;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gray);
+    writing-mode: vertical-rl; text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+
+  .hero-main {
+    grid-column: span 7;
+    padding: 64px 64px 64px 56px;
+    border-right: 1px solid var(--mid);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+
+  .hero-tag {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.6rem; font-weight: 400;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 40px;
+  }
+
+  .hero-h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 5.5vw, 6rem);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  .hero-h1 .line { display: block; }
+  .hero-h1 .red { color: var(--red); }
+  .hero-h1 .stroke {
+    -webkit-text-stroke: 2px var(--black);
+    color: transparent;
+  }
+
+  .hero-foot {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-top: 56px;
+  }
+
+  .hero-sub {
+    font-size: 0.875rem; color: var(--gray);
+    line-height: 1.7; max-width: 360px;
+  }
+
+  .cta-group { display: flex; gap: 12px; align-items: center; }
+  .btn-primary {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--black); color: var(--white);
+    padding: 14px 28px; text-decoration: none;
+    transition: background 0.15s;
+  }
+  .btn-primary:hover { background: var(--red); }
+
+  .hero-stats-col {
+    grid-column: span 4;
+    display: flex; flex-direction: column;
+  }
+
+  .stat-swiss {
+    flex: 1;
+    border-bottom: 1px solid var(--mid);
+    padding: 32px 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+  }
+  .stat-swiss:last-child { border-bottom: none; }
+
+  .stat-swiss-n {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .stat-swiss-n.red { color: var(--red); }
+
+  .stat-swiss-l {
+    font-size: 0.7rem; color: var(--gray);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* Progress bar accent */
+  .stat-progress {
+    position: absolute; bottom: 0; left: 0;
+    height: 2px; background: var(--red);
+  }
+
+  /* ── SECTION ── */
+  .section {
+    border-bottom: 1px solid var(--black);
+  }
+
+  .section-head {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    border-bottom: 1px solid var(--mid);
+  }
+
+  .section-num-cell {
+    grid-column: span 1;
+    border-right: 1px solid var(--mid);
+    padding: 32px 24px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .section-num {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.6rem; color: var(--gray);
+    letter-spacing: 0.15em;
+  }
+
+  .section-title-cell {
+    grid-column: span 6;
+    padding: 32px 48px;
+    border-right: 1px solid var(--mid);
+  }
+  .section-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700; font-size: clamp(1.2rem, 2.5vw, 2rem);
+    text-transform: uppercase; letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .section-desc-cell {
+    grid-column: span 5;
+    padding: 32px 48px;
+    display: flex; align-items: center;
+  }
+  .section-desc {
+    font-size: 0.825rem; color: var(--gray); line-height: 1.7;
+  }
+
+  /* ── PAIN GRID ── */
+  .pain-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pain-swiss {
+    border-right: 1px solid var(--mid);
+    padding: 56px 48px;
+    position: relative;
+  }
+  .pain-swiss:last-child { border-right: none; }
+
+  .pain-swiss-idx {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.55rem; color: var(--red);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .pain-swiss-cost {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    letter-spacing: -0.04em; line-height: 1;
+    color: var(--black); margin-bottom: 24px;
+  }
+
+  .pain-swiss-title {
+    font-size: 1rem; font-weight: 700;
+    line-height: 1.4; margin-bottom: 12px;
+  }
+
+  .pain-swiss-body {
+    font-size: 0.8rem; color: var(--gray); line-height: 1.7;
+  }
+
+  /* ── SERVICES STRIP ── */
+  .services-strip {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+  }
+
+  .service-swiss {
+    border-right: 1px solid var(--mid);
+    padding: 48px 40px;
+  }
+  .service-swiss:nth-child(1) { grid-column: span 3; }
+  .service-swiss:nth-child(2) { grid-column: span 5; background: var(--black); color: var(--white); }
+  .service-swiss:nth-child(3) { grid-column: span 4; border-right: none; }
+
+  .svc-tag {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 32px; display: block;
+  }
+
+  .svc-name {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 2vw, 1.6rem);
+    text-transform: uppercase; letter-spacing: -0.01em;
+    line-height: 1.2; margin-bottom: 16px;
+  }
+  .svc-name.light { color: var(--white); }
+
+  .svc-price {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900; font-size: 1.5rem;
+    color: var(--red); letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .svc-desc {
+    font-size: 0.8rem; color: var(--gray); line-height: 1.7;
+  }
+  .svc-desc.light { color: rgba(255,255,255,0.5); }
+
+  .svc-guarantee {
+    margin-top: 24px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--red);
+    border: 1px solid var(--red); padding: 6px 14px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--black); color: var(--white);
+    display: grid; grid-template-columns: repeat(12, 1fr);
+  }
+
+  .footer-main {
+    grid-column: span 8;
+    padding: 80px 64px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-h {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    text-transform: uppercase; letter-spacing: -0.03em;
+    line-height: 1.0;
+    margin-bottom: 40px;
+  }
+  .footer-h .red { color: var(--red); }
+
+  .footer-side {
+    grid-column: span 4;
+    padding: 80px 48px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+
+  .footer-cta-btn {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--red); color: var(--white);
+    padding: 16px 28px; text-decoration: none;
+    display: inline-block; transition: opacity 0.2s;
+  }
+  .footer-cta-btn:hover { opacity: 0.85; }
+
+  .footer-tagline {
+    font-size: 0.7rem; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<a href="index.html" style="position:fixed;top:12px;left:12px;z-index:9999;font-family:-apple-system,sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,0.6);padding:7px 14px;text-decoration:none;backdrop-filter:blur(6px);border-radius:3px;">← Back</a>
+
+<nav>
+  <span class="nav-mark">PEAK13</span>
+  <span class="nav-desc">Fractional AI Advisory · UK & UAE</span>
+  <div class="nav-right">
+    <a href="#" class="nav-link">Services</a>
+    <a href="#" class="nav-link">Approach</a>
+    <a href="#" class="nav-link">Results</a>
+    <a href="#" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-top">
+
+    <div class="hero-num-col">
+      <span class="col-label">Fractional AI Advisory</span>
+    </div>
+
+    <div class="hero-main">
+      <div>
+        <p class="hero-tag">AI Systems · Operational Efficiency</p>
+        <h1 class="hero-h1">
+          <span class="line">The cost</span>
+          <span class="line stroke">of chaos</span>
+          <span class="line red">is real.</span>
+        </h1>
+      </div>
+      <div class="hero-foot">
+        <p class="hero-sub">
+          We audit your operations, put a number on the waste,
+          and build the AI systems to eliminate it.
+          In two weeks. With a guarantee.
+        </p>
+        <div class="cta-group">
+          <a href="#" class="btn-primary">Book a Free Snapshot →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats-col">
+      <div class="stat-swiss">
+        <div>
+          <span class="stat-swiss-n red">£127K</span>
+          <p class="stat-swiss-l">Avg. annual savings identified</p>
+        </div>
+        <div class="stat-progress" style="width: 78%;"></div>
+      </div>
+      <div class="stat-swiss">
+        <div>
+          <span class="stat-swiss-n">14</span>
+          <p class="stat-swiss-l">Days to roadmap delivery</p>
+        </div>
+        <div class="stat-progress" style="width: 45%;"></div>
+      </div>
+      <div class="stat-swiss">
+        <div>
+          <span class="stat-swiss-n red">25×</span>
+          <p class="stat-swiss-l">Peak ROI on diagnostic</p>
+        </div>
+        <div class="stat-progress" style="width: 92%;"></div>
+      </div>
+      <div class="stat-swiss">
+        <div>
+          <span class="stat-swiss-n">8+</span>
+          <p class="stat-swiss-l">Years enterprise background</p>
+        </div>
+        <div class="stat-progress" style="width: 60%;"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num-cell">
+      <span class="section-num">01</span>
+    </div>
+    <div class="section-title-cell">
+      <h2 class="section-title">Where the<br>money goes.</h2>
+    </div>
+    <div class="section-desc-cell">
+      <p class="section-desc">Three systemic failures, visible in almost every firm we audit. Each one has a price tag. None of them are staffing problems.</p>
+    </div>
+  </div>
+
+  <div class="pain-grid">
+    <div class="pain-swiss">
+      <p class="pain-swiss-idx">01 / Capacity waste</p>
+      <p class="pain-swiss-cost">£45K</p>
+      <p class="pain-swiss-title">Your highest-paid people are doing £12/hr work.</p>
+      <p class="pain-swiss-body">Partners chasing documents. Senior capacity consumed by manual processes a well-configured system handles in seconds.</p>
+    </div>
+    <div class="pain-swiss">
+      <p class="pain-swiss-idx">02 / Seasonal crisis</p>
+      <p class="pain-swiss-cost">£20K</p>
+      <p class="pain-swiss-title">Tax season shouldn't be a capacity crisis.</p>
+      <p class="pain-swiss-body">The same manual processes that caused last year's crunch are still running. That's not a staffing problem — it's a systems problem.</p>
+    </div>
+    <div class="pain-swiss">
+      <p class="pain-swiss-idx">03 / Legal exposure</p>
+      <p class="pain-swiss-cost">£30K</p>
+      <p class="pain-swiss-title">Coordination via WhatsApp is a liability.</p>
+      <p class="pain-swiss-body">No audit trail. No accountability. The moment something goes wrong legally, you'll wish you had a system — not a chat thread.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-num-cell">
+      <span class="section-num">02</span>
+    </div>
+    <div class="section-title-cell">
+      <h2 class="section-title">How we<br>work.</h2>
+    </div>
+    <div class="section-desc-cell">
+      <p class="section-desc">Three entry points. One methodology. Every engagement begins with evidence — not assumptions.</p>
+    </div>
+  </div>
+
+  <div class="services-strip">
+    <div class="service-swiss">
+      <span class="svc-tag">One-time · 2 weeks</span>
+      <p class="svc-name">PEAK13<br>Snapshot</p>
+      <p class="svc-price">£5,000</p>
+      <p class="svc-desc">Full operational audit. Quantified waste. Prioritised 90-day roadmap.</p>
+      <span class="svc-guarantee">5× ROI Guarantee</span>
+    </div>
+    <div class="service-swiss">
+      <span class="svc-tag">Most popular · 6–10 weeks</span>
+      <p class="svc-name light">PEAK13<br>Build</p>
+      <p class="svc-price">From £15,000</p>
+      <p class="svc-desc light">We build the top 3 automations from your Snapshot. Real systems, in your stack, with team training and 90-day support.</p>
+    </div>
+    <div class="service-swiss">
+      <span class="svc-tag">Ongoing · from 3 months</span>
+      <p class="svc-name">PEAK13<br>Embedded</p>
+      <p class="svc-price">£6,000/mo</p>
+      <p class="svc-desc">Embedded fractional AI advisory. I own your roadmap, manage builds, and ensure adoption sticks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-main">
+    <h2 class="footer-h">
+      Find out what<br>
+      your operations<br>
+      are <span class="red">costing you.</span>
+    </h2>
+  </div>
+  <div class="footer-side">
+    <a href="#" class="footer-cta-btn">Book a Free Snapshot Call →</a>
+    <p class="footer-tagline">
+      5× ROI Guarantee<br>
+      No commitment required<br>
+      Accountancy · Property Management<br>
+      UK & UAE
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
