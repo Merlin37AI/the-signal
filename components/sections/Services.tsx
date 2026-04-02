@@ -5,63 +5,64 @@ import { BlurFade } from '@/components/ui/animations/blur-fade'
 const tiers = [
   {
     num: 'A',
-    name: 'PEAK13\nSnapshot',
-    tagline: 'Clarity before commitment.',
-    price: '£5,000',
-    priceNote: 'One-time · 2-week engagement',
+    name: 'AI\nClarity\nSession',
+    tagline: 'Understand before you invest.',
+    price: '£750',
+    priceAlt: 'AED 3,500',
+    priceNote: 'One-off · 90 minutes',
     description:
-      "The full PEAK13 Diagnostic. We audit your operations, quantify your waste, and deliver a prioritised roadmap. Backed by the 5× ROI Guarantee.",
-    for: "Right for you if you want evidence before investing further in AI.",
+      'A focused 90-minute session where I review your business, your current AI exposure, and your biggest operational constraints. You leave with a clear-eyed view of where AI creates real value — and where it doesn\'t.',
+    for: 'Right for you if you want strategic clarity before any commitment.',
     includes: [
-      'Full operational workflow audit',
-      'AI use-case scoring and prioritisation map',
-      'Time-cost analysis on every process',
-      'Governance and risk framework',
-      'Written 90-day roadmap',
-      'Live readout with your leadership team',
-      '5× ROI Guarantee',
+      '90-minute deep-dive session',
+      'Pre-session operational questionnaire',
+      'Top 3 AI opportunities identified',
+      'Tool and vendor recommendations',
+      'Written summary and next steps',
     ],
-    cta: 'Book a Snapshot',
+    cta: 'Book a Session',
     dark: false,
   },
   {
     num: 'B',
-    name: 'PEAK13\nBuild',
-    tagline: 'From roadmap to running systems.',
-    price: 'From £15,000',
-    priceNote: 'One-time · 6–10 week delivery',
+    name: 'Advisory\nRetainer',
+    tagline: 'Senior AI thinking. Monthly.',
+    price: 'From £3,000',
+    priceAlt: 'From AED 14,000',
+    priceNote: 'Monthly · Min. 3 months',
     description:
-      "We take the top 3 use cases from your Diagnostic and build them. Real automations — in N8N, Claude API, Airtable, or your existing stack.",
-    for: "Right for you if you're ready to implement.",
+      'I become your embedded fractional AI advisor — attending strategy sessions, owning your AI roadmap, evaluating tools and vendors, overseeing implementation. Senior judgment without the full-time cost.',
+    for: 'Right for you if you\'re ready to move from thinking to doing.',
     includes: [
-      'Everything in PEAK13 Snapshot',
-      'Build of top 3 identified automations',
-      'Integration with your existing tools',
-      'Team onboarding and change management',
-      'Documentation and runbooks',
-      '90-day post-delivery support window',
+      'Weekly 1:1 strategy sessions',
+      'AI roadmap ownership and prioritisation',
+      'Tool and vendor evaluation',
+      'Implementation oversight',
+      'Team training and upskilling',
+      'Monthly progress reporting',
     ],
-    cta: 'Book a Build Call',
+    cta: 'Book a Discovery Call',
     dark: true,
   },
   {
     num: 'C',
-    name: 'PEAK13\nEmbedded',
-    tagline: 'Ongoing AI leadership.',
-    price: 'From £6,000/mo',
-    priceNote: 'Monthly · Minimum 3 months',
+    name: 'Build &\nImplement',
+    tagline: 'From roadmap to running systems.',
+    price: 'From £8,500',
+    priceAlt: 'From AED 40,000',
+    priceNote: 'Fixed scope · 6–10 weeks',
     description:
-      "I become your embedded fractional AI advisor — attending strategy sessions, owning your AI roadmap, evaluating tools, managing builds.",
-    for: "Right for you if you're scaling AI across your business.",
+      'I design, build, and deploy your priority AI systems — using N8N, Claude API, Airtable, or your existing stack. Includes team onboarding, documentation, and a 60-day support window.',
+    for: 'Right for you if you have a clear use case and are ready to implement.',
     includes: [
-      'Weekly strategy and review sessions',
-      'Use-case pipeline ownership',
-      'Tool and vendor evaluation',
-      'Ongoing automation builds',
-      'Team training and change management',
-      'Monthly progress reporting',
+      'Scoped AI solution design',
+      'Build of top 2–3 priority automations',
+      'Integration with your existing tools',
+      'Team onboarding and change management',
+      'Full documentation and runbooks',
+      '60-day post-delivery support',
     ],
-    cta: 'Book an Embedded Call',
+    cta: 'Discuss a Build',
     dark: false,
   },
 ]
@@ -70,7 +71,7 @@ export default function Services() {
   return (
     <section id="services" className="border-b-[3px] border-ink">
       {/* Section header */}
-      <div className={`px-6 md:px-12 lg:px-20 bg-bg`}>
+      <div className="px-6 md:px-12 lg:px-20 bg-bg">
         <div className="section-header-bar">
           <span className="section-num-tag">03</span>
           <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-ink leading-none">
@@ -123,8 +124,13 @@ export default function Services() {
 
                 {/* Price */}
                 <div className={`mb-6 pb-6 border-b-[2px] ${tier.dark ? 'border-white/10' : 'border-ink/20'}`}>
-                  <p className={`font-heading text-4xl tracking-wide leading-none ${tier.dark ? 'text-accent' : 'text-accent'}`}>
+                  <p className="font-heading text-4xl tracking-wide leading-none text-accent">
                     {tier.price}
+                  </p>
+                  <p className={`font-sub font-semibold text-xs tracking-[0.1em] uppercase mt-1.5 ${
+                    tier.dark ? 'text-white/30' : 'text-muted/60'
+                  }`}>
+                    {tier.priceAlt}
                   </p>
                 </div>
 
@@ -177,7 +183,7 @@ export default function Services() {
       {/* Footnote */}
       <div className="bg-bg border-t-[3px] border-ink px-6 md:px-12 lg:px-20 py-5">
         <p className="font-sub font-semibold text-xs tracking-[0.12em] uppercase text-muted text-center">
-          All engagements begin with a free 30-minute Snapshot Call — no commitment required.
+          Not sure which engagement is right? Book a free 20-minute intro call — I&apos;ll tell you honestly.
         </p>
       </div>
     </section>

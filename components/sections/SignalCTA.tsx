@@ -5,46 +5,46 @@ import { BlurFade } from '@/components/ui/animations/blur-fade'
 
 const testimonials = [
   {
-    quote: "Gary doesn't just audit — he maps the whole system and shows you exactly where the leverage is. We found £110K in the first two weeks. The clarity alone was worth the engagement.",
-    name: 'Managing Partner',
-    company: 'Accountancy Firm, London UK',
+    quote: "Gary doesn't just advise — he gets inside the operation and shows you exactly where AI creates genuine leverage. The thinking is operational, not theoretical. That's rare.",
+    name: 'Sailesh Jani',
+    company: 'Founder, The Argenis Advisory · Dubai & London',
   },
   {
-    quote: "I've had AI consultants before who gave me a deck full of buzzwords. Gary gave me a roadmap I could actually execute on in week one. No theory. No jargon. Just a clear plan.",
+    quote: "What sets Gary apart is that he actually understands how businesses run — not just what AI can do. He spoke our language, found problems we'd normalised, and built systems that the team actually uses.",
     name: 'Director',
-    company: 'Property Management Company, Dubai UAE',
+    company: 'Property Services Business · Dubai UAE',
   },
   {
-    quote: "What set Gary apart was that he actually understands operations — not just AI. He spoke our language, found things we hadn't seen in years of running the business, and built systems that stuck.",
-    name: 'Founder',
-    company: 'Professional Services Firm, UAE',
+    quote: "I've worked with AI consultants who hand over a strategy and disappear. Gary stays embedded. He's in the sessions, he's in the implementation, he's accountable for what gets built.",
+    name: 'Managing Director',
+    company: 'Professional Services Firm · UK',
   },
 ]
 
 const faqs = [
   {
-    q: 'What does the Snapshot Call involve?',
-    a: "It's a free 30-minute call where I ask you about your business, your team, and your current processes. No pitch. No slide deck. I use it to understand whether the PEAK13 Diagnostic is right for you — and I'll tell you honestly if it isn't.",
+    q: 'What does fractional actually mean in practice?',
+    a: "It means I work inside your business — in your strategy sessions, your team conversations, your implementation reviews — without being on your payroll full time. Typically 1–2 days per week, depending on the engagement. You get senior AI leadership without the full-time cost or commitment.",
   },
   {
-    q: 'How does the 5× ROI Guarantee work?',
-    a: "If the Diagnostic doesn't identify at least 5× its cost in quantifiable annual savings, you receive a full refund. No caveats, no small print. The guarantee applies to the PEAK13 Snapshot engagement.",
-  },
-  {
-    q: "We've already tried AI tools and they didn't stick — will this be different?",
-    a: "Yes — because we start with diagnosis, not tools. The Diagnostic finds where AI creates genuine value in your specific business before we recommend a single piece of software. Tool failure almost always comes from buying before understanding.",
-  },
-  {
-    q: 'Do we need to be technically advanced?',
-    a: "Not at all. I bridge the gap between your business goals and the technology. You tell me what you want to achieve operationally — I design, build, and implement the systems. Your team doesn't need to understand the tech; they just need to use it.",
+    q: 'How is this different from hiring an AI consultant?',
+    a: "A traditional consultant diagnoses your business and hands you a document. I stay embedded for the duration of the engagement — attending your meetings, owning your AI roadmap, overseeing what gets built. The difference is accountability. I'm measured on what gets implemented, not what gets written.",
   },
   {
     q: 'What size of business do you work with?',
-    a: "Primarily accountancy firms with 5–35 partners and staff, and property management companies with 10–50 staff, based in the UK or UAE. Large enough to have complex workflows, small enough that fractional advisory makes financial sense.",
+    a: "Growing businesses with 10–100 staff, typically in professional services, property, or operations-heavy sectors in the UK or UAE. Large enough to have complex workflows worth automating; at a stage where fractional advisory makes more financial sense than a full-time senior AI hire.",
+  },
+  {
+    q: 'We\'ve tried AI tools before and they didn\'t stick — will this be different?',
+    a: "Yes — because I start with diagnosis, not tools. Tool failure almost always comes from buying before understanding. My process maps your operation first, identifies where AI creates genuine value in your specific context, then recommends the right tools for that job — not the other way around.",
+  },
+  {
+    q: 'Do we need to be technically advanced?',
+    a: "Not at all. I bridge the gap between your business goals and the technology. You tell me what you want to achieve operationally — I design, build, and oversee the implementation. Your team doesn't need to understand the tech; they just need to use it.",
   },
   {
     q: 'How quickly can we get started?',
-    a: "Typically within 2 weeks of your Snapshot Call. We align on scope, I send a short proposal, and if we're ready to go the Diagnostic kicks off that week.",
+    a: "An AI Clarity Session can be booked within a week. For a retainer or build engagement, we typically align on scope within 2 weeks of an initial call, then kick off. I take a limited number of engagements at any one time — so availability can vary.",
   },
 ]
 
@@ -52,8 +52,7 @@ export default function ResultsAboutTestimonialsPage() {
   return (
     <>
       {/* ── About Gary ── */}
-      <section id="about" className="zone-light border-b-[3px] border-ink">
-        {/* Section header */}
+      <section id="gary" className="zone-light border-b-[3px] border-ink">
         <div className="px-6 md:px-12 lg:px-20">
           <div className="section-header-bar">
             <span className="section-num-tag">05</span>
@@ -67,10 +66,13 @@ export default function ResultsAboutTestimonialsPage() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
             {/* Photo */}
             <BlurFade delay={0.1} className="order-2 md:order-1">
-              <div className="relative w-full max-w-sm mx-auto md:mx-0 aspect-[4/5] overflow-hidden border-[3px] border-ink" style={{ boxShadow: '8px 8px 0 #D90000' }}>
+              <div
+                className="relative w-full max-w-sm mx-auto md:mx-0 aspect-[4/5] overflow-hidden border-[3px] border-ink"
+                style={{ boxShadow: '8px 8px 0 #D90000' }}
+              >
                 <Image
                   src="/gary-headshot.jpg"
-                  alt="Gary Quigley — Fractional AI Consultant, PEAK13 Consulting"
+                  alt="Gary Quigley — Fractional AI Advisor, PEAK13 Consulting"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 80vw, 40vw"
@@ -78,7 +80,7 @@ export default function ResultsAboutTestimonialsPage() {
                 {/* Yellow corner stamp */}
                 <div className="absolute bottom-0 left-0 bg-yellow border-t-[3px] border-r-[3px] border-ink px-4 py-3">
                   <p className="font-heading text-ink text-xl leading-none tracking-wide">GARY QUIGLEY</p>
-                  <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor</p>
+                  <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor · PEAK13</p>
                 </div>
               </div>
 
@@ -102,7 +104,7 @@ export default function ResultsAboutTestimonialsPage() {
                   className="font-heading text-ink leading-[1.0] mb-6 tracking-wide"
                   style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
                 >
-                  8 YEARS BUILDING SYSTEMS THAT ACTUALLY WORK.
+                  8 YEARS BUILDING SYSTEMS. NOW HELPING OTHERS DO THE SAME WITH AI.
                 </h3>
               </BlurFade>
               <BlurFade delay={0.25}>
@@ -110,21 +112,23 @@ export default function ResultsAboutTestimonialsPage() {
                   <p>
                     I spent 8 years inside enterprise IT and operational transformation — at the
                     Maritime &amp; Coastguard Agency, Control Risks, and several high-growth
-                    businesses — designing the systems, processes, and governance frameworks
-                    that made complex organisations run better.
+                    businesses — designing the processes, governance frameworks, and systems
+                    that made complex organisations run more reliably.
                   </p>
                   <p>
-                    I founded PEAK13 Consulting because I kept seeing the same pattern: smart
-                    business owners getting sold AI they didn&apos;t need, by people who&apos;d
-                    never actually implemented it. I do things differently — diagnose first,
-                    recommend second, build only what makes measurable sense.
+                    I&apos;m neurodivergent, and I&apos;ve found that this shapes how I approach
+                    complex systems. I see the patterns in broken processes quickly. I find
+                    inefficiencies that people have normalised because they&apos;ve been there
+                    too long to see them as problems.
                   </p>
                   <p>
-                    I&apos;m a systems thinker with a coaching background. I believe most operational
-                    problems are people and process problems wearing a technology mask.
+                    I&apos;m currently AI Operations Lead at The Argenis Advisory — a business-first
+                    AI consultancy serving global brands including Microsoft, NEOM, and Riyadh Air —
+                    and Fractional AI Advisor to Upgraded Landscaping in Dubai. I founded PEAK13
+                    Consulting to bring the same embedded, operations-first advisory to growing businesses.
                   </p>
                   <p className="font-sub font-semibold text-xs tracking-[0.14em] uppercase text-muted/60">
-                    Based in Dubai. Work across the UAE and UK. Remote and in-person.
+                    Based in Dubai · Works across UAE and UK · Remote and in-person
                   </p>
                 </div>
               </BlurFade>
@@ -149,7 +153,6 @@ export default function ResultsAboutTestimonialsPage() {
 
       {/* ── Testimonials ── */}
       <section id="testimonials" className="zone-dark border-b-[3px] border-ink">
-        {/* Section header */}
         <div className="px-6 md:px-12 lg:px-20">
           <div className="section-header-bar border-dark-b">
             <span className="section-num-tag section-num-tag-inv">06</span>
@@ -162,8 +165,7 @@ export default function ResultsAboutTestimonialsPage() {
         <div className="grid md:grid-cols-3 border-t-0">
           {testimonials.map((t, i) => (
             <BlurFade key={i} delay={0.1 + i * 0.12}>
-              <div className={`p-8 md:p-10 flex flex-col h-full border-r-[2px] border-dark-b last:border-r-0 relative`}>
-                {/* Quote mark */}
+              <div className="p-8 md:p-10 flex flex-col h-full border-r-[2px] border-dark-b last:border-r-0">
                 <p className="font-heading text-7xl text-accent leading-none mb-4 select-none">&ldquo;</p>
                 <p className="font-body text-white/65 text-base leading-relaxed flex-1 mb-6">{t.quote}</p>
                 <div className="border-t-[2px] border-dark-b pt-4">
@@ -178,7 +180,6 @@ export default function ResultsAboutTestimonialsPage() {
 
       {/* ── FAQ ── */}
       <section id="faq" className="zone-light border-b-[3px] border-ink">
-        {/* Section header */}
         <div className="px-6 md:px-12 lg:px-20">
           <div className="section-header-bar">
             <span className="section-num-tag">07</span>
@@ -193,12 +194,12 @@ export default function ResultsAboutTestimonialsPage() {
             <div>
               <BlurFade delay={0.05}>
                 <p className="font-body text-muted text-base leading-relaxed mb-8">
-                  Anything else? Book a free Snapshot Call and ask me directly.
+                  Anything else? Book a free 20-minute intro call and ask me directly.
                 </p>
               </BlurFade>
               <BlurFade delay={0.15}>
                 <a href="#contact" className="btn-primary">
-                  Book a Snapshot Call →
+                  Book an Intro Call →
                 </a>
               </BlurFade>
             </div>
@@ -224,10 +225,10 @@ export default function ResultsAboutTestimonialsPage() {
             </BlurFade>
             <BlurFade delay={0.1}>
               <h2 className="font-heading text-white leading-[0.92] tracking-wide mb-0" style={{ fontSize: 'clamp(4rem, 10vw, 10rem)' }}>
-                <span className="block">FIND OUT</span>
-                <span className="block bg-yellow text-ink px-4 inline-block">WHAT IT&apos;S</span>
-                <span className="block text-accent">COSTING</span>
-                <span className="block" style={{ WebkitTextStroke: '3px rgba(255,255,255,0.3)', color: 'transparent' }}>YOU.</span>
+                <span className="block">LET&apos;S</span>
+                <span className="block bg-yellow text-ink px-4 inline-block">THINK</span>
+                <span className="block text-accent">DIFFER-</span>
+                <span className="block" style={{ WebkitTextStroke: '3px rgba(255,255,255,0.3)', color: 'transparent' }}>ENTLY.</span>
               </h2>
             </BlurFade>
           </div>
@@ -235,8 +236,8 @@ export default function ResultsAboutTestimonialsPage() {
           <div className="grid md:grid-cols-2 gap-12 items-start mt-14 pt-10 border-t-[2px] border-dark-b">
             <BlurFade delay={0.3}>
               <p className="font-body text-dark-m text-lg leading-relaxed mb-8">
-                Book a free 30-minute Snapshot Call. No pitch, no jargon — just an honest conversation
-                about where AI can create real value in your accountancy firm or property management business.
+                Book a free 20-minute intro call. No pitch, no jargon — just an honest conversation
+                about your business and where AI can create real value for you.
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <a
@@ -245,9 +246,9 @@ export default function ResultsAboutTestimonialsPage() {
                   rel="noopener noreferrer"
                   className="btn-red"
                 >
-                  Book a Free Snapshot Call →
+                  Book a Free Intro Call →
                 </a>
-                <a href="mailto:quigleygary@hotmail.com" className="btn-ghost-dark">
+                <a href="mailto:gary@peak13consulting.com" className="btn-ghost-dark">
                   Send an Email
                 </a>
               </div>
@@ -255,7 +256,7 @@ export default function ResultsAboutTestimonialsPage() {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
-                5× ROI Guarantee — if we don&apos;t find it, you don&apos;t pay.
+                Senior AI judgment. No junior handoffs. No disappearing acts.
               </div>
             </BlurFade>
 
@@ -274,6 +275,12 @@ export default function ResultsAboutTestimonialsPage() {
                     <p className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-dark-m mb-1">LinkedIn</p>
                     <a href="https://www.linkedin.com/in/gary-quigley" target="_blank" rel="noopener noreferrer" className="font-body text-white hover:text-accent transition-colors text-base">
                       linkedin.com/in/gary-quigley
+                    </a>
+                  </div>
+                  <div className="border-b-[1px] border-dark-b pb-4">
+                    <p className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-dark-m mb-1">Also At</p>
+                    <a href="https://argenisadvisory.com" target="_blank" rel="noopener noreferrer" className="font-body text-white hover:text-accent transition-colors text-base block">
+                      The Argenis Advisory
                     </a>
                   </div>
                   <div>

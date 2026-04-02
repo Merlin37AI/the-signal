@@ -3,32 +3,33 @@
 import { useEffect, useState } from 'react'
 
 const links = [
-  { label: 'How It Works', href: '#diagnostic' },
-  { label: 'Services', href: '#services' },
-  { label: 'Case Studies', href: '#results' },
   { label: 'About', href: '#about' },
+  { label: 'How I Work', href: '#how-i-work' },
+  { label: 'Services', href: '#services' },
+  { label: 'Clients', href: '/clients' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 const tickerItems = [
-  'Operational Waste Identified: £127K Average',
+  'Fractional AI Advisory · Dubai & UK',
   '✦',
-  '14-Day Turnaround · Guaranteed',
+  'Embedded. Not Arms-Length.',
   '✦',
-  '5× ROI Guarantee on Every Audit',
+  '8+ Years Enterprise IT & Operations',
   '✦',
-  'Accountancy Firms · Property Management',
+  'AI Strategy · Operations · Implementation',
   '✦',
-  'UK & UAE · Est. 2024',
+  'Currently Advising: Argenis Advisory · Upgraded Landscaping',
   '✦',
-  'Operational Waste Identified: £127K Average',
+  'Fractional AI Advisory · Dubai & UK',
   '✦',
-  '14-Day Turnaround · Guaranteed',
+  'Embedded. Not Arms-Length.',
   '✦',
-  '5× ROI Guarantee on Every Audit',
+  '8+ Years Enterprise IT & Operations',
   '✦',
-  'Accountancy Firms · Property Management',
+  'AI Strategy · Operations · Implementation',
   '✦',
-  'UK & UAE · Est. 2024',
+  'Currently Advising: Argenis Advisory · Upgraded Landscaping',
   '✦',
 ]
 
@@ -41,7 +42,7 @@ export default function Nav() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-ink border-b-[3px] border-ink">
         <div className="h-14 flex items-center justify-between px-6 md:px-10">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-0">
+          <a href="/" className="flex items-center gap-0">
             <span className="font-heading text-xl tracking-wide text-yellow leading-none">
               PEAK13
             </span>
@@ -68,7 +69,7 @@ export default function Nav() {
             href="#contact"
             className="hidden md:inline-flex btn-red text-xs px-5 py-2.5"
           >
-            Book a Free Call
+            Work With Gary
           </a>
 
           {/* Mobile menu button */}
@@ -101,7 +102,7 @@ export default function Nav() {
               onClick={() => setOpen(false)}
               className="btn-red mt-2 justify-center text-center"
             >
-              Book a Free Call
+              Work With Gary
             </a>
           </div>
         )}

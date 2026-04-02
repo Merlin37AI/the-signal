@@ -5,42 +5,42 @@ import { BlurFade } from '@/components/ui/animations/blur-fade'
 const steps = [
   {
     num: '1',
-    label: 'Discovery',
-    duration: 'Days 1–5',
-    headline: 'We map your operation inside-out.',
+    label: 'Observe',
+    duration: 'Week 1–2',
+    headline: 'I learn how your business actually runs.',
     description:
-      'We spend time inside your business — mapping workflows, interviewing your team, and identifying every manual process consuming capacity. No assumptions. No templates applied blindly.',
-    output: 'Full workflow map with time-cost data attached to every process.',
+      'Not from a questionnaire. I get inside your operations — talking to your team, mapping your workflows, understanding where time and money disappear. I bring no assumptions and no pre-built templates. Every business is different.',
+    output: 'A clear map of your operation with every manual process documented and time-costed.',
   },
   {
     num: '2',
-    label: 'Diagnosis',
-    duration: 'Days 6–10',
-    headline: 'Every finding gets a number.',
+    label: 'Advise',
+    duration: 'Week 2–3',
+    headline: 'I tell you exactly where AI creates real value.',
     description:
-      'Each workflow is scored for automation potential, implementation risk, and financial impact. We calculate exact time savings, error reduction rates, and ROI estimates — grounded in data, not opinion.',
-    output: 'Ranked use-case list with projected savings and implementation effort.',
+      'I rank opportunities by impact, effort, and risk. I tell you what to build first, what to ignore, and what everyone else in your space is getting wrong. No buzzwords. A ranked list of AI applications grounded in your specific operation.',
+    output: 'Prioritised AI roadmap — ranked by ROI, implementation effort, and business risk.',
   },
   {
     num: '3',
-    label: 'Roadmap',
-    duration: 'Days 11–14',
-    headline: 'You leave with a plan you can act on.',
+    label: 'Embed',
+    duration: 'Ongoing',
+    headline: 'I stay in the room while you build it.',
     description:
-      'A prioritised 90-day roadmap: which automations to build first, which tools to use, what governance you need, and how to bring your team with you. Plain language — not a 60-slide deck that collects dust.',
-    output: 'Written roadmap + live presentation to your leadership team.',
+      'Most advisors disappear after the strategy session. I don\'t. On a fractional basis I attend your leadership meetings, own your AI roadmap, evaluate tools and vendors, manage implementations, and make sure what gets built actually sticks.',
+    output: 'Working AI systems, trained teams, and a roadmap that evolves as your business does.',
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="diagnostic" className="zone-light border-b-[3px] border-ink">
+    <section id="how-i-work" className="zone-light border-b-[3px] border-ink">
       {/* Section header */}
       <div className="px-6 md:px-12 lg:px-20">
         <div className="section-header-bar">
           <span className="section-num-tag">02</span>
           <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-ink leading-none">
-            THE PEAK13 DIAGNOSTIC
+            HOW I WORK
           </h2>
         </div>
       </div>
@@ -53,14 +53,14 @@ export default function HowItWorks() {
               className="font-heading text-ink leading-[1.0] mb-5"
               style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}
             >
-              FROM OPERATIONAL CHAOS TO A CLEAR ROADMAP — IN 14 DAYS.
+              EMBEDDED. NOT ARMS-LENGTH.
             </h3>
           </BlurFade>
           <BlurFade delay={0.2}>
             <p className="font-body text-muted text-lg leading-relaxed">
-              Most consultants show up with a slide template and a theory. The PEAK13 Diagnostic is
-              a structured, evidence-based process — built from Six Sigma DMAIC methodology — that
-              gives you real numbers, not educated guesses.
+              Fractional means I work inside your business — in your strategy sessions, your team
+              conversations, your implementation reviews — without being on your payroll full time.
+              You get the thinking of a senior AI leader at a fraction of the cost.
             </p>
           </BlurFade>
         </div>
@@ -115,18 +115,19 @@ export default function HowItWorks() {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
-                5× ROI Guarantee
+                No theory. No vanishing acts.
               </div>
               <p className="font-heading text-white text-3xl md:text-4xl tracking-wide mb-2">
-                IF WE DON&apos;T FIND IT, YOU DON&apos;T PAY.
+                I DON&apos;T HAND OVER A DECK AND DISAPPEAR.
               </p>
               <p className="font-body text-dark-m text-sm max-w-lg leading-relaxed">
-                If the PEAK13 Diagnostic doesn&apos;t identify at least 5× its cost in annual savings,
-                you receive a full refund. No small print. No caveats.
+                Every engagement includes ongoing involvement — whether that&apos;s a monthly retainer,
+                a project build, or a standing seat in your leadership sessions. You get execution,
+                not just advice.
               </p>
             </div>
             <a href="#contact" className="btn-red shrink-0 whitespace-nowrap">
-              Book a Free Snapshot →
+              Start a Conversation →
             </a>
           </div>
         </BlurFade>

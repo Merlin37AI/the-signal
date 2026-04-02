@@ -5,10 +5,10 @@ import { BlurFade } from '@/components/ui/animations/blur-fade'
 import { NumberTicker } from '@/components/ui/animations/number-ticker'
 
 const stats = [
-  { n: 127,  prefix: '£', suffix: 'K', label: 'Annual savings per audit',           dark: false },
-  { n: 14,   prefix: '',  suffix: '',   label: 'Days to roadmap delivery',            dark: true  },
-  { n: 25,   prefix: '',  suffix: '×',  label: 'Peak ROI on diagnostic investment',   dark: false },
-  { n: 8,    prefix: '',  suffix: '+',  label: 'Years enterprise background',         dark: false },
+  { n: 8,  prefix: '',  suffix: '+', label: 'Years in enterprise IT & operations', dark: false },
+  { n: 2,  prefix: '',  suffix: '',  label: 'Active fractional clients',           dark: true  },
+  { n: 14, prefix: '',  suffix: '',  label: 'Days average to first recommendations', dark: false },
+  { n: 3,  prefix: '',  suffix: '',  label: 'Engagement models available',           dark: false },
 ]
 
 export default function Hero() {
@@ -22,41 +22,42 @@ export default function Hero() {
         <div>
           <BlurFade delay={0.05}>
             <p className="eyebrow eyebrow-light mb-8">
-              PEAK13 Consulting · UK &amp; UAE · Accountancy &amp; Property Management
+              Gary Quigley · Fractional AI Advisor · PEAK13 Consulting · Dubai &amp; UK
             </p>
           </BlurFade>
 
           {/* Big brutalist headline */}
           <div className="mb-10">
             <BlurFade delay={0.1}>
-              <h1 className="font-heading leading-[0.92] tracking-wide" style={{ fontSize: 'clamp(5rem, 13vw, 12rem)' }}>
-                <span className="block text-ink">THE</span>
+              <h1 className="font-heading leading-[0.92] tracking-wide" style={{ fontSize: 'clamp(4.5rem, 12vw, 11rem)' }}>
+                <span className="block text-ink">DIFFERENT</span>
                 <span className="block" style={{
                   WebkitTextStroke: '3px #0F0F0F',
                   color: 'transparent',
-                }}>COST</span>
+                }}>THINKING.</span>
                 <span className="block">
-                  <span className="bg-yellow text-ink px-3 inline-block">OF</span>
+                  <span className="bg-yellow text-ink px-3 inline-block">BETTER</span>
                 </span>
-                <span className="block text-accent">CHAOS</span>
+                <span className="block text-accent">SYSTEMS.</span>
               </h1>
             </BlurFade>
           </div>
 
           <BlurFade delay={0.35}>
             <p className="font-body text-muted text-lg leading-relaxed max-w-lg mb-10">
-              I audit your operations, put a number on the waste, and build the AI systems
-              to eliminate it. In two weeks. With a guarantee.
+              I&apos;m a Fractional AI Advisor embedded inside leadership teams. I translate what
+              AI can actually do into a plan your business can execute — without the full-time cost
+              of a senior AI hire.
             </p>
           </BlurFade>
 
           <BlurFade delay={0.5}>
             <div className="flex flex-wrap gap-4 mb-8">
               <a href="#contact" className="btn-primary">
-                Book a Free Snapshot →
+                Work With Gary →
               </a>
-              <a href="#diagnostic" className="btn-ghost-light">
-                See the Diagnostic
+              <a href="#how-i-work" className="btn-ghost-light">
+                How it works
               </a>
             </div>
           </BlurFade>
@@ -66,15 +67,15 @@ export default function Hero() {
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
-              5× ROI Guarantee — if we don&apos;t find it, you don&apos;t pay.
+              Senior AI judgment. Fractional cost. Real implementation.
             </div>
           </BlurFade>
         </div>
 
-        {/* Industry tags */}
+        {/* Tags */}
         <BlurFade delay={0.8} className="mt-10 pt-8 border-t-[2px] border-ink/20">
           <div className="flex flex-wrap gap-3">
-            {['Accountancy Firms', 'Property Management', 'United Kingdom', 'United Arab Emirates'].map((tag) => (
+            {['Fractional Advisory', 'AI Strategy', 'Operations', 'United Arab Emirates', 'United Kingdom'].map((tag) => (
               <span key={tag} className="font-sub font-semibold text-xs tracking-[0.12em] uppercase text-muted border border-ink/30 px-3 py-1.5">
                 {tag}
               </span>
@@ -85,19 +86,19 @@ export default function Hero() {
 
       {/* RIGHT: Stats panel + image */}
       <div className="hidden md:flex flex-col border-t-[3px] md:border-t-0 border-ink">
-        {/* Pexels image header */}
+        {/* Image */}
         <div className="relative h-48 overflow-hidden border-b-[3px] border-ink shrink-0">
           <Image
-            src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="Business strategy team reviewing operational data"
+            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="AI advisor working with leadership team"
             fill
             className="object-cover object-center"
             sizes="460px"
           />
-          <div className="absolute inset-0 bg-ink/50" />
+          <div className="absolute inset-0 bg-ink/55" />
           <div className="absolute inset-0 flex items-end p-5">
             <p className="font-sub font-semibold text-xs tracking-[0.18em] uppercase text-white/70">
-              Fractional AI Advisory · Evidence-first
+              Fractional AI Advisory · Dubai &amp; UK
             </p>
           </div>
         </div>
@@ -111,13 +112,8 @@ export default function Hero() {
               }`}
               style={{ minHeight: '90px' }}
             >
-              {/* Diamond accent */}
-              <div
-                className={`absolute top-3 right-3 w-3 h-3 border-2 rotate-45 ${
-                  s.dark ? 'border-yellow' : 'border-accent'
-                }`}
-              />
-              <p className={`font-heading leading-none`} style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}>
+              <div className={`absolute top-3 right-3 w-3 h-3 border-2 rotate-45 ${s.dark ? 'border-yellow' : 'border-accent'}`} />
+              <p className="font-heading leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}>
                 <span className={s.dark ? 'text-yellow' : 'text-accent'}>
                   {s.prefix}
                   <NumberTicker
