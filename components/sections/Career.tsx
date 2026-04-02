@@ -1,14 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
 import { BlurFade } from '@/components/ui/animations/blur-fade'
-import { AnimatedBeam } from '@/components/ui/animations/animated-beam'
-import dynamic from 'next/dynamic'
-
-const DiagnosticPlayer = dynamic(
-  () => import('@/components/remotion/DiagnosticPlayer').then((m) => m.DiagnosticPlayer),
-  { ssr: false, loading: () => <div className="w-full h-[200px] bg-surface border-[2px] border-ink animate-pulse" /> }
-)
 
 const steps = [
   {
@@ -41,12 +33,6 @@ const steps = [
 ]
 
 export default function HowItWorks() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const step1Ref = useRef<HTMLDivElement>(null)
-  const step2Ref = useRef<HTMLDivElement>(null)
-  const step3Ref = useRef<HTMLDivElement>(null)
-  const stepRefs = [step1Ref, step2Ref, step3Ref]
-
   return (
     <section id="diagnostic" className="zone-light border-b-[3px] border-ink">
       {/* Section header */}
@@ -79,46 +65,13 @@ export default function HowItWorks() {
           </BlurFade>
         </div>
 
-        {/* Remotion DataFlow animation */}
-        <BlurFade delay={0.25} className="mb-14 border-[2px] border-ink overflow-hidden">
-          <DiagnosticPlayer />
-        </BlurFade>
-
         {/* Step cards */}
-        <div
-          ref={containerRef}
-          className="relative grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-0 items-start mb-14"
-        >
-          <AnimatedBeam
-            containerRef={containerRef as React.RefObject<HTMLElement>}
-            fromRef={step1Ref as React.RefObject<HTMLElement>}
-            toRef={step2Ref as React.RefObject<HTMLElement>}
-            curvature={-30}
-            duration={3}
-            delay={0.2}
-            pathColor="#0F0F0F20"
-            gradientStartColor="#D90000"
-            gradientStopColor="#FFD600"
-            className="hidden md:block"
-          />
-          <AnimatedBeam
-            containerRef={containerRef as React.RefObject<HTMLElement>}
-            fromRef={step2Ref as React.RefObject<HTMLElement>}
-            toRef={step3Ref as React.RefObject<HTMLElement>}
-            curvature={-30}
-            duration={3}
-            delay={0.6}
-            pathColor="#0F0F0F20"
-            gradientStartColor="#D90000"
-            gradientStopColor="#FFD600"
-            className="hidden md:block"
-          />
-
+        <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-0 items-start mb-14">
           {steps.map((step, i) => (
             <>
               <BlurFade key={step.num} delay={0.15 + i * 0.15} className="flex flex-col">
                 <div className="border-[2px] border-ink p-6 mb-4">
-                  <div ref={stepRefs[i]} className="flex items-center gap-4 mb-5">
+                  <div className="flex items-center gap-4 mb-5">
                     <div className="w-12 h-12 border-[3px] border-accent flex items-center justify-center shrink-0">
                       <span className="font-heading text-xl text-accent leading-none">{step.num}</span>
                     </div>
