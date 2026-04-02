@@ -294,15 +294,7 @@ export default function ResultsAboutTestimonialsPage() {
 
           {/* Footer */}
           <BlurFade delay={0.6} className="mt-20 pt-8 border-t-[2px] border-dark-b flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="bg-bg border-[2px] border-white/10 px-3 py-2 inline-block">
-              <Image
-                src="/gds-logo.jpg"
-                alt="GDS — Gary Does Strategy"
-                width={110}
-                height={62}
-                className="object-contain"
-              />
-            </div>
+            <p className="font-heading text-xl text-yellow tracking-wide">GDS</p>
             <p className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/20">
               © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy · All rights reserved
             </p>

@@ -20,22 +20,9 @@ export default function Hero() {
       {/* LEFT: Typography */}
       <div className="px-6 md:px-10 lg:px-16 py-14 md:py-20 flex flex-col justify-between border-r-0 md:border-r-[3px] border-ink">
         <div>
-          <BlurFade delay={0.02}>
-            <div className="mb-8">
-              <Image
-                src="/gds-logo.jpg"
-                alt="GDS — Gary Does Strategy · Fractional AI Advisory"
-                width={220}
-                height={124}
-                className="object-contain"
-                priority
-              />
-            </div>
-          </BlurFade>
-
           <BlurFade delay={0.05}>
             <p className="eyebrow eyebrow-light mb-8">
-              Gary Quigley · Fractional AI Advisor · Dubai &amp; UK
+              Gary Quigley · Fractional AI Advisor · Gary Does Strategy · Dubai &amp; UK
             </p>
           </BlurFade>
 
