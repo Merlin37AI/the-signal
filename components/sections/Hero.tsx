@@ -89,7 +89,7 @@ export default function Hero() {
         {/* Image */}
         <div className="relative h-48 overflow-hidden border-b-[3px] border-ink shrink-0">
           <Image
-            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600"
+            src="/upload_2.jpg"
             alt="AI advisor working with leadership team"
             fill
             className="object-cover object-center"
