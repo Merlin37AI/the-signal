@@ -1,11 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import { BlurFade } from '@/components/ui/animations/blur-fade'
 
 export default function ImageBreak() {
   return (
-    <div className="relative w-full h-[340px] md:h-[440px] overflow-hidden">
+    <div className="relative w-full h-[360px] md:h-[480px] overflow-hidden border-b-[3px] border-ink">
       {/* Pexels: consulting team strategy session */}
       <Image
         src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -14,31 +13,34 @@ export default function ImageBreak() {
         className="object-cover object-center"
         sizes="100vw"
       />
-      {/* Dark gradient overlays — bottom-heavy for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
 
-      {/* Overlay content */}
+      {/* Left content */}
       <div className="absolute inset-0 flex items-center px-6 md:px-12 lg:px-20">
         <div className="max-w-2xl">
-          <BlurFade delay={0.05}>
-            <p className="eyebrow eyebrow-dark mb-4">Why PEAK13</p>
-          </BlurFade>
-          <BlurFade delay={0.15}>
-            <p
-              className="font-heading font-extrabold text-white leading-[1.05]"
-              style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)' }}
-            >
-              Most AI projects fail because they start with the technology, not the problem.
-            </p>
-          </BlurFade>
-          <BlurFade delay={0.3}>
-            <p className="text-white/60 text-base font-body mt-4 leading-relaxed max-w-xl">
-              Every PEAK13 engagement begins with evidence. We audit your operations first,
-              quantify the waste, then design the solution — in that order, every time.
-            </p>
-          </BlurFade>
+          <p className="font-sub font-700 text-xs tracking-[0.22em] uppercase text-accent mb-5">
+            Why PEAK13
+          </p>
+          <p
+            className="font-heading text-white leading-[0.95] tracking-wide mb-6"
+            style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+          >
+            MOST AI PROJECTS FAIL BECAUSE THEY START WITH THE TECHNOLOGY, NOT THE PROBLEM.
+          </p>
+          <p className="font-body text-white/55 text-base leading-relaxed max-w-xl">
+            Every PEAK13 engagement begins with evidence. We audit your operations first,
+            quantify the waste, then design the solution — in that order, every time.
+          </p>
         </div>
+      </div>
+
+      {/* Bottom-right stamp */}
+      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 bg-yellow border-[3px] border-ink px-4 py-2"
+        style={{ boxShadow: '4px 4px 0 #0F0F0F' }}>
+        <p className="font-heading text-ink text-xl leading-none tracking-wide">PEAK13</p>
+        <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Evidence-first AI</p>
       </div>
     </div>
   )

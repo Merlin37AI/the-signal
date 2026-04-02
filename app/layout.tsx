@@ -1,19 +1,27 @@
 import type { Metadata } from 'next'
-import { Inter, DM_Sans } from 'next/font/google'
+import { Bebas_Neue, Barlow_Condensed, Barlow } from 'next/font/google'
 import './globals.css'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 
-const inter = Inter({
+const bebasNeue = Bebas_Neue({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-bebas',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
+const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
-  variable: '--font-dm-sans',
+  variable: '--font-barlow-condensed',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700', '900'],
+})
+
+const barlow = Barlow({
+  subsets: ['latin'],
+  variable: '--font-barlow',
+  display: 'swap',
+  weight: ['400', '500', '600'],
 })
 
 export const metadata: Metadata = {
@@ -50,7 +58,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${bebasNeue.variable} ${barlowCondensed.variable} ${barlow.variable}`}>
       <head>
         <script
           type="application/ld+json"

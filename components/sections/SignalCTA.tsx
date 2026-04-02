@@ -2,8 +2,6 @@
 
 import Image from 'next/image'
 import { BlurFade } from '@/components/ui/animations/blur-fade'
-import { MagicCard } from '@/components/ui/animations/magic-card'
-import { TextAnimate } from '@/components/ui/animations/text-animate'
 
 const testimonials = [
   {
@@ -54,12 +52,22 @@ export default function ResultsAboutTestimonialsPage() {
   return (
     <>
       {/* ── About Gary ── */}
-      <section id="about" className="zone-surface section-pad border-b border-border">
-        <div className="container-lg">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section id="about" className="zone-light border-b-[3px] border-ink">
+        {/* Section header */}
+        <div className="px-6 md:px-12 lg:px-20">
+          <div className="section-header-bar">
+            <span className="section-num-tag">05</span>
+            <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-ink leading-none">
+              ABOUT GARY
+            </h2>
+          </div>
+        </div>
+
+        <div className="px-6 md:px-12 lg:px-20 py-14 md:py-20">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
             {/* Photo */}
             <BlurFade delay={0.1} className="order-2 md:order-1">
-              <div className="relative w-full max-w-sm mx-auto md:mx-0 aspect-[4/5] rounded-2xl overflow-hidden bg-border">
+              <div className="relative w-full max-w-sm mx-auto md:mx-0 aspect-[4/5] overflow-hidden border-[3px] border-ink" style={{ boxShadow: '8px 8px 0 #D90000' }}>
                 <Image
                   src="/gary-headshot.jpg"
                   alt="Gary Quigley — Fractional AI Consultant, PEAK13 Consulting"
@@ -67,26 +75,38 @@ export default function ResultsAboutTestimonialsPage() {
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 80vw, 40vw"
                 />
+                {/* Yellow corner stamp */}
+                <div className="absolute bottom-0 left-0 bg-yellow border-t-[3px] border-r-[3px] border-ink px-4 py-3">
+                  <p className="font-heading text-ink text-xl leading-none tracking-wide">GARY QUIGLEY</p>
+                  <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor</p>
+                </div>
+              </div>
+
+              {/* Credentials below photo */}
+              <div className="mt-6 max-w-sm mx-auto md:mx-0">
+                <p className="font-sub font-700 text-[0.6rem] tracking-[0.2em] uppercase text-muted/60 mb-3">Credentials</p>
+                <div className="flex flex-wrap gap-2">
+                  {['ITIL 4 Foundation', 'Six Sigma Green Belt', 'AI in Business — UPenn', 'Micro MBA Cum Laude', 'CompTIA Security+', 'CPD Business Strategist'].map((c) => (
+                    <span key={c} className="font-sub font-semibold text-xs tracking-[0.08em] uppercase text-muted border-[2px] border-ink/20 px-3 py-1.5">
+                      {c}
+                    </span>
+                  ))}
+                </div>
               </div>
             </BlurFade>
 
             {/* Bio */}
             <div className="order-1 md:order-2">
-              <BlurFade delay={0.05}>
-                <p className="eyebrow eyebrow-light mb-5">About Gary</p>
-              </BlurFade>
               <BlurFade delay={0.15}>
-                <h2
-                  className="font-heading font-extrabold text-ink leading-[1.05] mb-6"
-                  style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)' }}
+                <h3
+                  className="font-heading text-ink leading-[1.0] mb-6 tracking-wide"
+                  style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
                 >
-                  8 years building systems
-                  <br />
-                  that actually work.
-                </h2>
+                  8 YEARS BUILDING SYSTEMS THAT ACTUALLY WORK.
+                </h3>
               </BlurFade>
               <BlurFade delay={0.25}>
-                <div className="space-y-4 text-muted text-base leading-relaxed font-body">
+                <div className="space-y-4 font-body text-muted text-base leading-relaxed">
                   <p>
                     I spent 8 years inside enterprise IT and operational transformation — at the
                     Maritime &amp; Coastguard Agency, Control Risks, and several high-growth
@@ -101,41 +121,26 @@ export default function ResultsAboutTestimonialsPage() {
                   </p>
                   <p>
                     I&apos;m a systems thinker with a coaching background. I believe most operational
-                    problems are people and process problems wearing a technology mask — and I
-                    bring that lens to every engagement.
+                    problems are people and process problems wearing a technology mask.
                   </p>
-                  <p>Based in Dubai. Work across the UAE and UK. Remote and in-person.</p>
+                  <p className="font-sub font-semibold text-xs tracking-[0.14em] uppercase text-muted/60">
+                    Based in Dubai. Work across the UAE and UK. Remote and in-person.
+                  </p>
                 </div>
               </BlurFade>
 
-              {/* Certs */}
-              <BlurFade delay={0.35}>
-                <div className="mt-8">
-                  <p className="text-xs text-muted/60 uppercase tracking-widest font-body mb-3">Credentials</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['ITIL 4 Foundation', 'Six Sigma Green Belt', 'AI in Business — UPenn', 'Micro MBA Cum Laude', 'CompTIA Security+', 'CPD Business Strategist'].map((c) => (
-                      <span key={c} className="text-xs font-body font-medium text-muted border border-border rounded-full px-3 py-1.5">
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </BlurFade>
-
-              <BlurFade delay={0.45}>
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <a
-                    href="https://www.linkedin.com/in/gary-quigley"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-ghost-light text-sm"
-                  >
-                    Connect on LinkedIn →
-                  </a>
-                  <a href="#contact" className="btn-primary text-sm">
-                    Work with Gary
-                  </a>
-                </div>
+              <BlurFade delay={0.35} className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="https://www.linkedin.com/in/gary-quigley"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost-light text-sm"
+                >
+                  Connect on LinkedIn →
+                </a>
+                <a href="#contact" className="btn-primary text-sm">
+                  Work with Gary
+                </a>
               </BlurFade>
             </div>
           </div>
@@ -143,70 +148,56 @@ export default function ResultsAboutTestimonialsPage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section id="testimonials" className="zone-dark section-pad border-b border-dark-b">
-        <div className="container-lg">
-          <div className="mb-14">
-            <BlurFade delay={0.05}>
-              <p className="eyebrow eyebrow-dark mb-5">Testimonials</p>
-            </BlurFade>
-            <BlurFade delay={0.15}>
-              <h2
-                className="font-heading font-extrabold text-white leading-[1.05]"
-                style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
-              >
-                What clients say.
-              </h2>
-            </BlurFade>
+      <section id="testimonials" className="zone-dark border-b-[3px] border-ink">
+        {/* Section header */}
+        <div className="px-6 md:px-12 lg:px-20">
+          <div className="section-header-bar border-dark-b">
+            <span className="section-num-tag section-num-tag-inv">06</span>
+            <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-white leading-none">
+              WHAT CLIENTS SAY
+            </h2>
           </div>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <BlurFade key={i} delay={0.1 + i * 0.15} className="flex flex-col">
-                <div className="relative card-dark flex flex-col h-full group/magic">
-                  <MagicCard
-                    className="absolute inset-0 rounded-[inherit]"
-                    gradientColor="#1e1e1e"
-                    gradientOpacity={0.75}
-                    gradientSize={180}
-                  />
-                  <div className="relative z-10 flex flex-col flex-1">
-                    <p className="text-4xl text-accent font-heading leading-none mb-4 select-none">&ldquo;</p>
-                    <p className="text-white/70 text-base leading-relaxed font-body flex-1 mb-6">{t.quote}</p>
-                    <div className="border-t border-dark-b pt-4">
-                      <p className="font-heading font-bold text-white text-sm">{t.name}</p>
-                      <p className="text-dark-m text-xs font-body mt-0.5">{t.company}</p>
-                    </div>
-                  </div>
+        <div className="grid md:grid-cols-3 border-t-0">
+          {testimonials.map((t, i) => (
+            <BlurFade key={i} delay={0.1 + i * 0.12}>
+              <div className={`p-8 md:p-10 flex flex-col h-full border-r-[2px] border-dark-b last:border-r-0 relative`}>
+                {/* Quote mark */}
+                <p className="font-heading text-7xl text-accent leading-none mb-4 select-none">&ldquo;</p>
+                <p className="font-body text-white/65 text-base leading-relaxed flex-1 mb-6">{t.quote}</p>
+                <div className="border-t-[2px] border-dark-b pt-4">
+                  <p className="font-sub font-700 text-white text-sm tracking-wide uppercase">{t.name}</p>
+                  <p className="font-body text-dark-m text-xs mt-1">{t.company}</p>
                 </div>
-              </BlurFade>
-            ))}
-          </div>
+              </div>
+            </BlurFade>
+          ))}
         </div>
       </section>
 
       {/* ── FAQ ── */}
-      <section id="faq" className="zone-light section-pad border-b border-border">
-        <div className="container-lg">
+      <section id="faq" className="zone-light border-b-[3px] border-ink">
+        {/* Section header */}
+        <div className="px-6 md:px-12 lg:px-20">
+          <div className="section-header-bar">
+            <span className="section-num-tag">07</span>
+            <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-ink leading-none">
+              COMMON QUESTIONS
+            </h2>
+          </div>
+        </div>
+
+        <div className="px-6 md:px-12 lg:px-20 py-14 md:py-20">
           <div className="grid md:grid-cols-[1fr_2fr] gap-16">
             <div>
               <BlurFade delay={0.05}>
-                <p className="eyebrow eyebrow-light mb-5">FAQ</p>
-              </BlurFade>
-              <BlurFade delay={0.15}>
-                <h2
-                  className="font-heading font-extrabold text-ink leading-tight"
-                  style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
-                >
-                  Common questions.
-                </h2>
-              </BlurFade>
-              <BlurFade delay={0.25}>
-                <p className="text-muted text-base mt-4 font-body leading-relaxed">
+                <p className="font-body text-muted text-base leading-relaxed mb-8">
                   Anything else? Book a free Snapshot Call and ask me directly.
                 </p>
               </BlurFade>
-              <BlurFade delay={0.35}>
-                <a href="#contact" className="btn-primary mt-8 inline-flex">
+              <BlurFade delay={0.15}>
+                <a href="#contact" className="btn-primary">
                   Book a Snapshot Call →
                 </a>
               </BlurFade>
@@ -222,85 +213,84 @@ export default function ResultsAboutTestimonialsPage() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section id="contact" className="zone-dark noise-overlay section-pad">
-        <div className="container-md text-center">
-          <BlurFade delay={0.05}>
-            <p className="eyebrow eyebrow-dark mb-6">Ready to start?</p>
-          </BlurFade>
-
-          <div className="mb-6">
-            <TextAnimate
-              as="h2"
-              by="word"
-              animation="blurInUp"
-              delay={0.1}
-              duration={0.55}
-              className="font-heading font-extrabold text-white leading-[1.0] block"
-              style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)' } as React.CSSProperties}
-            >
-              Find out what
-            </TextAnimate>
-            <TextAnimate
-              as="h2"
-              by="word"
-              animation="blurInUp"
-              delay={0.3}
-              duration={0.55}
-              className="font-heading font-extrabold text-accent leading-[1.0] block"
-              style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)' } as React.CSSProperties}
-            >
-              your operations are costing you.
-            </TextAnimate>
+      <section id="contact" className="zone-dark noise-overlay border-t-[3px] border-accent">
+        <div className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
+          {/* Big brutalist CTA headline */}
+          <div className="mb-10">
+            <BlurFade delay={0.05}>
+              <p className="font-sub font-700 text-xs tracking-[0.22em] uppercase text-accent mb-6">
+                Ready to start?
+              </p>
+            </BlurFade>
+            <BlurFade delay={0.1}>
+              <h2 className="font-heading text-white leading-[0.92] tracking-wide mb-0" style={{ fontSize: 'clamp(4rem, 10vw, 10rem)' }}>
+                <span className="block">FIND OUT</span>
+                <span className="block bg-yellow text-ink px-4 inline-block">WHAT IT&apos;S</span>
+                <span className="block text-accent">COSTING</span>
+                <span className="block" style={{ WebkitTextStroke: '3px rgba(255,255,255,0.3)', color: 'transparent' }}>YOU.</span>
+              </h2>
+            </BlurFade>
           </div>
 
-          <BlurFade delay={0.5}>
-            <p className="text-dark-m text-lg font-body max-w-lg mx-auto mb-10 leading-relaxed">
-              Book a free 30-minute Snapshot Call. No pitch, no jargon — just an honest conversation
-              about where AI can create real value in your accountancy firm or property management business.
-            </p>
-          </BlurFade>
-
-          <BlurFade delay={0.6} className="mb-14">
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href="https://calendly.com/quigleygary/signal-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-base px-10 py-4"
-              >
-                Book a Free Snapshot Call →
-              </a>
-              <a href="mailto:quigleygary@hotmail.com" className="btn-ghost-dark text-base px-10 py-4">
-                Send an Email
-              </a>
-            </div>
-          </BlurFade>
-
-          <BlurFade delay={0.7} className="mb-14">
-            <div className="guarantee-badge inline-flex">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              5× ROI Guarantee — if we don&apos;t identify at least 5× your investment in savings, you don&apos;t pay.
-            </div>
-          </BlurFade>
-
-          <BlurFade delay={0.75}>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/30 font-body">
-              <a href="https://www.linkedin.com/in/gary-quigley" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">LinkedIn</a>
-              <span>·</span>
-              <a href="mailto:quigleygary@hotmail.com" className="hover:text-white/70 transition-colors">quigleygary@hotmail.com</a>
-              <span>·</span>
-              <span>Dubai, UAE &amp; UK</span>
-            </div>
-          </BlurFade>
-
-          <BlurFade delay={0.85}>
-            <div className="mt-20 pt-8 border-t border-white/10">
-              <p className="text-xs text-white/20 font-body">
-                PEAK13 Consulting · © {new Date().getFullYear()} Gary Quigley · All rights reserved
+          <div className="grid md:grid-cols-2 gap-12 items-start mt-14 pt-10 border-t-[2px] border-dark-b">
+            <BlurFade delay={0.3}>
+              <p className="font-body text-dark-m text-lg leading-relaxed mb-8">
+                Book a free 30-minute Snapshot Call. No pitch, no jargon — just an honest conversation
+                about where AI can create real value in your accountancy firm or property management business.
               </p>
-            </div>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <a
+                  href="https://calendly.com/quigleygary/signal-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-red"
+                >
+                  Book a Free Snapshot Call →
+                </a>
+                <a href="mailto:quigleygary@hotmail.com" className="btn-ghost-dark">
+                  Send an Email
+                </a>
+              </div>
+              <div className="guarantee-badge" style={{ borderColor: 'rgba(255,255,255,0.15)', color: '#FFD600' }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                5× ROI Guarantee — if we don&apos;t find it, you don&apos;t pay.
+              </div>
+            </BlurFade>
+
+            {/* Contact details box */}
+            <BlurFade delay={0.4}>
+              <div className="border-[3px] border-dark-b p-8" style={{ boxShadow: '6px 6px 0 #D90000' }}>
+                <p className="font-sub font-700 text-xs tracking-[0.2em] uppercase text-accent mb-6">Contact</p>
+                <div className="space-y-4">
+                  <div className="border-b-[1px] border-dark-b pb-4">
+                    <p className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-dark-m mb-1">Email</p>
+                    <a href="mailto:quigleygary@hotmail.com" className="font-body text-white hover:text-accent transition-colors text-base">
+                      quigleygary@hotmail.com
+                    </a>
+                  </div>
+                  <div className="border-b-[1px] border-dark-b pb-4">
+                    <p className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-dark-m mb-1">LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/gary-quigley" target="_blank" rel="noopener noreferrer" className="font-body text-white hover:text-accent transition-colors text-base">
+                      linkedin.com/in/gary-quigley
+                    </a>
+                  </div>
+                  <div>
+                    <p className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-dark-m mb-1">Location</p>
+                    <p className="font-body text-white/70 text-base">Dubai, UAE &amp; United Kingdom</p>
+                  </div>
+                </div>
+              </div>
+            </BlurFade>
+          </div>
+
+          {/* Footer */}
+          <BlurFade delay={0.6} className="mt-20 pt-8 border-t-[2px] border-dark-b flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="font-heading text-xl text-yellow tracking-wide">PEAK13</p>
+            <p className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/20">
+              © {new Date().getFullYear()} Gary Quigley · PEAK13 Consulting · All rights reserved
+            </p>
           </BlurFade>
         </div>
       </section>
@@ -310,14 +300,14 @@ export default function ResultsAboutTestimonialsPage() {
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   return (
-    <details className="group border-b border-border py-5 last:border-0">
-      <summary className="flex items-start justify-between gap-4 cursor-pointer list-none font-heading font-bold text-ink text-base leading-snug hover:text-accent transition-colors duration-150">
+    <details className="group border-b-[2px] border-ink py-5 last:border-b-0">
+      <summary className="flex items-start justify-between gap-4 cursor-pointer list-none font-sub font-700 text-ink text-base uppercase tracking-wide leading-snug hover:text-accent transition-colors duration-150">
         {q}
-        <span className="shrink-0 w-5 h-5 rounded-full border border-border flex items-center justify-center text-muted text-xs mt-0.5 group-open:rotate-45 transition-transform duration-200">
+        <span className="shrink-0 w-6 h-6 border-[2px] border-ink flex items-center justify-center text-ink text-sm mt-0.5 group-open:rotate-45 transition-transform duration-200 font-bold">
           +
         </span>
       </summary>
-      <p className="text-muted text-sm leading-relaxed font-body mt-3 pr-8">{a}</p>
+      <p className="font-body text-muted text-sm leading-relaxed mt-3 pr-8">{a}</p>
     </details>
   )
 }

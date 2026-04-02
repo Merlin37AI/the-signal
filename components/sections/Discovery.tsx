@@ -5,96 +5,91 @@ import { BlurFade } from '@/components/ui/animations/blur-fade'
 const pains = [
   {
     number: '01',
-    tag: 'Accountancy & Property',
+    tag: 'Capacity Drain',
     headline: 'Your highest-paid people are doing £12/hr work.',
     body: 'Partners manually chasing client documents. Property managers copy-pasting rent reminders into WhatsApp. Senior staff spending half their day on tasks a well-configured system could handle in seconds.',
-    cost: 'Est. £30K–£60K in wasted senior time per year',
+    cost: '£45K',
+    costLabel: 'Est. annual capacity waste',
   },
   {
     number: '02',
-    tag: 'Accountancy',
+    tag: 'Seasonal Crisis',
     headline: "Tax season shouldn't be a capacity crisis every year.",
     body: "You already know it's coming — the 14-hour days, the near-misses on deadlines, the staff burnout. Yet the same manual processes that caused it last year are still running unchanged. That's not a people problem. It's a systems problem.",
-    cost: 'Est. £20K in overtime and staff attrition cost',
+    cost: '£20K',
+    costLabel: 'Est. annual overtime & attrition cost',
   },
   {
     number: '03',
-    tag: 'Property Management',
+    tag: 'Legal Exposure',
     headline: 'Maintenance coordination via WhatsApp is a liability.',
     body: "No audit trail. No accountability. Contractors missed, tenants escalating, landlords unhappy. The moment something goes wrong legally, you'll wish you had a system — not a chat thread.",
-    cost: 'Est. £15K–£40K in disputes and lost contracts annually',
+    cost: '£30K',
+    costLabel: 'Est. annual disputes & lost contracts',
   },
 ]
 
 export default function PainPoints() {
   return (
-    <section id="pain" className="zone-dark-surface section-pad border-b border-dark-b">
-      <div className="container-lg">
-        {/* Header */}
-        <div className="mb-14 max-w-2xl">
-          <BlurFade delay={0.05}>
-            <p className="eyebrow eyebrow-dark mb-5">The Problem</p>
-          </BlurFade>
-          <BlurFade delay={0.15}>
-            <h2
-              className="font-heading font-extrabold text-white leading-[1.05]"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
-            >
-              Every week you delay
-              <br />
-              <span className="text-accent">costs more than you think.</span>
-            </h2>
-          </BlurFade>
-          <BlurFade delay={0.25}>
-            <p className="text-dark-m text-lg font-body mt-5 leading-relaxed">
-              These aren&apos;t edge cases. They&apos;re the daily reality of accountancy firms and property
-              management companies across the UK and UAE — and every one of them has a measurable price tag.
-            </p>
-          </BlurFade>
+    <section id="pain" className="zone-dark border-b-[3px] border-ink">
+      {/* Section header */}
+      <div className="px-6 md:px-12 lg:px-20">
+        <div className="section-header-bar border-ink/20">
+          <span className="section-num-tag section-num-tag-inv">01</span>
+          <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-white leading-none">
+            WHERE THE MONEY ACTUALLY GOES
+          </h2>
         </div>
+      </div>
 
-        {/* Pain cards — staggered blur-fade */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {pains.map((p, i) => (
-            <BlurFade key={p.number} delay={0.1 + i * 0.15} className="flex flex-col">
-              <div className="card-dark flex flex-col h-full">
-                {/* Number + tag */}
-                <div className="flex items-start justify-between mb-6">
-                  <span className="font-heading font-extrabold text-5xl text-white/10 leading-none select-none">
-                    {p.number}
-                  </span>
-                  <span className="text-xs font-semibold font-body uppercase tracking-widest text-accent border border-accent/30 rounded-full px-3 py-1">
-                    {p.tag}
-                  </span>
-                </div>
+      {/* Pain columns */}
+      <div className="grid md:grid-cols-3 border-t-0">
+        {pains.map((p, i) => (
+          <BlurFade key={p.number} delay={0.1 + i * 0.12}>
+            <div className={`relative p-8 md:p-10 flex flex-col border-b-[2px] md:border-b-0 md:border-r-[2px] border-dark-b last:border-r-0 last:border-b-0`}>
+              {/* Ghost number */}
+              <span className="absolute top-2 right-4 font-heading text-[7rem] text-white/[0.04] leading-none select-none pointer-events-none">
+                {p.number}
+              </span>
 
-                <h3 className="font-heading font-bold text-white text-xl mb-3 leading-snug flex-1">
-                  {p.headline}
-                </h3>
+              {/* Tag */}
+              <span className="font-sub font-700 text-xs tracking-[0.2em] uppercase text-white inline-block bg-ink border border-dark-b px-3 py-1.5 mb-6 self-start">
+                {p.tag}
+              </span>
 
-                <p className="text-dark-m text-sm leading-relaxed font-body mb-6">{p.body}</p>
+              {/* Cost */}
+              <p className="font-heading text-accent leading-none mb-5" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}>
+                {p.cost}
+              </p>
 
-                {/* Cost line */}
-                <div className="border-t border-dark-b pt-4 mt-auto">
-                  <p className="text-xs font-body font-semibold text-accent/80">{p.cost}</p>
-                </div>
+              <h3 className="font-sub font-700 text-white text-lg md:text-xl uppercase tracking-wide leading-tight mb-4">
+                {p.headline}
+              </h3>
+
+              <p className="font-body text-dark-m text-sm leading-relaxed mb-6 flex-1">{p.body}</p>
+
+              {/* Cost line */}
+              <div className="border-t border-dark-b pt-4 mt-auto">
+                <p className="font-sub font-semibold text-xs tracking-[0.12em] uppercase text-accent/70">
+                  {p.costLabel}
+                </p>
               </div>
-            </BlurFade>
-          ))}
-        </div>
+            </div>
+          </BlurFade>
+        ))}
+      </div>
 
-        {/* Bridge statement */}
-        <BlurFade delay={0.5} className="mt-14 pt-10 border-t border-dark-b">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <p className="text-white text-lg font-body max-w-xl leading-relaxed">
-              <strong className="font-semibold text-white">The average business we audit is losing £50K–£150K a year</strong>{' '}
-              to processes they assume are unavoidable. They&apos;re not.
-            </p>
-            <a href="#diagnostic" className="btn-primary shrink-0 text-base px-8 py-4">
-              See the PEAK13 Diagnostic →
-            </a>
-          </div>
-        </BlurFade>
+      {/* Bridge */}
+      <div className="px-6 md:px-12 lg:px-20 py-10 border-t-[2px] border-dark-b">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <p className="font-body text-white text-lg max-w-xl leading-relaxed">
+            <strong className="font-semibold text-white">The average business we audit is losing £50K–£150K a year</strong>{' '}
+            to processes they assume are unavoidable. They&apos;re not.
+          </p>
+          <a href="#diagnostic" className="btn-red shrink-0">
+            See the PEAK13 Diagnostic →
+          </a>
+        </div>
       </div>
     </section>
   )
