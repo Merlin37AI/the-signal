@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 const links = [
   { label: 'About', href: '#about' },
@@ -35,6 +36,15 @@ const tickerItems = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
+  const resolveHref = (href: string) => {
+    if (href.startsWith('#') && !isHome) return `/${href}`
+    return href
+  }
+
+  const contactHref = isHome ? '#contact' : '/#contact'
 
   return (
     <>
@@ -56,7 +66,7 @@ export default function Nav() {
             {links.map(({ label, href }) => (
               <a
                 key={href}
-                href={href}
+                href={resolveHref(href)}
                 className="font-sub font-semibold text-xs tracking-[0.14em] uppercase text-white/60 hover:text-white transition-colors duration-150"
               >
                 {label}
@@ -66,7 +76,7 @@ export default function Nav() {
 
           {/* Desktop CTA */}
           <a
-            href="#contact"
+            href={contactHref}
             className="hidden md:inline-flex btn-red text-xs px-5 py-2.5"
           >
             Work With Gary
@@ -90,7 +100,7 @@ export default function Nav() {
             {links.map(({ label, href }) => (
               <a
                 key={href}
-                href={href}
+                href={resolveHref(href)}
                 onClick={() => setOpen(false)}
                 className="font-sub font-semibold text-sm tracking-[0.12em] uppercase text-white/70 py-1 border-b border-dark-b"
               >
@@ -98,7 +108,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={contactHref}
               onClick={() => setOpen(false)}
               className="btn-red mt-2 justify-center text-center"
             >
