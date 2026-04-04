@@ -11,8 +11,8 @@ const work = [
     headline: 'Embedding operational AI inside a business-first consultancy.',
     summary:
       'The Argenis Advisory is a business-first AI consultancy serving some of the world\'s most recognised brands — including Microsoft, NEOM, Riyadh Air, and eBay. As AI Operations Lead, Gary sits inside the delivery team, overseeing the operational implementation of AI strategies developed by the advisory\'s founders.',
-    image: '/argenis-screenshot.jpg',
-    imageAlt: 'The Argenis Advisory website — business-first AI consultancy',
+    image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    imageAlt: 'Executive boardroom — The Argenis Advisory, business-first AI consultancy',
     focus: [
       { area: 'Process Automation', detail: 'Identifying and mapping high-friction manual processes across client operations for AI-led resolution.' },
       { area: 'Implementation Oversight', detail: 'Managing the build and deployment of AI solutions across client businesses, from workflow automation to knowledge management systems.' },
@@ -29,8 +29,8 @@ const work = [
     headline: 'Bringing operational intelligence to Dubai\'s premium landscaping market.',
     summary:
       'Upgraded Landscaping delivers premium villa landscaping across Dubai\'s most prestigious communities — Dubai Hills Estate, Arabian Ranches, Emirates Hills, and Palm Jumeirah. Gary advises on how AI and automation can improve the operational backbone of a high-growth service business managing multiple active sites across the city.',
-    image: '/upgraded-screenshot.jpg',
-    imageAlt: 'Upgraded Landscaping website — premium villa landscaping in Dubai',
+    image: 'https://images.pexels.com/photos/261327/pexels-photo-261327.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    imageAlt: 'Luxury villa outdoor terrace — Upgraded Landscaping, premium Dubai landscaping',
     focus: [
       { area: 'Customer Communication', detail: 'Automating client updates, quote follow-ups, and project status notifications — reducing manual touchpoints without losing the premium service feel.' },
       { area: 'Job & Project Orchestration', detail: 'Structuring task assignment, crew scheduling, and project milestone tracking with AI-assisted workflow tools.' },
