@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
+import Logo from '@/components/ui/Logo'
 
 const links = [
   { label: 'About',      href: '#about'     },
@@ -63,12 +64,14 @@ export default function Nav() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-ink border-b-[3px] border-ink">
         <div className="h-14 flex items-center justify-between px-6 md:px-10">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-0 relative z-[70]">
-            <span className="font-heading text-xl tracking-wide text-yellow leading-none">
-              GDS
+          <a href="/" className="flex items-center relative z-[70]" aria-label="Gary Does Strategy — Home">
+            {/* Mobile: mark only */}
+            <span className="md:hidden">
+              <Logo variant="reversed" size={30} showWordmark={false} />
             </span>
-            <span className="font-sub font-700 text-xs tracking-[0.18em] text-white/40 uppercase ml-3 hidden md:block">
-              Gary Does Strategy
+            {/* Desktop: full lockup */}
+            <span className="hidden md:block">
+              <Logo variant="reversed" size={34} />
             </span>
           </a>
 
@@ -170,9 +173,9 @@ export default function Nav() {
           >
             Work With Gary →
           </a>
-          <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-white/20 text-center">
-            Gary Does Strategy · Dubai & UK
-          </p>
+          <div className="flex justify-center">
+            <Logo variant="reversed" size={28} showWordmark={false} />
+          </div>
         </div>
       </div>
     </>

@@ -1,0 +1,43 @@
+<svg viewBox="0 0 320 56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GDS — Gary Does Strategy">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow+Condensed:wght@700&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Yellow offset shadow -->
+  <rect x="4" y="4" width="48" height="48" fill="#FFD600"/>
+
+  <!-- Ink block -->
+  <rect x="0" y="0" width="48" height="48" fill="#0F0F0F"/>
+
+  <!-- GDS letterforms -->
+  <text x="24" y="34" text-anchor="middle"
+    font-family="'Bebas Neue', Impact, sans-serif"
+    font-size="22" letter-spacing="1.2"
+    fill="#F0EDE8">GDS</text>
+
+  <!-- Vertical divider -->
+  <line x1="65" y1="10" x2="65" y2="42" stroke="#0F0F0F" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- GARY -->
+  <text x="74" y="22"
+    font-family="'Bebas Neue', Impact, sans-serif"
+    font-size="16" letter-spacing="1"
+    fill="#0F0F0F">GARY</text>
+
+  <!-- DOES STRATEGY -->
+  <text x="74" y="35"
+    font-family="'Barlow Condensed', 'Arial Narrow', sans-serif"
+    font-weight="700" font-size="10" letter-spacing="2.2"
+    fill="#0F0F0F" opacity="0.55">DOES STRATEGY</text>
+
+  <!-- Accent rule -->
+  <line x1="74" y1="40" x2="170" y2="40" stroke="#FFD600" stroke-width="2" opacity="0.9"/>
+
+  <!-- Sub-tagline -->
+  <text x="74" y="50"
+    font-family="'Barlow Condensed', 'Arial Narrow', sans-serif"
+    font-weight="700" font-size="7" letter-spacing="1.8"
+    fill="#0F0F0F" opacity="0.35">FRACTIONAL AI ADVISORY</text>
+</svg>

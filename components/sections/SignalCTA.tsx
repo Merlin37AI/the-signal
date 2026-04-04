@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { BlurFade } from '@/components/ui/animations/blur-fade'
+import Logo from '@/components/ui/Logo'
 
 const testimonials = [
   {
@@ -324,7 +325,7 @@ export default function ResultsAboutTestimonialsPage() {
               </p>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="font-heading text-xl text-yellow tracking-wide">GDS</p>
+              <Logo variant="reversed" size={32} showWordmark={false} />
               <p className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/20">
                 © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy · All rights reserved
               </p>
