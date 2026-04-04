@@ -1,5 +1,13 @@
 import Image from 'next/image'
 import Nav from '@/components/ui/Nav'
+import SectionLabel from '@/components/ui/SectionLabel'
+import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Current Clients — Gary Does Strategy',
+  description: 'Gary Quigley currently advises The Argenis Advisory and Upgraded Landscaping as a fractional AI advisor embedded inside their operations.',
+}
 
 const clients = [
   {
@@ -96,7 +104,8 @@ export default function ClientsPage() {
   return (
     <>
       <Nav />
-      <main className="pt-[108px]">
+      <SectionLabel />
+      <main className="pt-[110px] bg-bg min-h-screen">
         {/* Page header */}
         <div className="bg-ink border-b-[3px] border-ink px-6 md:px-12 lg:px-20 py-20 md:py-28">
           <p className="font-sub font-700 text-xs tracking-[0.22em] uppercase text-accent mb-6">
@@ -287,7 +296,7 @@ export default function ClientsPage() {
 
         {/* Bottom CTA */}
         <section className="zone-dark noise-overlay border-t-[3px] border-accent px-6 md:px-12 lg:px-20 py-20">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-16">
             <div>
               <p className="font-sub font-700 text-xs tracking-[0.22em] uppercase text-accent mb-4">
                 New engagements
@@ -316,6 +325,21 @@ export default function ClientsPage() {
               <a href="/" className="btn-ghost-dark whitespace-nowrap text-center">
                 ← Back to Site
               </a>
+            </div>
+          </div>
+
+          {/* Footer bar */}
+          <div className="pt-8 border-t-[2px] border-dark-b flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <span className="font-heading text-white/20 leading-none" style={{ fontSize: '1.4rem', letterSpacing: '0.04em' }}>GDS</span>
+            <div className="flex flex-wrap items-center gap-4 md:gap-6">
+              <div className="flex gap-4">
+                <Link href="/privacy" className="font-sub font-700 text-[0.55rem] tracking-[0.14em] uppercase text-white/20 hover:text-white/50 transition-colors">Privacy Policy</Link>
+                <Link href="/cookies" className="font-sub font-700 text-[0.55rem] tracking-[0.14em] uppercase text-white/20 hover:text-white/50 transition-colors">Cookie Policy</Link>
+                <Link href="/terms" className="font-sub font-700 text-[0.55rem] tracking-[0.14em] uppercase text-white/20 hover:text-white/50 transition-colors">Terms</Link>
+              </div>
+              <p className="font-sub font-semibold text-[0.55rem] tracking-[0.1em] uppercase text-white/15">
+                © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy
+              </p>
             </div>
           </div>
         </section>
