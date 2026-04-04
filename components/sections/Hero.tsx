@@ -1,21 +1,48 @@
 'use client'
 
 import Image from 'next/image'
+import { useEffect, useRef } from 'react'
 import { BlurFade } from '@/components/ui/animations/blur-fade'
 import { NumberTicker } from '@/components/ui/animations/number-ticker'
+import MagneticButton from '@/components/ui/MagneticButton'
 
 const stats = [
-  { n: 8,  prefix: '',  suffix: '+', label: 'Years in enterprise IT & operations', dark: false },
-  { n: 2,  prefix: '',  suffix: '',  label: 'Active fractional clients',           dark: true  },
-  { n: 14, prefix: '',  suffix: '',  label: 'Days average to first recommendations', dark: false },
-  { n: 3,  prefix: '',  suffix: '',  label: 'Engagement models available',           dark: false },
+  { n: 8,  prefix: '', suffix: '+', label: 'Years in enterprise IT & operations',  dark: false },
+  { n: 2,  prefix: '', suffix: '',  label: 'Active fractional clients',             dark: true  },
+  { n: 14, prefix: '', suffix: '',  label: 'Days average to first recommendations', dark: false },
+  { n: 3,  prefix: '', suffix: '',  label: 'Engagement models available',           dark: false },
 ]
 
 export default function Hero() {
+  const heroRef  = useRef<HTMLElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    let ctx: { revert?: () => void } = {}
+    const init = async () => {
+      const { gsap, ScrollTrigger } = await import('@/lib/gsap')
+      ctx = gsap.context(() => {
+        gsap.to(panelRef.current, {
+          yPercent: -18,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1.2,
+          },
+        })
+      }, heroRef)
+    }
+    init()
+    return () => ctx.revert?.()
+  }, [])
+
   return (
     <section
+      ref={heroRef}
       id="hero"
-      className="min-h-screen pt-[88px] grid md:grid-cols-[1fr_400px] lg:grid-cols-[1fr_460px] border-b-[3px] border-ink bg-bg"
+      className="min-h-screen pt-[110px] grid md:grid-cols-[1fr_400px] lg:grid-cols-[1fr_460px] border-b-[3px] border-ink bg-bg"
     >
       {/* LEFT: Typography */}
       <div className="px-6 md:px-10 lg:px-16 py-14 md:py-20 flex flex-col justify-between border-r-0 md:border-r-[3px] border-ink">
@@ -31,10 +58,7 @@ export default function Hero() {
             <BlurFade delay={0.1}>
               <h1 className="font-heading leading-[0.92] tracking-wide" style={{ fontSize: 'clamp(4.5rem, 12vw, 11rem)' }}>
                 <span className="block text-ink">DIFFERENT</span>
-                <span className="block" style={{
-                  WebkitTextStroke: '3px #0F0F0F',
-                  color: 'transparent',
-                }}>THINKING.</span>
+                <span className="block" style={{ WebkitTextStroke: '3px #0F0F0F', color: 'transparent' }}>THINKING.</span>
                 <span className="block">
                   <span className="bg-yellow text-ink px-3 inline-block">BETTER</span>
                 </span>
@@ -53,12 +77,12 @@ export default function Hero() {
 
           <BlurFade delay={0.5}>
             <div className="flex flex-wrap gap-4 mb-8">
-              <a href="#contact" className="btn-primary">
+              <MagneticButton href="#contact" className="btn-primary">
                 Work With Gary →
-              </a>
-              <a href="#how-i-work" className="btn-ghost-light">
+              </MagneticButton>
+              <MagneticButton href="#how-i-work" className="btn-ghost-light">
                 How it works
-              </a>
+              </MagneticButton>
             </div>
           </BlurFade>
 
@@ -84,8 +108,8 @@ export default function Hero() {
         </BlurFade>
       </div>
 
-      {/* RIGHT: Stats panel + image */}
-      <div className="hidden md:flex flex-col border-t-[3px] md:border-t-0 border-ink">
+      {/* RIGHT: Stats panel + image — parallax target */}
+      <div ref={panelRef} className="hidden md:flex flex-col border-t-[3px] md:border-t-0 border-ink will-change-transform">
         {/* Image */}
         <div className="relative h-48 overflow-hidden border-b-[3px] border-ink shrink-0">
           <Image
@@ -118,10 +142,10 @@ export default function Hero() {
                   {s.prefix}
                   <NumberTicker
                     value={s.n}
+                    suffix={s.suffix}
                     delay={0.5 + i * 0.1}
                     className={`font-heading leading-none ${s.dark ? 'text-yellow' : 'text-accent'}`}
                   />
-                  {s.suffix}
                 </span>
               </p>
               <p className={`font-sub font-semibold text-xs tracking-[0.12em] uppercase mt-1 ${
@@ -146,8 +170,7 @@ export default function Hero() {
             <p className="font-heading text-3xl leading-none">
               <span className={s.dark ? 'text-yellow' : 'text-accent'}>
                 {s.prefix}
-                <NumberTicker value={s.n} delay={0.4 + i * 0.1} className="font-heading text-3xl leading-none" />
-                {s.suffix}
+                <NumberTicker value={s.n} suffix={s.suffix} delay={0.4 + i * 0.1} className="font-heading text-3xl leading-none" />
               </span>
             </p>
             <p className={`font-sub font-semibold text-[0.6rem] tracking-[0.12em] uppercase mt-1 ${

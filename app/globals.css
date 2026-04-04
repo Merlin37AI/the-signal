@@ -257,6 +257,32 @@ body {
   animation: ticker 20s linear infinite;
 }
 
+@keyframes ticker-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.animate-ticker-reverse {
+  animation: ticker-reverse 28s linear infinite;
+}
+
+/* ── Diagonal section break ── */
+.diagonal-top {
+  clip-path: polygon(0 clamp(18px, 2.5vw, 36px), 100% 0%, 100% 100%, 0 100%);
+  margin-top: calc(-1 * clamp(18px, 2.5vw, 36px));
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Full-screen mobile menu link animation ── */
+@keyframes menu-item-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mobile-menu-link {
+  animation: menu-item-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
 /* ── Border beam (keep for Services) ── */
 @keyframes border-beam-angle {
   to { --angle: 360deg; }

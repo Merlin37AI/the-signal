@@ -69,7 +69,7 @@ const tiers = [
 
 export default function Services() {
   return (
-    <section id="services" className="border-b-[3px] border-ink">
+    <section id="services" className="border-b-[3px] border-ink diagonal-top bg-bg">
       {/* Section header */}
       <div className="px-6 md:px-12 lg:px-20 bg-bg">
         <div className="section-header-bar">

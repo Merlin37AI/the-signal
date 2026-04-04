@@ -96,7 +96,7 @@ export default function ClientsPage() {
   return (
     <>
       <Nav />
-      <main className="pt-[88px]">
+      <main className="pt-[108px]">
         {/* Page header */}
         <div className="bg-ink border-b-[3px] border-ink px-6 md:px-12 lg:px-20 py-20 md:py-28">
           <p className="font-sub font-700 text-xs tracking-[0.22em] uppercase text-accent mb-6">
@@ -118,8 +118,11 @@ export default function ClientsPage() {
         {/* Client profiles */}
         {clients.map((client, ci) => (
           <article key={client.name} className={`border-b-[3px] border-ink ${ci % 2 === 0 ? 'bg-bg' : 'bg-surface'}`}>
-            {/* Hero image */}
-            <div className="relative w-full h-[320px] md:h-[420px] overflow-hidden border-b-[3px] border-ink">
+            {/* Hero image — skewed bottom edge */}
+            <div
+              className="relative w-full h-[340px] md:h-[440px] overflow-hidden"
+              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 0 100%)' }}
+            >
               <Image
                 src={client.image}
                 alt={client.imageAlt}
