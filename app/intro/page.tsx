@@ -41,7 +41,8 @@ export default function IntroPage() {
       curtain.style.transition = 'background 0.12s ease'
       curtain.style.background = '#0F0F0F'
 
-      /* Phase 3: navigate */
+      /* Phase 3: set session cookie so middleware lets us through, then navigate */
+      document.cookie = 'gds-intro=1; path=/; samesite=lax'
       setTimeout(() => router.push('/'), 140)
     }, { once: true })
   }, [router])
