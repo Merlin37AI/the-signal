@@ -4,7 +4,9 @@ import Image from 'next/image'
 
 export default function ImageBreak() {
   return (
-    <div className="relative w-full h-[360px] md:h-[480px] overflow-hidden border-b-[3px] border-ink">
+    <div className="relative w-full h-[360px] md:h-[480px] overflow-hidden border-b-[3px] border-ink" style={{ cursor: 'default' }}>
+      {/* Scan line */}
+      <div className="scan-line" />
       <Image
         src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920"
         alt="Fractional AI advisor embedded with leadership team"

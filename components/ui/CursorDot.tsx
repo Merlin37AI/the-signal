@@ -40,7 +40,7 @@ export default function CursorDot() {
     const tick = () => {
       currentX += (mouseX - currentX) * 0.15
       currentY += (mouseY - currentY) * 0.15
-      dot.style.transform = `translate(${currentX - 5}px, ${currentY - 5}px)`
+      dot.style.transform = `translate(${currentX - 12}px, ${currentY - 12}px)`
       rafId = requestAnimationFrame(tick)
     }
     rafId = requestAnimationFrame(tick)

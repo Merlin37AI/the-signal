@@ -66,21 +66,34 @@ export default function ResultsAboutTestimonialsPage() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
             {/* Photo */}
             <BlurFade delay={0.1} className="order-2 md:order-1">
-              <div
-                className="relative w-full max-w-sm mx-auto md:mx-0 aspect-[4/5] overflow-hidden border-[3px] border-ink"
-                style={{ boxShadow: '8px 8px 0 #D90000' }}
-              >
-                <Image
-                  src="/gary-headshot.jpg"
-                  alt="Gary Quigley — Fractional AI Advisor, PEAK13 Consulting"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 80vw, 40vw"
-                />
-                {/* Yellow corner stamp */}
-                <div className="absolute bottom-0 left-0 bg-yellow border-t-[3px] border-r-[3px] border-ink px-4 py-3">
-                  <p className="font-heading text-ink text-xl leading-none tracking-wide">GARY QUIGLEY</p>
-                  <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor · GDS</p>
+              <div className="relative">
+                {/* Rotated vertical role label */}
+                <div
+                  className="hidden md:flex absolute -left-10 top-1/2 items-center gap-2 z-10"
+                  style={{ transform: 'translateY(-50%) rotate(180deg)', writingMode: 'vertical-rl' }}
+                >
+                  <span className="font-sub font-700 text-[0.5rem] tracking-[0.35em] uppercase text-accent">
+                    Fractional AI Advisor
+                  </span>
+                  <span className="w-px h-8 bg-accent/40" />
+                </div>
+
+                <div
+                  className="relative w-full max-w-sm mx-auto md:mx-0 aspect-[4/5] overflow-hidden border-[3px] border-ink"
+                  style={{ boxShadow: '8px 8px 0 #D90000' }}
+                >
+                  <Image
+                    src="/gary-headshot.jpg"
+                    alt="Gary Quigley — Fractional AI Advisor, PEAK13 Consulting"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 80vw, 40vw"
+                  />
+                  {/* Yellow corner stamp */}
+                  <div className="absolute bottom-0 left-0 bg-yellow border-t-[3px] border-r-[3px] border-ink px-4 py-3">
+                    <p className="font-heading text-ink text-xl leading-none tracking-wide">GARY QUIGLEY</p>
+                    <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-ink/60">Fractional AI Advisor · GDS</p>
+                  </div>
                 </div>
               </div>
 
@@ -108,12 +121,10 @@ export default function ResultsAboutTestimonialsPage() {
                 </h3>
               </BlurFade>
               <BlurFade delay={0.25}>
-                <div className="space-y-4 font-body text-muted text-base leading-relaxed">
-                  <p>
-                    I spent 8 years inside enterprise IT and operational transformation — at the
-                    Maritime &amp; Coastguard Agency, Control Risks, and several high-growth
-                    businesses — designing the processes, governance frameworks, and systems
-                    that made complex organisations run more reliably.
+                <div className="space-y-4 font-body text-muted leading-relaxed">
+                  {/* Typographic lead — larger first sentence */}
+                  <p className="text-ink text-xl leading-snug font-medium border-l-[4px] border-accent pl-5">
+                    I spent 8 years inside enterprise IT and operational transformation — designing the processes and systems that made complex organisations run reliably.
                   </p>
                   <p>
                     I&apos;m neurodivergent, and I&apos;ve found that this shapes how I approach
@@ -162,12 +173,22 @@ export default function ResultsAboutTestimonialsPage() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 border-t-0">
+        <div className="grid md:grid-cols-3 border-t-0 px-6 md:px-12 lg:px-20 py-14 md:py-20 gap-0">
           {testimonials.map((t, i) => (
             <BlurFade key={i} delay={0.1 + i * 0.12}>
-              <div className="p-8 md:p-10 flex flex-col h-full border-r-[2px] border-dark-b last:border-r-0">
-                <p className="font-heading text-7xl text-accent leading-none mb-4 select-none">&ldquo;</p>
-                <p className="font-body text-white/65 text-base leading-relaxed flex-1 mb-6">{t.quote}</p>
+              <div
+                className="relative p-8 md:p-10 flex flex-col border-[2px] border-dark-b"
+                style={{ marginTop: `${i * 36}px` }}
+              >
+                {/* Oversized quote mark outside card boundary */}
+                <span
+                  className="absolute font-heading text-accent select-none pointer-events-none leading-none"
+                  aria-hidden="true"
+                  style={{ fontSize: '6rem', top: '-1.8rem', left: '-0.5rem', opacity: 0.9 }}
+                >
+                  &ldquo;
+                </span>
+                <p className="font-body text-white/65 text-base leading-relaxed flex-1 mb-6 mt-8">{t.quote}</p>
                 <div className="border-t-[2px] border-dark-b pt-4">
                   <p className="font-sub font-700 text-white text-sm tracking-wide uppercase">{t.name}</p>
                   <p className="font-body text-dark-m text-xs mt-1">{t.company}</p>
@@ -292,12 +313,22 @@ export default function ResultsAboutTestimonialsPage() {
             </BlurFade>
           </div>
 
-          {/* Footer */}
-          <BlurFade delay={0.6} className="mt-20 pt-8 border-t-[2px] border-dark-b flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-heading text-xl text-yellow tracking-wide">GDS</p>
-            <p className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/20">
-              © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy · All rights reserved
-            </p>
+          {/* Footer — oversized bookend statement */}
+          <BlurFade delay={0.6} className="mt-20 pt-8 border-t-[2px] border-dark-b">
+            <div className="overflow-hidden mb-6">
+              <p
+                className="font-heading text-white/[0.07] leading-none tracking-wide select-none"
+                style={{ fontSize: 'clamp(2.5rem, 7vw, 6.5rem)', WebkitTextStroke: '1px rgba(255,255,255,0.12)', color: 'transparent' }}
+              >
+                DIFFERENT THINKING. BETTER SYSTEMS.
+              </p>
+            </div>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="font-heading text-xl text-yellow tracking-wide">GDS</p>
+              <p className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/20">
+                © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy · All rights reserved
+              </p>
+            </div>
           </BlurFade>
         </div>
       </section>

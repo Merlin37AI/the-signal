@@ -42,7 +42,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className="min-h-screen pt-[110px] grid md:grid-cols-[1fr_400px] lg:grid-cols-[1fr_460px] border-b-[3px] border-ink bg-bg"
+      className="relative min-h-screen pt-[110px] grid md:grid-cols-[1fr_400px] lg:grid-cols-[1fr_460px] border-b-[3px] border-ink bg-bg"
     >
       {/* LEFT: Typography */}
       <div className="px-6 md:px-10 lg:px-16 py-14 md:py-20 flex flex-col justify-between border-r-0 md:border-r-[3px] border-ink">
@@ -106,6 +106,27 @@ export default function Hero() {
             ))}
           </div>
         </BlurFade>
+      </div>
+
+      {/* Rotated availability stamp — anchors the two columns */}
+      <div
+        className="hidden md:flex absolute items-center justify-center z-20"
+        style={{
+          left: 'calc(100% / 12 * 7 - 64px)',
+          top: '160px',
+          width: '128px',
+          height: '128px',
+          transform: 'rotate(-12deg)',
+        }}
+      >
+        <div
+          className="w-full h-full rounded-full bg-accent border-[3px] border-ink flex items-center justify-center text-center"
+          style={{ boxShadow: '4px 4px 0 #0F0F0F' }}
+        >
+          <span className="font-heading text-white leading-tight tracking-[0.1em]" style={{ fontSize: '0.72rem' }}>
+            TAKING<br />NEW<br />CLIENTS
+          </span>
+        </div>
       </div>
 
       {/* RIGHT: Stats panel + image — parallax target */}

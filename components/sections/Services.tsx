@@ -84,7 +84,7 @@ export default function Services() {
       <div className="grid md:grid-cols-3 border-t-0">
         {tiers.map((tier, i) => (
           <BlurFade key={tier.name} delay={0.1 + i * 0.12}>
-            <div className={`flex flex-col h-full border-r-[3px] last:border-r-0 border-ink relative ${
+            <div className={`service-card flex flex-col h-full border-r-[3px] last:border-r-0 border-ink relative ${
               tier.dark ? 'bg-ink text-white' : 'bg-bg text-ink'
             }`}>
 

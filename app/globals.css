@@ -48,8 +48,8 @@ body {
 .reveal-delay-5 { transition-delay: 0.40s; }
 
 /* ── Section padding ── */
-.section-pad { @apply px-6 md:px-12 lg:px-20 py-20 md:py-28; }
-.section-pad-sm { @apply px-6 md:px-12 lg:px-20 py-14 md:py-20; }
+.section-pad { @apply px-6 md:px-12 lg:px-20 py-24 md:py-28; }
+.section-pad-sm { @apply px-6 md:px-12 lg:px-20 py-20 md:py-20; }
 .container-lg { @apply max-w-6xl mx-auto; }
 .container-md { @apply max-w-4xl mx-auto; }
 
@@ -263,6 +263,80 @@ body {
 }
 .animate-ticker-reverse {
   animation: ticker-reverse 28s linear infinite;
+}
+
+/* ── Scan line ── */
+@keyframes scan {
+  0%   { top: 0%; opacity: 1; }
+  88%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  animation: scan 5s linear infinite;
+  box-shadow: 0 0 14px 3px rgba(217,0,0,0.55);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ── Crosshair cursor ── */
+#cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.3s;
+}
+#cursor-dot::before,
+#cursor-dot::after {
+  content: '';
+  position: absolute;
+  background: var(--accent);
+  transition: width 0.18s cubic-bezier(0.34,1.56,0.64,1),
+              height 0.18s cubic-bezier(0.34,1.56,0.64,1),
+              transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+}
+#cursor-dot::before {
+  width: 2px;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#cursor-dot::after {
+  width: 20px;
+  height: 2px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#cursor-dot.hovered::before {
+  height: 36px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+#cursor-dot.hovered::after {
+  width: 36px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* ── Service card hover tilt ── */
+.service-card {
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.15s ease;
+  transform-origin: bottom center;
+}
+.service-card:hover {
+  transform: perspective(900px) rotateX(-1.5deg) rotateY(1deg) translateY(-5px);
+  box-shadow: -6px -6px 0 var(--accent);
+  z-index: 2;
+  position: relative;
 }
 
 /* ── Full-screen mobile menu link animation ── */
