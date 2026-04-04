@@ -265,14 +265,6 @@ body {
   animation: ticker-reverse 28s linear infinite;
 }
 
-/* ── Diagonal section break ── */
-.diagonal-top {
-  clip-path: polygon(0 clamp(18px, 2.5vw, 36px), 100% 0%, 100% 100%, 0 100%);
-  margin-top: calc(-1 * clamp(18px, 2.5vw, 36px));
-  position: relative;
-  z-index: 1;
-}
-
 /* ── Full-screen mobile menu link animation ── */
 @keyframes menu-item-in {
   from { opacity: 0; transform: translateY(24px); }

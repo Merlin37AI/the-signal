@@ -31,7 +31,7 @@ const problems = [
 
 export default function PainPoints() {
   return (
-    <section id="pain" className="zone-dark noise-overlay border-b-[3px] border-ink diagonal-top">
+    <section id="pain" className="zone-dark noise-overlay border-b-[3px] border-ink">
       {/* Section header */}
       <div className="px-6 md:px-12 lg:px-20">
         <div className="section-header-bar border-ink/20">
