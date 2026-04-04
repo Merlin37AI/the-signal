@@ -86,12 +86,11 @@ export default function Nav() {
           </nav>
 
           {/* Desktop CTA */}
-          <a
-            href={contactHref}
-            className="hidden md:inline-flex btn-red text-xs px-5 py-2.5"
-          >
-            Work With Gary
-          </a>
+          <div className="hidden md:block">
+            <a href={contactHref} className="btn-red text-xs px-5 py-2.5">
+              Work With Gary
+            </a>
+          </div>
 
           {/* Mobile menu button */}
           <button
