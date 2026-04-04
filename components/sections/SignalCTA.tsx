@@ -385,11 +385,18 @@ export default function ResultsAboutTestimonialsPage() {
               </span>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <span className="font-heading text-white/30 leading-none" style={{ fontSize: '1.4rem', letterSpacing: '0.04em' }}>GDS</span>
-              <p className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/20">
-                © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy · All rights reserved
-              </p>
+              <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+                <div className="flex gap-4">
+                  <a href="/privacy" className="font-sub font-700 text-[0.55rem] tracking-[0.14em] uppercase text-white/20 hover:text-white/50 transition-colors">Privacy Policy</a>
+                  <a href="/cookies" className="font-sub font-700 text-[0.55rem] tracking-[0.14em] uppercase text-white/20 hover:text-white/50 transition-colors">Cookie Policy</a>
+                  <a href="/terms" className="font-sub font-700 text-[0.55rem] tracking-[0.14em] uppercase text-white/20 hover:text-white/50 transition-colors">Terms</a>
+                </div>
+                <p className="font-sub font-semibold text-[0.55rem] tracking-[0.1em] uppercase text-white/15">
+                  © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy · All rights reserved
+                </p>
+              </div>
             </div>
           </BlurFade>
         </div>

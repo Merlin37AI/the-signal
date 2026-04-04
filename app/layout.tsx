@@ -3,6 +3,7 @@ import { Bebas_Neue, Barlow_Condensed, Barlow } from 'next/font/google'
 import './globals.css'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import PageTransition from '@/components/ui/PageTransition'
+import CookieConsent from '@/components/ui/CookieConsent'
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PageTransition />
         <ScrollReveal />
         {children}
+        <CookieConsent />
       </body>
     </html>
   )
