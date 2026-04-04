@@ -174,7 +174,7 @@ export default function Terms() {
 
           {/* Footer links */}
           <div className="mt-16 pt-8 border-t-[2px] border-ink/15 flex flex-wrap gap-6">
-            <Link href="/" className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-muted hover:text-accent transition-colors">← Back to Home</Link>
+            <Link href="/home" className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-muted hover:text-accent transition-colors">← Back to Home</Link>
             <Link href="/privacy" className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-muted hover:text-accent transition-colors">Privacy Policy</Link>
             <Link href="/cookies" className="font-sub font-700 text-xs tracking-[0.14em] uppercase text-muted hover:text-accent transition-colors">Cookie Policy</Link>
           </div>

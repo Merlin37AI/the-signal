@@ -307,7 +307,7 @@ export default function ClientsPage() {
                 >
                   Book an Intro Call →
                 </a>
-                <Link href="/" className="btn-ghost-dark whitespace-nowrap text-center">
+                <Link href="/home" className="btn-ghost-dark whitespace-nowrap text-center">
                   ← Back to Site
                 </Link>
               </div>

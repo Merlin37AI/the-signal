@@ -43,7 +43,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
   const pathname = usePathname()
-  const isHome = pathname === '/'
+  const isHome = pathname === '/home'
 
   // Track active section for dot indicator
   useEffect(() => {
@@ -63,11 +63,11 @@ export default function Nav() {
   }, [])
 
   const resolveHref = (href: string) => {
-    if (href.startsWith('#') && !isHome) return `/${href}`
+    if (href.startsWith('#') && !isHome) return `/home${href}`
     return href
   }
 
-  const contactHref = isHome ? '#contact' : '/#contact'
+  const contactHref = isHome ? '#contact' : '/home#contact'
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function Nav() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-ink border-b-[3px] border-ink">
         <div className="h-14 flex items-center justify-between px-6 md:px-10">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 relative z-[70]" aria-label="Gary Does Strategy — Home">
+          <a href="/home" className="flex items-center gap-3 relative z-[70]" aria-label="Gary Does Strategy — Home">
             {/* Mark */}
             <span className="font-heading text-white leading-none" style={{ fontSize: '1.6rem', letterSpacing: '0.04em' }}>GDS</span>
             {/* Wordmark — desktop only */}
