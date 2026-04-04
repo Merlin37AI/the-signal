@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { BlurFade } from '@/components/ui/animations/blur-fade'
-import Logo from '@/components/ui/Logo'
 
 const testimonials = [
   {
@@ -261,6 +260,41 @@ export default function ResultsAboutTestimonialsPage() {
                 Book a free 20-minute intro call. No pitch, no jargon — just an honest conversation
                 about your business and where AI can create real value for you.
               </p>
+
+              {/* Inline contact form */}
+              <form
+                className="mb-8 border-[3px] border-dark-b"
+                onSubmit={(e) => { e.preventDefault() }}
+              >
+                <div className="border-b-[2px] border-dark-b">
+                  <label className="block font-sub font-700 text-[0.55rem] tracking-[0.22em] uppercase text-white/30 px-5 pt-4 pb-1">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Jane Smith"
+                    className="w-full bg-transparent px-5 pb-4 font-body text-white text-sm placeholder-white/20 focus:outline-none focus:placeholder-white/10 transition-colors"
+                  />
+                </div>
+                <div className="border-b-[2px] border-dark-b">
+                  <label className="block font-sub font-700 text-[0.55rem] tracking-[0.22em] uppercase text-white/30 px-5 pt-4 pb-1">
+                    What&apos;s on your mind?
+                  </label>
+                  <textarea
+                    placeholder="Tell me about your business and the challenge you're facing…"
+                    rows={3}
+                    className="w-full bg-transparent px-5 pb-4 font-body text-white text-sm placeholder-white/20 focus:outline-none focus:placeholder-white/10 resize-none transition-colors"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="btn-red w-full justify-center"
+                  style={{ borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderRadius: 0 }}
+                >
+                  Send Message →
+                </button>
+              </form>
+
               <div className="flex flex-wrap gap-4 mb-8">
                 <a
                   href="https://calendly.com/quigleygary/signal-call"
@@ -324,8 +358,35 @@ export default function ResultsAboutTestimonialsPage() {
                 DIFFERENT THINKING. BETTER SYSTEMS.
               </p>
             </div>
+            {/* Social bar */}
+            <div className="flex mb-6">
+              <a
+                href="https://www.linkedin.com/in/gary-quigley"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 border-[2px] border-white/10 px-5 py-3 font-sub font-700 text-[0.6rem] tracking-[0.14em] uppercase text-white/40 hover:text-white hover:border-yellow hover:bg-yellow/10 transition-all duration-150"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+                LinkedIn
+              </a>
+              <a
+                href="mailto:gary@garydoesstrategy.com"
+                className="flex items-center gap-2.5 border-[2px] border-l-0 border-white/10 px-5 py-3 font-sub font-700 text-[0.6rem] tracking-[0.14em] uppercase text-white/40 hover:text-white hover:border-accent hover:bg-accent/10 transition-all duration-150"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Email
+              </a>
+              <span className="flex items-center border-[2px] border-l-0 border-white/10 px-5 py-3 font-sub font-700 text-[0.6rem] tracking-[0.14em] uppercase text-white/15">
+                Dubai, UAE · UK
+              </span>
+            </div>
+
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <Logo variant="reversed" size={32} showWordmark={false} />
+              <span className="font-heading text-white/30 leading-none" style={{ fontSize: '1.4rem', letterSpacing: '0.04em' }}>GDS</span>
               <p className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/20">
                 © {new Date().getFullYear()} Gary Quigley · Gary Does Strategy · All rights reserved
               </p>

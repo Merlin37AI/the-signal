@@ -326,17 +326,55 @@ body {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-/* ── Service card hover tilt ── */
-.service-card {
-  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 0.15s ease;
-  transform-origin: bottom center;
+
+/* ── 01: Hero word stamp reveal ── */
+@keyframes word-stamp {
+  from { clip-path: inset(0 100% 0 0); transform: skewX(-3deg); }
+  to   { clip-path: inset(0 0% 0 0);   transform: skewX(0deg); }
 }
-.service-card:hover {
-  transform: perspective(900px) rotateX(-1.5deg) rotateY(1deg) translateY(-5px);
-  box-shadow: -6px -6px 0 var(--accent);
-  z-index: 2;
-  position: relative;
+.word-stamp {
+  display: block;
+  animation: word-stamp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── 06: Stats progress bar ── */
+@keyframes bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.stat-bar {
+  transform-origin: left;
+  animation: bar-grow 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--bar-delay, 0.2s);
+}
+
+/* ── 08: Ink rule section divider ── */
+@keyframes ink-rule-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ink-rule {
+  height: 28px;
+  background: var(--ink);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+}
+.ink-rule-inner {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ink-rule-scroll 28s linear infinite;
+  will-change: transform;
+}
+.ink-rule-item {
+  font-weight: 700;
+  font-size: 0.52rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.12);
+  padding-right: 3rem;
 }
 
 /* ── Full-screen mobile menu link animation ── */

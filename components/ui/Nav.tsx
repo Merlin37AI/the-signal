@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import Logo from '@/components/ui/Logo'
 
 const links = [
   { label: 'About',      href: '#about'     },
@@ -42,8 +41,26 @@ const credentialItems = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
   const pathname = usePathname()
   const isHome = pathname === '/'
+
+  // Track active section for dot indicator
+  useEffect(() => {
+    const sectionIds = ['about', 'how-i-work', 'services', 'results', 'contact']
+    const observers: IntersectionObserver[] = []
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id)
+      if (!el) return
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id) },
+        { threshold: 0.25, rootMargin: '-56px 0px -20% 0px' }
+      )
+      obs.observe(el)
+      observers.push(obs)
+    })
+    return () => observers.forEach(o => o.disconnect())
+  }, [])
 
   const resolveHref = (href: string) => {
     if (href.startsWith('#') && !isHome) return `/${href}`
@@ -64,28 +81,36 @@ export default function Nav() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-ink border-b-[3px] border-ink">
         <div className="h-14 flex items-center justify-between px-6 md:px-10">
           {/* Logo */}
-          <a href="/" className="flex items-center relative z-[70]" aria-label="Gary Does Strategy — Home">
-            {/* Mobile: mark only */}
-            <span className="md:hidden">
-              <Logo variant="reversed" size={30} showWordmark={false} />
-            </span>
-            {/* Desktop: full lockup */}
-            <span className="hidden md:block">
-              <Logo variant="reversed" size={34} />
+          <a href="/" className="flex items-center gap-3 relative z-[70]" aria-label="Gary Does Strategy — Home">
+            {/* Mark */}
+            <span className="font-heading text-white leading-none" style={{ fontSize: '1.6rem', letterSpacing: '0.04em' }}>GDS</span>
+            {/* Wordmark — desktop only */}
+            <span className="hidden md:flex flex-col leading-none border-l border-white/20 pl-3">
+              <span className="font-heading text-white text-sm tracking-widest">GARY</span>
+              <span className="font-sub font-700 text-[0.55rem] tracking-[0.18em] uppercase text-white/45">DOES STRATEGY</span>
             </span>
           </a>
 
           {/* Desktop links */}
           <nav className="hidden md:flex items-center gap-8">
-            {links.map(({ label, href }) => (
-              <a
-                key={href}
-                href={resolveHref(href)}
-                className="font-sub font-semibold text-xs tracking-[0.14em] uppercase text-white/60 hover:text-white transition-colors duration-150"
-              >
-                {label}
-              </a>
-            ))}
+            {links.map(({ label, href }) => {
+              const sectionId = href.replace('#', '').replace('/', '')
+              const isActive = isHome && activeSection === sectionId
+              return (
+                <a
+                  key={href}
+                  href={resolveHref(href)}
+                  className="relative flex flex-col items-center gap-1 font-sub font-semibold text-xs tracking-[0.14em] uppercase transition-colors duration-150"
+                  style={{ color: isActive ? '#fff' : 'rgba(255,255,255,0.5)' }}
+                >
+                  {label}
+                  <span
+                    className="w-1 h-1 bg-yellow transition-opacity duration-200"
+                    style={{ opacity: isActive ? 1 : 0 }}
+                  />
+                </a>
+              )
+            })}
           </nav>
 
           {/* Desktop CTA */}
@@ -142,9 +167,13 @@ export default function Nav() {
 
       {/* Full-screen mobile menu overlay */}
       <div
-        className={`md:hidden fixed inset-0 z-[60] bg-ink flex flex-col justify-between px-8 pt-[72px] pb-10 transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-[60] flex flex-col justify-between px-8 pt-[72px] pb-10 transition-opacity duration-300 ${
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
+        style={{
+          background: '#0F0F0F',
+          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 30px)',
+        }}
       >
         {/* Nav links */}
         <nav className="flex flex-col mt-6">
@@ -174,7 +203,7 @@ export default function Nav() {
             Work With Gary →
           </a>
           <div className="flex justify-center">
-            <Logo variant="reversed" size={28} showWordmark={false} />
+            <span className="font-heading text-white/30 leading-none" style={{ fontSize: '1.4rem', letterSpacing: '0.04em' }}>GDS</span>
           </div>
         </div>
       </div>

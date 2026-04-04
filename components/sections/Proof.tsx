@@ -67,33 +67,35 @@ export default function Comparison() {
           {work.map((c, ci) => (
             <BlurFade key={c.client} delay={0.1 + ci * 0.15}>
               <div className="border-[3px] border-ink overflow-hidden" style={{ boxShadow: '6px 6px 0 #D90000' }}>
-                {/* Image banner */}
-                <div className="relative w-full h-52 md:h-64 overflow-hidden border-b-[3px] border-ink">
+                {/* Image banner — hover reveals ink overlay */}
+                <div className="relative w-full h-52 md:h-64 overflow-hidden border-b-[3px] border-ink group">
                   <Image
                     src={c.image}
                     alt={c.imageAlt}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 1200px"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-transparent" />
-                  {/* Labels */}
-                  <div className="absolute bottom-5 left-6 flex items-center gap-3">
-                    <span className="font-sub font-700 text-xs tracking-[0.15em] uppercase text-white bg-accent border-[2px] border-accent px-3 py-1.5">
-                      {c.tag}
-                    </span>
-                    <span className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/70 border border-white/20 px-3 py-1.5">
-                      {c.location}
-                    </span>
-                  </div>
-                  {/* Role in corner */}
-                  <div className="absolute bottom-4 right-6 text-right">
-                    <p className="font-sub font-700 text-[0.6rem] tracking-[0.14em] uppercase text-yellow/70 mb-0.5">
-                      Gary&apos;s role
-                    </p>
-                    <p className="font-heading text-yellow leading-tight" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)' }}>
-                      {c.role.toUpperCase()}
-                    </p>
+                  {/* Permanent subtle gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+                  {/* Hover reveal ink panel */}
+                  <div className="absolute inset-x-0 bottom-0 bg-ink translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out p-5 flex items-end justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className="font-sub font-700 text-xs tracking-[0.15em] uppercase text-white bg-accent border-[2px] border-accent px-3 py-1.5">
+                        {c.tag}
+                      </span>
+                      <span className="font-sub font-semibold text-xs tracking-[0.1em] uppercase text-white/50 border border-white/20 px-3 py-1.5">
+                        {c.location}
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-sub font-700 text-[0.6rem] tracking-[0.14em] uppercase text-yellow/70 mb-0.5">
+                        Gary&apos;s role
+                      </p>
+                      <p className="font-heading text-yellow leading-tight" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)' }}>
+                        {c.role.toUpperCase()}
+                      </p>
+                    </div>
                   </div>
                 </div>
 

@@ -70,6 +70,26 @@ export default function CredibilityBar() {
                 Agency, Control Risks, and several high-growth businesses — that wiring gave me
                 an edge: I spot broken patterns in systems that everyone else has learned to work around.
               </p>
+            </div>
+          </BlurFade>
+
+          {/* Pull quote */}
+          <BlurFade delay={0.28}>
+            <blockquote
+              className="my-8 pl-6 font-heading text-ink leading-[1.0] tracking-wide"
+              style={{
+                fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)',
+                borderLeft: '6px solid #FFD600',
+                transform: 'rotate(-1deg)',
+                transformOrigin: 'left center',
+              }}
+            >
+              I spot broken patterns in systems that everyone else has learned to work around.
+            </blockquote>
+          </BlurFade>
+
+          <BlurFade delay={0.35}>
+            <div className="space-y-4 font-body text-muted text-base leading-relaxed">
               <p>
                 I now work as a Fractional AI Advisor: embedded inside leadership teams, without
                 the full-time cost. I don&apos;t sell AI tools. I don&apos;t produce 60-slide

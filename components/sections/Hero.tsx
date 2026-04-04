@@ -53,18 +53,24 @@ export default function Hero() {
             </p>
           </BlurFade>
 
-          {/* Big brutalist headline */}
+          {/* Big brutalist headline — staggered word stamp reveal */}
           <div className="mb-10">
-            <BlurFade delay={0.1}>
-              <h1 className="font-heading leading-[0.92] tracking-wide" style={{ fontSize: 'clamp(4.5rem, 12vw, 11rem)' }}>
-                <span className="block text-ink">DIFFERENT</span>
-                <span className="block" style={{ WebkitTextStroke: '3px #0F0F0F', color: 'transparent' }}>THINKING.</span>
-                <span className="block">
+            <h1 className="font-heading leading-[0.92] tracking-wide" style={{ fontSize: 'clamp(4.5rem, 12vw, 11rem)' }}>
+              <span className="block overflow-hidden">
+                <span className="word-stamp text-ink" style={{ animationDelay: '0.08s' }}>DIFFERENT</span>
+              </span>
+              <span className="block overflow-hidden">
+                <span className="word-stamp" style={{ WebkitTextStroke: '3px #0F0F0F', color: 'transparent', animationDelay: '0.22s' }}>THINKING.</span>
+              </span>
+              <span className="block overflow-hidden">
+                <span className="word-stamp" style={{ animationDelay: '0.36s' }}>
                   <span className="bg-yellow text-ink px-3 inline-block">BETTER</span>
                 </span>
-                <span className="block text-accent">SYSTEMS.</span>
-              </h1>
-            </BlurFade>
+              </span>
+              <span className="block overflow-hidden">
+                <span className="word-stamp text-accent" style={{ animationDelay: '0.50s' }}>SYSTEMS.</span>
+              </span>
+            </h1>
           </div>
 
           <BlurFade delay={0.35}>

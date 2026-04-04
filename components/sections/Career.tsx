@@ -1,6 +1,5 @@
 'use client'
 
-import { useRef } from 'react'
 import { BlurFade } from '@/components/ui/animations/blur-fade'
 
 const steps = [
@@ -34,8 +33,6 @@ const steps = [
 ]
 
 export default function HowItWorks() {
-  const scrollRef = useRef<HTMLDivElement>(null)
-
   return (
     <section id="how-i-work" className="zone-light border-b-[3px] border-ink overflow-hidden">
       {/* Section header */}
@@ -64,34 +61,19 @@ export default function HowItWorks() {
         </BlurFade>
       </div>
 
-      {/* Horizontal scroll steps */}
-      <div
-        ref={scrollRef}
-        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none border-t-[3px] border-ink"
-        style={{ cursor: 'grab' }}
-        onMouseDown={(e) => {
-          const el = scrollRef.current
-          if (!el) return
-          el.style.cursor = 'grabbing'
-          const startX = e.pageX - el.offsetLeft
-          const scrollLeft = el.scrollLeft
-          const onMove = (ev: MouseEvent) => { el.scrollLeft = scrollLeft - (ev.pageX - el.offsetLeft - startX) }
-          const onUp = () => { el.style.cursor = 'grab'; window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp) }
-          window.addEventListener('mousemove', onMove)
-          window.addEventListener('mouseup', onUp)
-        }}
-      >
-        {steps.map((step, i) => (
+      {/* Steps grid */}
+      <div className="border-t-[3px] border-ink grid grid-cols-1 md:grid-cols-3">
+        {steps.map((step) => (
           <div
             key={step.num}
-            className="snap-start shrink-0 relative border-r-[3px] last:border-r-0 border-ink bg-bg flex flex-col justify-between select-none"
-            style={{ width: 'clamp(280px, 72vw, 560px)', minHeight: '420px', padding: 'clamp(1.5rem, 4vw, 3.5rem)' }}
+            className="relative border-b-[3px] md:border-b-0 md:border-r-[3px] last:border-r-0 border-ink bg-bg flex flex-col justify-between"
+            style={{ minHeight: '420px', padding: 'clamp(1.5rem, 4vw, 3rem)' }}
           >
             {/* Ghost step number watermark */}
             <span
               aria-hidden="true"
               className="absolute bottom-0 right-0 font-heading text-ink/[0.05] leading-none select-none pointer-events-none"
-              style={{ fontSize: 'clamp(8rem, 22vw, 18rem)', lineHeight: 0.85 }}
+              style={{ fontSize: 'clamp(8rem, 16vw, 14rem)', lineHeight: 0.85 }}
             >
               {step.num}
             </span>
@@ -106,18 +88,12 @@ export default function HowItWorks() {
                   <p className="font-heading text-ink text-2xl leading-none tracking-wide">{step.label.toUpperCase()}</p>
                   <p className="font-sub font-semibold text-xs tracking-[0.14em] uppercase text-muted mt-1">{step.duration}</p>
                 </div>
-                {/* Drag hint on first card */}
-                {i === 0 && (
-                  <span className="ml-auto font-sub font-700 text-[0.55rem] tracking-[0.18em] uppercase text-muted/40 hidden md:block">
-                    drag →
-                  </span>
-                )}
               </div>
 
-              <h4 className="font-sub font-700 text-ink text-xl uppercase tracking-wide mb-4 leading-snug max-w-sm">
+              <h4 className="font-sub font-700 text-ink text-xl uppercase tracking-wide mb-4 leading-snug">
                 {step.headline}
               </h4>
-              <p className="font-body text-muted text-sm leading-relaxed mb-8 max-w-sm">{step.description}</p>
+              <p className="font-body text-muted text-sm leading-relaxed mb-8">{step.description}</p>
             </div>
 
             {/* Output strip */}
@@ -127,36 +103,22 @@ export default function HowItWorks() {
             </div>
           </div>
         ))}
-
-        {/* Final guarantee card */}
-        <div
-          className="snap-start shrink-0 bg-ink flex flex-col justify-center border-r-0 select-none"
-          style={{ width: 'clamp(260px, 60vw, 480px)', padding: 'clamp(1.5rem, 4vw, 3.5rem)' }}
-        >
-          <div className="guarantee-badge mb-6" style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#FFD600' }}>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-            No theory. No vanishing acts.
-          </div>
-          <p className="font-heading text-white tracking-wide mb-4 leading-[0.95]" style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)' }}>
-            I DON&apos;T HAND OVER A DECK AND DISAPPEAR.
-          </p>
-          <p className="font-body text-dark-m text-sm leading-relaxed mb-8">
-            Every engagement includes ongoing involvement — whether that&apos;s a monthly retainer,
-            a project build, or a standing seat in your leadership sessions.
-          </p>
-          <a href="#contact" className="btn-red self-start whitespace-nowrap">
-            Start a Conversation →
-          </a>
-        </div>
       </div>
 
-      {/* Mobile scroll hint */}
-      <div className="md:hidden px-6 py-3 border-t-[2px] border-ink/10">
-        <p className="font-sub font-700 text-[0.55rem] tracking-[0.2em] uppercase text-muted/40">
-          ← scroll to explore →
+      {/* Guarantee strip */}
+      <div className="bg-ink px-6 md:px-12 lg:px-20 py-12 flex flex-col md:flex-row items-start md:items-center gap-8">
+        <div className="guarantee-badge shrink-0" style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#FFD600' }}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          No theory. No vanishing acts.
+        </div>
+        <p className="font-heading text-white tracking-wide leading-[0.95] flex-1" style={{ fontSize: 'clamp(1.4rem, 3vw, 2.2rem)' }}>
+          I DON&apos;T HAND OVER A DECK AND DISAPPEAR.
         </p>
+        <a href="#contact" className="btn-red shrink-0 whitespace-nowrap">
+          Start a Conversation →
+        </a>
       </div>
     </section>
   )

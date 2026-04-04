@@ -5,6 +5,7 @@ import { BlurFade } from '@/components/ui/animations/blur-fade'
 const tiers = [
   {
     num: 'A',
+    topAccent: 'rgba(15,15,15,0.2)',
     name: 'AI\nClarity\nSession',
     tagline: 'Understand before you invest.',
     price: '£750',
@@ -25,6 +26,7 @@ const tiers = [
   },
   {
     num: 'B',
+    topAccent: '#FFD600',
     name: 'Advisory\nRetainer',
     tagline: 'Senior AI thinking. Monthly.',
     price: 'From £3,000',
@@ -46,6 +48,7 @@ const tiers = [
   },
   {
     num: 'C',
+    topAccent: '#D90000',
     name: 'Build &\nImplement',
     tagline: 'From roadmap to running systems.',
     price: 'From £8,500',
@@ -84,9 +87,9 @@ export default function Services() {
       <div className="grid md:grid-cols-3 border-t-0">
         {tiers.map((tier, i) => (
           <BlurFade key={tier.name} delay={0.1 + i * 0.12}>
-            <div className={`service-card flex flex-col h-full border-r-[3px] last:border-r-0 border-ink relative ${
+            <div className={`flex flex-col h-full border-r-[3px] last:border-r-0 border-ink relative ${
               tier.dark ? 'bg-ink text-white' : 'bg-bg text-ink'
-            }`}>
+            }`} style={{ borderTop: `4px solid ${tier.topAccent}` }}>
 
               {/* Most popular banner */}
               {tier.dark && (

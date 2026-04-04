@@ -3,10 +3,10 @@
 import { NumberTicker } from '@/components/ui/animations/number-ticker'
 
 const stats = [
-  { n: 8,  suffix: '+', label: 'Years in enterprise IT & operations',  accent: 'text-accent'  },
-  { n: 2,  suffix: '',  label: 'Active fractional clients right now',   accent: 'text-yellow'  },
-  { n: 14, suffix: '',  label: 'Days average to first recommendations', accent: 'text-white'   },
-  { n: 3,  suffix: '',  label: 'Engagement models to choose from',      accent: 'text-accent'  },
+  { n: 8,  suffix: '+', label: 'Years in enterprise IT & operations',  accent: 'text-accent', barColor: '#D90000', barWidth: 80 },
+  { n: 2,  suffix: '',  label: 'Active fractional clients right now',   accent: 'text-yellow', barColor: '#FFD600', barWidth: 40 },
+  { n: 14, suffix: '',  label: 'Days average to first recommendations', accent: 'text-white',  barColor: '#ffffff', barWidth: 60 },
+  { n: 3,  suffix: '',  label: 'Engagement models to choose from',      accent: 'text-accent', barColor: '#D90000', barWidth: 30 },
 ]
 
 export default function StatsBreak() {
@@ -44,6 +44,18 @@ export default function StatsBreak() {
           <p className="font-sub font-700 text-[0.58rem] tracking-[0.22em] uppercase text-white/35 relative z-10 mt-4 leading-snug max-w-[12ch]">
             {s.label}
           </p>
+
+          {/* Progress bar */}
+          <div className="relative z-10 mt-4 h-[2px] w-full bg-white/[0.06] overflow-hidden">
+            <div
+              className="stat-bar h-full"
+              style={{
+                width: `${s.barWidth}%`,
+                background: s.barColor,
+                '--bar-delay': `${0.3 + i * 0.15}s`,
+              } as React.CSSProperties}
+            />
+          </div>
         </div>
       ))}
     </section>
