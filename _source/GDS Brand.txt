@@ -1,0 +1,225 @@
+
+GDS - One man Business
+Understand the scheduled triggers for 1 man business
+
+
+
+How can I help you today?
+
+
+Website framework and portfolio structure
+Last message 25 minutes ago
+Assessing business alignment and personalization
+Last message 5 hours ago
+Creating a soul.md file
+Last message 2 days ago
+SEMRush MCP prompt for AI advisor research
+Last message 4 days ago
+Group humanizer instructions
+Last message 5 days ago
+Business profile bio writing
+Last message 6 days ago
+LinkedIn outreach message templates
+Last message May 13
+Replicating Brooke Wright's AI consulting path
+Last message Apr 26
+Using Claude with attached files
+Last message Apr 26
+Memory
+Only you
+Purpose & context Gary Quigley is the founder of Gary Does Strategy (GDS), a Fractional AI Advisory practice operating under Peak13 Consulting Ltd. Website: garydoesstrategy.com. GDS serves founders and operations leaders in professional services, property, and operations-heavy sectors across the UK and UAE, targeting companies with roughly 10–100 staff. Services: AI Clarity Session — £750 Advisory Retainer — from £3k/month Build & Implement — from £8.5k Proprietary methodology: The PRISM Method (Probe, Review, Identify, Secure, Measure). Core positioning: diagnostic-first AI advisory. Gary's professional identity/brand persona is The Systematic Overcomer. Gary has approximately eight years of background in enterprise IT and operations (including work at Control Risks). Credentials include ITIL 4, Six Sigma Green Belt, Micro MBA Cum Laude, and AI in Business (UPenn). He splits time between Dubai and the UK. Important distinction: Argenis Advisory (founder: Sailesh Jani) is a GDS client, not Gary's own business. Gary is building GDS using a structured 90-day roadmap across five phases, following a path modelled on Brooke Wright's AI consulting journey, adapted to his own context via an "Invisible Team" methodology. --- Current state Gary has completed Phase 1 (Positioning & Offer) in full, covering: PRISM Method framework creation, customer avatar development (three detailed ICPs), pricing architecture, and client-facing scope documents for all three service tiers. Phase 2 (Brand) is active. Skills confirmed active for this phase: brand-strategist, brand-copywriter, content-strategist, influence-builder, world-context-communicator, humanizer. P2 Task 01 — building the Interview Method brand voice system — was the next item on the tracker at the most recent checkpoint. A soul.md file has been created as a comprehensive identity, voice, and operational reference document for use by AI systems generating content as or for Gary. A corresponding Gary-specific section has been added to the humanizer skill file. Gary is also conducting competitive research in the fractional AI advisory space using Semrush via MCP integration, with garydoesstrategy.com as the reference domain. --- On the horizon Completing P2 brand voice build (Interview Method) — requires feeding in existing LinkedIn posts, podcast transcripts, or voice notes Follow-up Semrush prompt once initial competitor/keyword results are returned Phases 3–5 (Lead Gen, Sales, Delivery) remain ahead on the roadmap GDS assets noted as works in progress (not yet built): courses, newsletter, book, free audit LinkedIn outreach: industry-specific variations (accountancy, property, UAE) were offered but not yet actioned --- Key learnings & principles Gary explicitly corrected early framing that conflated Argenis Advisory as his own business — this distinction must be maintained GDS assets described as future/in-progress, not already built — do not overstate what exists Gary's neuroprofile shapes all content requirements: one idea per piece, one ask, no ambiguity, lead with output Positioning is diagnostic/advisor, never vendor — authority comes through diagnosis framing Pricing architecture was substantially revised upward after an audit identified significant underpricing across all tiers (current public-facing prices per user instructions above) --- Approach & patterns Works sequentially through a tracked roadmap; methodical phase-by-phase progression Invokes specific skill files per task rather than giving detailed briefs — expects Claude to read and fully apply the skill without extensive back-and-forth Prefers outputs grounded in psychological frameworks with reasoning explained, not just polished copy Iterates by invoking skills, not by re-briefing from scratch Progress tracked via a custom Excel workbook (GDSRoadmapTracker_v2.xlsx) with seven sheets (Tracker, Skills, P1–P5 phase sheets), status dropdowns, conditional formatting, and auto-calculated progress metrics Documents produced in GDS brand palette and typography standards (see Tools & Resources) Voice & communication rules (critical for all content): Direct, short, British, colloquial British spellings throughout Zero corporate language, hype vocabulary, hedging, preamble, or fake warmth No filler phrases or AI-typical opener language Structural defaults: one idea per piece, one next action Extended vocabulary cut-list documented in soul.md and humanizer skill file Hates: "game-changer," "unlock," "leverage," "seamless," "cutting-edge," and similar hype terms Claude interactions: lead with output, give one next action, skip preamble --- Tools & resources Claude skills system — phase-specific skill files applied per task (humanizer, brand-strategist, brand-copywriter, content-strategist, etc.) soul.md — master identity/voice reference file; Gary-specific section added to humanizer SKILL.md Semrush via MCP integration — competitor and keyword research Notion — pipeline/CRM database (collection ID: e8d484d7-57e0-4a9d-8648-4ffa83ce6f0f); accessed via Notion:notion-search with collection://[id] format HubSpot — CRM notes and outreach tracking Connected tools: Gmail, Google Calendar, HubSpot, ClickUp, Apollo.io, Notion, Slack, Windsor.ai, Canva GDS brand standards: Colours: Black #0B0B0B, Off White #F2F2F2, Red #E10600, Yellow #FFD400, Dark Grey #6E6E6E, Mid Grey #BFBFBF Typography: Arial (body), Cormorant Garamond (display/HTML) Word and HTML documents produced to this palette
+
+Last updated 8 hours ago
+
+Instructions
+Add instructions to tailor Claude’s responses
+
+Files
+61% of project capacity used
+Search mode
+
+The 7-10 Hour Tech
+1,786 lines
+
+text
+
+
+
+GDS_Homepage_Wireframe_v3.html
+279 lines
+
+html
+
+
+
+GDS_Business_Setup_Guide_v1.docx
+598 lines
+
+docx
+
+
+
+GDS Brand
+58 lines
+
+text
+
+
+
+fCAIO Business Setup Guide — GDS.docx
+887 lines
+
+docx
+
+
+
+GenAIPi Inspiration
+158 lines
+
+text
+
+
+
+My Voice
+160 lines
+
+text
+
+
+
+Business Workflows
+199 lines
+
+text
+
+
+
+GDS_AI_Clarity_Session_Scope.docx
+117 lines
+
+docx
+
+
+
+Gary_Quigley_Personal_Profile.docx
+195 lines
+
+docx
+
+
+
+GDS_Avatar_3_Marcus_Osei.docx
+119 lines
+
+docx
+
+
+
+GDS_Avatar_2_Claire_Henderson.docx
+119 lines
+
+docx
+
+
+
+GDS_Avatar_1_David_AlMansoori.docx
+119 lines
+
+docx
+
+
+
+Understanding Yourself..docx
+123 lines
+
+docx
+
+
+
+Template for none.md.docx
+2,899 lines
+
+docx
+
+
+
+Invisible team.md.docx
+5,549 lines
+
+docx
+
+
+
+The Genuine Connector Blueprint.pdf
+3,051 lines
+
+pdf
+
+
+
+The 5-Minute Daily.pdf
+1,350 lines
+
+pdf
+
+
+
+GDS Brand
+1. Introduction
+The GDS Brand embodies a unique "Street-Luxe" aesthetic, seamlessly blending the timeless sophistication of classic luxury with the raw, rebellious energy of urban street art. Inspired by the visual foundation provided, the brand creates a compelling narrative where elegance meets edge, and tradition intertwines with contemporary culture. This document outlines the core identity, visual guidelines, and values that define the GDS Brand.
+ 
+2. Brand Identity
+2.1. Core Concept: The Duality of Street-Luxe
+GDS Brand is built upon the concept of duality: the harmonious contrast between refined luxury and gritty street culture. It represents a world where bespoke tailoring coexists with vibrant graffiti, and classic motifs are reinterpreted through an urban lens. This fusion creates a distinctive identity that is both aspirational and authentic, appealing to those who appreciate understated elegance and bold self-expression.
+ 
+2.2. Vision
+To redefine modern luxury by creating a brand that celebrates the unexpected synergy between classic sophistication and urban artistry, inspiring individuals to embrace their multifaceted identities.
+ 
+2.3. Mission
+To craft exceptional products and experiences that embody the "Street-Luxe" aesthetic, utilizing high-quality materials, innovative design, and a commitment to artistic expression. GDS Brand aims to empower its audience to make a statement that is both refined and rebellious.
+ 
+3. Visual Guidelines
+3.1. Color Palette
+The GDS Brand color palette is derived directly from the foundational image, emphasizing strong contrasts and strategic pops of color. The primary palette establishes the sophisticated base, while the accent colors inject the vibrant, rebellious spirit of street art.
+ 
+GDS Brand Color Palette
+Official GDS Brand Color Swatches
+ 
+Color Name	Hex Code	Usage
+Deep Black	#000000	Primary background, text, foundational elements
+Pure White	#FFFFFF	Primary text, contrast elements, negative space
+Graffiti Red	#E50000	Accent, bold statements, key highlights
+Urban Teal	#008080	Secondary accent, dynamic elements
+Gilded Yellow	#FFD700	Subtle accent, premium details, highlights
+3.2. Typography
+Typography for GDS Brand will reflect the dual nature of its identity. A sophisticated sans-serif typeface will be used for primary branding and formal communication, conveying luxury and heritage. This will be complemented by a more modern, possibly distressed or handwritten-style font for headlines, artistic elements, and informal messaging, echoing the graffiti aesthetic.
+ 
+Primary Font (Luxury/Classic): A clean, elegant sans-serif (e.g., Montserrat, Lato) or a refined serif (e.g., Playfair Display, Lora) for body text and formal headings.
+Secondary Font (Street/Graffiti): A bold, expressive, or slightly distressed display font for impactful headlines and artistic overlays (e.g., a custom-designed font or one inspired by street art lettering).
+3.3. Imagery Style
+Imagery will be central to communicating the GDS Brand identity. The style will be characterized by:
+ 
+High Contrast: Predominantly black and white photography with selective colorization, mirroring the core visual inspiration.
+Urban & Refined Settings: Juxtaposing elegant subjects (e.g., individuals in formal wear) within gritty, urban environments (e.g., brick walls, cityscapes with graffiti).
+Dynamic Composition: Use of strong lines, dramatic lighting, and unconventional angles to create a sense of movement and energy.
+Artistic Overlays: Integration of subtle or prominent graffiti-inspired elements, paint splatters, and textures to reinforce the street art influence.
+GDS Brand Mood Board
+GDS Brand Mood Board: Street-Luxe Aesthetic
+ 
+4. Brand Values
+GDS Brand is built on a foundation of core values that guide its actions, creations, and interactions:
+ 
+Authenticity
+Embracing genuine self-expression and staying true to the brand's unique blend of influences.
+Craftsmanship
+A relentless pursuit of quality, detail, and excellence in every product and experience.
+Innovation
+Continuously exploring new ideas, materials, and artistic collaborations to push the boundaries of luxury.
+Rebellion
+Challenging conventional norms and celebrating the spirit of individuality and creative freedom.
+Exclusivity
+Offering unique and distinctive pieces that resonate with a discerning audience.
+5. Conclusion
+The GDS Brand is more than just a label; it is a statement. By meticulously blending the worlds of classic luxury and vibrant street art, it offers a fresh perspective on modern elegance. This brand document serves as a foundational guide to ensure consistency and integrity across all facets of the GDS Brand, fostering a powerful and memorable identity in the market.
+ 
+Document created for GDS Brand. All rights reserved.

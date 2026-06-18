@@ -1,0 +1,327 @@
+
+GDS - One man Business
+Understand the scheduled triggers for 1 man business
+
+
+
+How can I help you today?
+
+
+Website framework and portfolio structure
+Last message 10 minutes ago
+Assessing business alignment and personalization
+Last message 5 hours ago
+Creating a soul.md file
+Last message 2 days ago
+SEMRush MCP prompt for AI advisor research
+Last message 4 days ago
+Group humanizer instructions
+Last message 5 days ago
+Business profile bio writing
+Last message 6 days ago
+LinkedIn outreach message templates
+Last message May 13
+Replicating Brooke Wright's AI consulting path
+Last message Apr 26
+Using Claude with attached files
+Last message Apr 26
+Memory
+Only you
+Purpose & context Gary Quigley is the founder of Gary Does Strategy (GDS), a Fractional AI Advisory practice operating under Peak13 Consulting Ltd. Website: garydoesstrategy.com. GDS serves founders and operations leaders in professional services, property, and operations-heavy sectors across the UK and UAE, targeting companies with roughly 10–100 staff. Services: AI Clarity Session — £750 Advisory Retainer — from £3k/month Build & Implement — from £8.5k Proprietary methodology: The PRISM Method (Probe, Review, Identify, Secure, Measure). Core positioning: diagnostic-first AI advisory. Gary's professional identity/brand persona is The Systematic Overcomer. Gary has approximately eight years of background in enterprise IT and operations (including work at Control Risks). Credentials include ITIL 4, Six Sigma Green Belt, Micro MBA Cum Laude, and AI in Business (UPenn). He splits time between Dubai and the UK. Important distinction: Argenis Advisory (founder: Sailesh Jani) is a GDS client, not Gary's own business. Gary is building GDS using a structured 90-day roadmap across five phases, following a path modelled on Brooke Wright's AI consulting journey, adapted to his own context via an "Invisible Team" methodology. --- Current state Gary has completed Phase 1 (Positioning & Offer) in full, covering: PRISM Method framework creation, customer avatar development (three detailed ICPs), pricing architecture, and client-facing scope documents for all three service tiers. Phase 2 (Brand) is active. Skills confirmed active for this phase: brand-strategist, brand-copywriter, content-strategist, influence-builder, world-context-communicator, humanizer. P2 Task 01 — building the Interview Method brand voice system — was the next item on the tracker at the most recent checkpoint. A soul.md file has been created as a comprehensive identity, voice, and operational reference document for use by AI systems generating content as or for Gary. A corresponding Gary-specific section has been added to the humanizer skill file. Gary is also conducting competitive research in the fractional AI advisory space using Semrush via MCP integration, with garydoesstrategy.com as the reference domain. --- On the horizon Completing P2 brand voice build (Interview Method) — requires feeding in existing LinkedIn posts, podcast transcripts, or voice notes Follow-up Semrush prompt once initial competitor/keyword results are returned Phases 3–5 (Lead Gen, Sales, Delivery) remain ahead on the roadmap GDS assets noted as works in progress (not yet built): courses, newsletter, book, free audit LinkedIn outreach: industry-specific variations (accountancy, property, UAE) were offered but not yet actioned --- Key learnings & principles Gary explicitly corrected early framing that conflated Argenis Advisory as his own business — this distinction must be maintained GDS assets described as future/in-progress, not already built — do not overstate what exists Gary's neuroprofile shapes all content requirements: one idea per piece, one ask, no ambiguity, lead with output Positioning is diagnostic/advisor, never vendor — authority comes through diagnosis framing Pricing architecture was substantially revised upward after an audit identified significant underpricing across all tiers (current public-facing prices per user instructions above) --- Approach & patterns Works sequentially through a tracked roadmap; methodical phase-by-phase progression Invokes specific skill files per task rather than giving detailed briefs — expects Claude to read and fully apply the skill without extensive back-and-forth Prefers outputs grounded in psychological frameworks with reasoning explained, not just polished copy Iterates by invoking skills, not by re-briefing from scratch Progress tracked via a custom Excel workbook (GDSRoadmapTracker_v2.xlsx) with seven sheets (Tracker, Skills, P1–P5 phase sheets), status dropdowns, conditional formatting, and auto-calculated progress metrics Documents produced in GDS brand palette and typography standards (see Tools & Resources) Voice & communication rules (critical for all content): Direct, short, British, colloquial British spellings throughout Zero corporate language, hype vocabulary, hedging, preamble, or fake warmth No filler phrases or AI-typical opener language Structural defaults: one idea per piece, one next action Extended vocabulary cut-list documented in soul.md and humanizer skill file Hates: "game-changer," "unlock," "leverage," "seamless," "cutting-edge," and similar hype terms Claude interactions: lead with output, give one next action, skip preamble --- Tools & resources Claude skills system — phase-specific skill files applied per task (humanizer, brand-strategist, brand-copywriter, content-strategist, etc.) soul.md — master identity/voice reference file; Gary-specific section added to humanizer SKILL.md Semrush via MCP integration — competitor and keyword research Notion — pipeline/CRM database (collection ID: e8d484d7-57e0-4a9d-8648-4ffa83ce6f0f); accessed via Notion:notion-search with collection://[id] format HubSpot — CRM notes and outreach tracking Connected tools: Gmail, Google Calendar, HubSpot, ClickUp, Apollo.io, Notion, Slack, Windsor.ai, Canva GDS brand standards: Colours: Black #0B0B0B, Off White #F2F2F2, Red #E10600, Yellow #FFD400, Dark Grey #6E6E6E, Mid Grey #BFBFBF Typography: Arial (body), Cormorant Garamond (display/HTML) Word and HTML documents produced to this palette
+
+Last updated 7 hours ago
+
+Instructions
+Add instructions to tailor Claude’s responses
+
+Files
+61% of project capacity used
+Search mode
+
+The 7-10 Hour Tech
+1,786 lines
+
+text
+
+
+
+GDS_Homepage_Wireframe_v3.html
+279 lines
+
+html
+
+
+
+GDS_Business_Setup_Guide_v1.docx
+598 lines
+
+docx
+
+
+
+GDS Brand
+58 lines
+
+text
+
+
+
+fCAIO Business Setup Guide — GDS.docx
+887 lines
+
+docx
+
+
+
+GenAIPi Inspiration
+158 lines
+
+text
+
+
+
+My Voice
+160 lines
+
+text
+
+
+
+Business Workflows
+199 lines
+
+text
+
+
+
+GDS_AI_Clarity_Session_Scope.docx
+117 lines
+
+docx
+
+
+
+Gary_Quigley_Personal_Profile.docx
+195 lines
+
+docx
+
+
+
+GDS_Avatar_3_Marcus_Osei.docx
+119 lines
+
+docx
+
+
+
+GDS_Avatar_2_Claire_Henderson.docx
+119 lines
+
+docx
+
+
+
+GDS_Avatar_1_David_AlMansoori.docx
+119 lines
+
+docx
+
+
+
+Understanding Yourself..docx
+123 lines
+
+docx
+
+
+
+Template for none.md.docx
+2,899 lines
+
+docx
+
+
+
+Invisible team.md.docx
+5,549 lines
+
+docx
+
+
+
+The Genuine Connector Blueprint.pdf
+3,051 lines
+
+pdf
+
+
+
+The 5-Minute Daily.pdf
+1,350 lines
+
+pdf
+
+
+
+My Voice
+How You Speak & Write
+1. Short, punchy, and direct
+You default to minimal language. A lot of your posts are one or two lines. You don't over-explain — you state something and let it land. Examples:
+ 
+"This is Gold!"
+ 
+"If you know you know"
+ 
+"I'm staying 🙂"
+ 
+"INSANE!!!!"
+ 
+"Upgrade"
+ 
+"First of the year"
+ 
+"I feel you mate"
+ 
+2. Heavy use of exclamation and caps for emphasis
+When something moves you, you let it show:
+ 
+"F*CKIN LOVE THIS WOMAN!!!!"
+ 
+"INSANE!!!!"
+ 
+"Merry Christmas from the Burj, next year top floor!"
+ 
+ALL-CAPS phrases like "No to Digital ID"
+ 
+3. Colloquial British voice
+You write the way you talk — informal, unfiltered, British:
+ 
+"mate" (used naturally, not forced)
+ 
+"dickheads" — no filter on frustration
+ 
+"Common!" — encouragement in your own voice
+ 
+"Win!" — self-explanatory, no fluff
+ 
+"I feel you mate" — directly empathetic in your dialect
+ 
+4. Dry wit / understated humour
+ 
+"Still waiting dickheads 🥱"
+ 
+"Ghosted on Zoom but it's ok 💀"
+ 
+"Ask the robot son, I'm busy."
+ 
+"Next year top floor!" (aspirational but delivered casually)
+ 
+5. Reflective and introspective when it matters
+You drop into a more thoughtful register for personal posts:
+ 
+"Last week was both tough"
+ 
+"Creating Again, and It Feels Good"
+ 
+"New man, Old lessons"
+ 
+"Called my mum yesterday. First time I've spoken to someone in England in months."
+ 
+"Every New Year I've set intentions."
+ 
+6. Engagement-first language
+You write to provoke thought or response:
+ 
+"Just curious if they have done the statistics on how many times people's jaws hit the floor..."
+ 
+"What do you say...."
+ 
+"Ever wonder if your AI is making things up? 🤔"
+ 
+"Honestly, could you get more..." (rhetorical framing)
+ 
+Your Interests
+1. Artificial Intelligence (core passion)
+This is your most consistent and deeply-engaged topic. You don't just share — you discuss AI:
+ 
+AI tools: ChatGPT, GPT Sonnet, Perplexity, Whimsical
+ 
+AI concepts: hallucination, AI divide, automating tasks
+ 
+AI in business: "If your business still treats AI as an expense instead of an opportunity, you're already behind"
+ 
+You regularly educate your audience about AI rather than just posting surface-level takes
+ 
+2. UK Politics & Civil Liberties (strong convictions)
+You're highly engaged with political and societal issues in the UK:
+ 
+Strong opposition to Digital ID ("No to Digital ID", "Global AI divide", linking to petition sites)
+ 
+Concern over government overreach (police confronting people for social media posts, Charlie Kirk coverage)
+ 
+You share content from UK Column, Bongino Report, LBC, TalkTVUK, Alex Phillips
+ 
+Your political posts are passionate and uncompromising in tone
+ 
+3. Business & Entrepreneurship (through Peak13 Consulting / Argenis Advisory)
+ 
+Networking events (you host and promote AI in Business networking)
+ 
+Professional services: consulting, strategy, AI advisory
+ 
+Content around "Changing the question around AI in business"
+ 
+You share moments about being stood up on Zoom calls, 9am to 10pm workdays — the real grind of running a consultancy
+ 
+4. Technology & Digital Tools
+Beyond AI specifically:
+ 
+Whimsical (mind mapping)
+ 
+Web design tools
+ 
+Skool (shared academy link)
+ 
+You're a tool-sharer — you recommend things you find useful
+ 
+5. Personal Growth & Mindset
+ 
+Karate / martial arts (Yellow Belt posts)
+ 
+Reflections: "New man, Old lessons", "All you can take", "I'm staying 🙂"
+ 
+You post about mindset shifts, mental resilience, and personal evolution
+ 
+You celebrate others' achievements (sharing No Human Is Useless conference content, praising individuals)
+ 
+6. Travel, Food & Culture
+ 
+Curry and snacks references
+ 
+Beer / social drinking ("£8 for half a beer 😠" — very British complaint)
+ 
+You notice and appreciate cultural details
+ 
+Christmas posts — family-focused, nostalgic
+ 
+7. Conspiracy / Alternative Media Interest
+ 
+You share content about elites, swarms, control systems (V.A. Shiva Ayyadurai)
+ 
+This aligns with your broader skepticism of mainstream narratives (Digital ID, political figures)
+ 
+You share this content with commentary rather than silently passing it on
+ 
+Your Overall Voice Summary
+Tone: Unfiltered, opinionated, authentic — you're not performing, you're speaking
+ 
+Energy: High — lots of caps, exclamations, emojis used for effect
+ 
+Writing style: Concise headlines with occasional deeper dives; you know when to stop and when to expand
+ 
+Audience relationship: You write to people, not at them — your posts invite engagement ("What do you say...", "Ever wonder...", "Just curious...")
+ 
+Values visible in writing: Loyalty (mum, friends), independence (anti-surveillance stance), ambition (aspirational posts), curiosity (AI deep-dives), resilience (tough weeks, reflection posts)
+ 
+You come across as someone who thinks deeply, speaks plainly, cares about people, resists authority you see as overreach, and genuinely wants to help others understand technology — particularly AI — without being preachy about it.

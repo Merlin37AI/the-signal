@@ -1,0 +1,48 @@
+1. Site structure — 7 pages
+Your setup guide specifies a 3-page minimum (Home / About / Services). That's the floor. For a portfolio that holds its own in 2026, here's the full set, flagged for sequencing so you're not building everything at once.
+#PageJobBuild phase1HomeHook, position, route to the right next stepLaunch2The PRISM MethodProve you're a diagnostician, not a generalistLaunch3ServicesThe four-tier ladder + the money decisionLaunch4AboutTrust, doctrine, credentials, the operatorLaunch5Book a CallConvert — two booking typesLaunch6ResultsProof (credibility-led now, case studies later)Phase 27Insights / JournalContent engine, SEO, nurturePhase 2
+Utility (footer, not nav): Privacy · Terms · Data handling (UK GDPR + UAE).
+
+Launch with 5, add Results + Insights as the proof and content mature. That matches how you work — sequential, nothing overstated before it exists.
+
+2. Page-by-page layout
+Home — see the mock. Section stack: nav → split hero (poster wordmark + gold tagline + portrait) → "the real problem" (ink band, three ICP pains) → PRISM teaser (5-step) → Services teaser (4 cards) → why-it-pays proof strip → About teaser → Insights teaser → final CTA → footer.
+The PRISM Method
+
+Hero: "Diagnosis before prescription."
+The five stages in depth — Probe / Review / Identify / Secure / Measure, one outcome each (interactive stepper or accordion).
+The effort/impact matrix (your Eliminators / Simplifiers / Evaluators / Keepers grid) as the signature visual.
+"Why this beats a generalist" — doctrine tie-in.
+CTA: "See where your business sits."
+
+Services
+
+Hero: "Four ways in. One outcome."
+The ladder: Clarity Conversation (free) → AI Clarity Session (£750) → Build & Implement (from £8,500) → Advisory Retainer (Foundations £3k / Growth £5k / Embedded £8.5k per month).
+One card per tier: who it's for, what you get, single CTA.
+ROI block — your 1%-of-revenue framing, UK and UAE versions.
+A dedicated AI Clarity Session detail strip (built from your Scope doc).
+FAQ = your four objection responses.
+
+About
+
+Hero: portrait + "The Systematic Overcomer."
+Story: 8 years enterprise IT/ops, Control Risks, UK + UAE.
+The doctrine — five statements as a manifesto block (the page's bold moment, graffiti treatment).
+Credentials: ITIL 4, Six Sigma Green Belt, Micro MBA Cum Laude, AI in Business (UPenn).
+CTA.
+
+Book a Call
+
+Two clear options: free 20-min Clarity Conversation, and the £750 Clarity Session.
+"What to expect" — your three questions, no pitch.
+Calendly embed.
+
+Results (phase 2)
+
+Launches credibility-led: ROI model, anonymised ICP outcome scenarios (David / Claire / Marcus), process transparency, credentials.
+Grows into anonymised, outcome-led case studies + testimonials as clients land.
+
+Insights (phase 2)
+
+Article grid filtered by your four content pillars; seeded from repurposed LinkedIn posts; newsletter capture.
