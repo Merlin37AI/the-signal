@@ -73,7 +73,11 @@
   .navlinks a.lnk::after{content:"";position:absolute;left:0;bottom:-5px;height:2px;width:0;background:var(--red);transition:width .25s var(--ease)}
   .navlinks a.lnk:hover::after{width:100%}
   .navcta{padding:0.6em 1.2em;font-size:0.8rem}
-  .burger{display:none}
+  .burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;width:36px;height:36px}
+  .burger span{display:block;height:2px;background:#fff;border-radius:2px;transition:transform .3s var(--ease),opacity .3s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
   /* HERO */
   .hero{position:relative;min-height:100svh;display:flex;align-items:center;background:var(--black);overflow:hidden}
@@ -335,7 +339,13 @@
   .mbar{display:none}
 
   @media(max-width:900px){
-    .navlinks{display:none}
+    .burger{display:flex}
+    .navlinks{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:49;background:rgba(11,11,11,.98);
+      flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    .navlinks.open{display:flex}
+    .navlinks a{font-size:1.3rem;opacity:1}
+    .navlinks a.lnk::after{display:none}
+    .navcta{font-size:1rem!important;padding:0.8em 1.8em!important}
     .ladder{grid-template-columns:1fr 1fr}
     .tier.anchor{transform:none}.tier.anchor:hover{transform:translateY(-6px)}
     .steps{grid-template-columns:1fr 1fr}.step:nth-child(2n){border-right:none}
@@ -367,13 +377,16 @@
 <nav id="nav" aria-label="Main navigation">
   <div class="wrap navin">
     <a href="#top" class="brand">Gary<b>·</b>Does<b>·</b>Strategy</a>
-    <div class="navlinks">
+    <div class="navlinks" id="navlinks">
       <a class="lnk" href="#prism">The STOIC Method</a>
       <a class="lnk" href="#services">Services</a>
       <a class="lnk" href="#about">About</a>
       <a class="lnk" href="#insights">Insights</a>
       <a class="btn light navcta" href="#calembed">Book a Clarity Call</a>
     </div>
+    <button class="burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -667,21 +680,6 @@
     },{passive:true});
   }
 
-  // count-up stats
-  var counted=false;
-  function runCount(){
-    if(counted) return; var sec=document.getElementById('results');
-    if(sec.getBoundingClientRect().top < window.innerHeight*0.8){
-      counted=true;
-      document.querySelectorAll('[data-count]').forEach(function(el){
-        var target=parseInt(el.getAttribute('data-count'),10), suf=el.getAttribute('data-suffix')||'', cur=0;
-        var step=Math.max(1,Math.round(target/40));
-        var t=setInterval(function(){ cur+=step; if(cur>=target){cur=target;clearInterval(t);} el.textContent=cur+suf; },24);
-      });
-    }
-  }
-  if(!reduce){ runCount(); window.addEventListener('scroll',runCount,{passive:true}); }
-  else { document.querySelectorAll('[data-count]').forEach(function(el){el.textContent=el.getAttribute('data-count')+(el.getAttribute('data-suffix')||'');}); }
 
   var finePointer=window.matchMedia('(pointer:fine)').matches;
 
@@ -743,6 +741,25 @@
         ctx.globalAlpha=Math.max(0,s.life); ctx.fillStyle=s.c; ctx.beginPath(); ctx.arc(s.x,s.y,2.6*s.life+0.6,0,Math.PI*2); ctx.fill();
       } requestAnimationFrame(loop); })();
   }
+
+  // MOBILE NAV burger
+  (function(){
+    var burger=document.getElementById('burger'), links=document.getElementById('navlinks');
+    if(!burger||!links) return;
+    function toggle(){
+      var open=links.classList.toggle('open');
+      burger.classList.toggle('open',open);
+      burger.setAttribute('aria-expanded',open?'true':'false');
+      document.body.style.overflow=open?'hidden':'';
+    }
+    function close(){
+      links.classList.remove('open'); burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false'); document.body.style.overflow='';
+    }
+    burger.addEventListener('click',toggle);
+    links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',close); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  })();
 
   // STOIC interactive tabs :click + hover, sliding indicator, animated panels
   (function(){
