@@ -309,6 +309,28 @@
   @keyframes drift{to{background-position:260px 260px}}
   .dotgrid>.wrap{position:relative;z-index:2}
 
+  /* CADENCE STRIP */
+  .cad-strip{background:var(--offwhite);border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:2rem 0;text-align:center}
+  .cad-flow{display:flex;align-items:center;justify-content:center;gap:clamp(.8rem,2vw,2rem);flex-wrap:wrap;margin-bottom:.6rem}
+  .cad-item{font-family:var(--display2);font-size:clamp(1.2rem,1rem+1.4vw,1.8rem);color:var(--black)}
+  .cad-arr{color:var(--red);font-size:1.4rem;font-weight:700;line-height:1}
+  .cad-strip .note{font-size:0.82rem;color:var(--dgrey);letter-spacing:0.04em;margin:0}
+
+  /* OUTCOME TRIO :inside services */
+  .outcome-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+  .oc{padding:1.4rem;border-left:3px solid var(--red);background:#1e1c18}
+  .oc strong{display:block;font-family:var(--display);font-size:1.7rem;color:var(--gold);line-height:1;margin-bottom:.4rem}
+  .oc p{margin:0;font-size:0.88rem;color:var(--mgrey)}
+
+  /* STOIC AI DOCTRINE */
+  .doctrine{background:var(--black);color:var(--offwhite);position:relative;overflow:hidden}
+  .doctrine h2{color:#fff;font-size:clamp(2.1rem,1.4rem+3vw,3.7rem)}
+  .doctrine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.6rem}
+  .principle{border-top:2px solid var(--gold);padding-top:1.4rem}
+  .principle .pk{font-family:var(--display);font-size:2.6rem;color:var(--gold);line-height:.9;margin-bottom:.4rem}
+  .principle h3{font-family:var(--display2);font-size:1.25rem;color:#fff;margin:.3rem 0 .5rem}
+  .principle p{font-size:0.88rem;color:var(--mgrey);margin:0}
+
   /* mobile bottom CTA */
   .mbar{display:none}
 
@@ -321,6 +343,8 @@
     .about .grid{grid-template-columns:1fr}
     .arts{grid-template-columns:1fr}
     .stats{grid-template-columns:1fr;gap:1.6rem}
+    .doctrine-grid{grid-template-columns:1fr}
+    .outcome-trio{grid-template-columns:1fr}
     .foot{grid-template-columns:1fr}
     .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:.7rem 1rem;
       background:rgba(11,11,11,.97);border-top:1px solid #222;gap:.7rem}
@@ -362,8 +386,9 @@
   <div class="wrap">
     <div class="hero-in">
       <span class="eyebrow">Fractional AI Advisory · UK &amp; UAE</span>
-      <h1>Diagnosis<br>before <span class="em">prescription.</span></h1>
-      <p class="sub">Most firms buy AI tools before they understand the problem. I find what's broken in your operations, then tell you what's worth fixing.</p>
+      <h1>Stoic AI Cadence,<br>Installed Inside <span class="em">Your Business.</span></h1>
+      <p class="sub">Senior AI judgment and weekly embedded working sessions that turn scattered tools into a disciplined operating system — without the cost of a full-time AI executive.</p>
+      <p style="font-size:0.8rem;color:rgba(255,255,255,.5);margin:-.8rem 0 1.6rem;letter-spacing:0.02em;max-width:36em">Built for founders and leadership teams in 5–50 person professional services, property and operations firms past the experimentation phase. <span style="color:rgba(255,255,255,.32)">·</span> Certified: ITIL 4 · Six Sigma · AI in Business, UPenn · Dubai &amp; UK</p>
       <div class="acts">
         <a class="btn light" href="#calembed">Book a Clarity Call <span class="arr">→</span></a>
         <a class="btn ghost" href="#prism" style="color:#fff;border-color:#fff">See the STOIC Method</a>
@@ -442,11 +467,25 @@
   </div>
 </section>
 
+<!-- CADENCE STRIP -->
+<div class="cad-strip">
+  <div class="wrap">
+    <div class="cad-flow">
+      <span class="cad-item">Strategy</span>
+      <span class="cad-arr">→</span>
+      <span class="cad-item">Systems</span>
+      <span class="cad-arr">→</span>
+      <span class="cad-item">Stewardship</span>
+    </div>
+    <p class="note">We work in 90-day cycles with weekly working sessions embedded into your team.</p>
+  </div>
+</div>
+
 <!-- SERVICES -->
 <section class="services dotgrid" id="services">
   <div class="wrap">
     <span class="eyebrow rv">Services</span>
-    <h2 class="rv">Four ways in. <em>One outcome.</em></h2>
+    <h2 class="rv">Four ways in. <em>One operating cadence.</em></h2>
     <div class="ladder">
       <div class="tier rv">
         <h3>Clarity Conversation</h3>
@@ -455,22 +494,27 @@
       </div>
       <div class="tier anchor rv">
         <span class="ribbon">Start here</span>
-        <h3>AI Clarity Session</h3>
-        <p>A focused diagnostic on one part of your business. You leave with a written read on what's broken and what to fix first.</p>
+        <h3>Stoic AI Readiness Review</h3>
+        <p>A focused diagnostic on one part of your business. Leave with a written read on where your AI readiness actually sits and what to fix first.</p>
         <a class="btn light" href="#calembed">See details</a>
       </div>
       <div class="tier rv">
-        <h3>Build &amp; Implement</h3>
-        <p>When the diagnosis says build, I scope it, build it, implement it, then prove it worked.</p>
+        <h3>90-Day System Install</h3>
+        <p>When the diagnosis says build: scope, build, implement. Your Stoic AI Cadence installed in 90 days, with weekly working sessions embedded into your team.</p>
         <a class="btn light" href="#calembed">Explore</a>
       </div>
       <div class="tier rv">
-        <h3>Advisory Retainer</h3>
-        <p>Ongoing diagnostic and build support. Foundations £3k · Growth £5k · Embedded £8.5k per month.</p>
+        <h3>Fractional AI Stewardship</h3>
+        <p>Ongoing fractional AI leadership: continuous diagnostic, build support and governance. Foundations £3k · Growth £5k · Embedded £8.5k per month.</p>
         <a class="btn light" href="#calembed">Compare</a>
       </div>
     </div>
     <p class="roi rv">Most firms your size are losing around <b>1% of revenue</b> to operational drag. The session costs less than the leak.</p>
+    <div class="outcome-trio rv">
+      <div class="oc"><strong>20–40%</strong><p>reduction in manual knowledge work in core processes</p></div>
+      <div class="oc"><strong>90 days</strong><p>to a working AI operating cadence, not quarters</p></div>
+      <div class="oc"><strong>Full visibility</strong><p>and governance over AI experiments for your leadership team</p></div>
+    </div>
   </div>
 </section>
 
@@ -502,6 +546,33 @@
       <div class="stat rv"><div class="n" data-count="3" data-suffix="">0</div><div class="l">core sectors: property, professional services, operations-heavy firms.</div></div>
     </div>
     <p class="disclaim rv">Early-stage practice, shown straight. The figures above are the model and the method, not client claims. Named, anonymised case studies land here as engagements complete. I overstate nothing before it exists.</p>
+  </div>
+</section>
+
+<!-- STOIC AI DOCTRINE -->
+<section class="doctrine dotgrid" id="doctrine">
+  <div class="wrap">
+    <span class="eyebrow rv" style="color:var(--gold)">The Stoic AI Doctrine</span>
+    <div class="sechead">
+      <h2 class="rv">What we believe <em>about AI.</em></h2>
+    </div>
+    <div class="doctrine-grid">
+      <div class="principle rv">
+        <div class="pk">01</div>
+        <h3>AI eliminates noise, not judgment</h3>
+        <p>AI should remove drudgery so humans can practise judgment, courage and clear thinking. We build systems that respect what humans must always own.</p>
+      </div>
+      <div class="principle rv">
+        <div class="pk">02</div>
+        <h3>A tool, never a master</h3>
+        <p>No system we design aims to replace human responsibility. AI stays a tool. Authority remains with the people who run the business.</p>
+      </div>
+      <div class="principle rv">
+        <div class="pk">03</div>
+        <h3>Control what you can measure</h3>
+        <p>We design AI workflows aligned to what leaders can control and measure. Uncertainty remains. We build systems disciplined enough to handle it.</p>
+      </div>
+    </div>
   </div>
 </section>
 
