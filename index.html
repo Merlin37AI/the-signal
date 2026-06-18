@@ -12,7 +12,7 @@
 <style>
   @font-face{font-family:'Grindy Brush';src:url('assets/fonts/grindy-brush.otf') format('opentype');font-display:swap}
   :root{
-    --black:#0B0B0B; --offwhite:#F2F2F2; --red:#E10600; --gold:#FFD400;
+    --black:#0B0B0B; --offwhite:#F2F2F2; --red:#E10600; --gold:#C8A84B;
     --teal:#0E8A8A; --dgrey:#6E6E6E; --mgrey:#BFBFBF;
     --ink:#0B0B0B; --paper:#F2F2F2;
     --display:'Grindy Brush','Permanent Marker',cursive;
@@ -53,7 +53,7 @@
   /* tape + chips :street-luxe motif */
   .tape{display:inline-block;font-family:var(--body);font-weight:700;font-size:0.66rem;letter-spacing:0.14em;
     text-transform:uppercase;padding:0.35em 0.8em;color:#3a2c00;
-    background:linear-gradient(180deg,#ffe35c,var(--gold));box-shadow:0 3px 10px -3px rgba(0,0,0,.4);transform:rotate(-2.5deg)}
+    background:linear-gradient(180deg,#E8C97A,var(--gold));box-shadow:0 3px 10px -3px rgba(0,0,0,.4);transform:rotate(-2.5deg)}
 
   /* reveal */
   .rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -178,7 +178,7 @@
   .tier h3{font-size:1.5rem;color:#fff}
   .tier p{font-size:0.88rem;color:var(--mgrey);flex:1;margin:0}
   .tier .btn{align-self:flex-start;padding:0.6em 1.2em;font-size:0.78rem}
-  .tier.anchor{transform:translateY(-22px);border:2px solid var(--gold);background:#1b1a16;box-shadow:0 30px 60px -30px rgba(255,212,0,.4)}
+  .tier.anchor{transform:translateY(-22px);border:2px solid var(--gold);background:#1b1a16;box-shadow:0 30px 60px -30px rgba(200,168,75,.4)}
   .tier.anchor:hover{transform:translateY(-30px)}
   .tier.anchor .ribbon{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
     background:var(--gold);color:#3a2c00;font-size:0.62rem;font-weight:800;letter-spacing:0.12em;padding:.3em .8em;border-radius:2px;white-space:nowrap}
@@ -325,16 +325,16 @@
   .srow{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(1.5rem,3vw,5rem);align-items:center;padding:2rem 0;border-top:1px solid #2a2a26}
   .srow:last-child{border-bottom:1px solid #2a2a26}
   .spr p{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,.9rem+.8vw,1.35rem);color:var(--dgrey);margin:0;line-height:1.45}
-  .srow.is-anchor{border-left:3px solid #C8A84B;padding-left:clamp(.8rem,1.5vw,1.5rem);margin-left:-3px}
+  .srow.is-anchor{border-left:3px solid var(--gold);padding-left:clamp(.8rem,1.5vw,1.5rem);margin-left:-3px}
   .srow.is-anchor .spr p{color:#e8e8e8}
-  .stag{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#C8A84B;margin-bottom:.5rem}
+  .stag{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
   .stier h3{color:#fff;font-family:var(--display2);font-size:1.4rem;margin:.2rem 0 .7rem}
   .stier>p{color:var(--mgrey);font-size:0.9rem;margin:0 0 1.1rem}
 
   /* OUTCOME TRIO :inside services */
   .outcome-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
   .oc{padding:1.4rem;border-left:3px solid var(--red);background:#1e1c18}
-  .oc strong{display:block;font-family:var(--display);font-size:1.7rem;color:#C8A84B;line-height:1;margin-bottom:.4rem}
+  .oc strong{display:block;font-family:var(--display);font-size:1.7rem;color:var(--gold);line-height:1;margin-bottom:.4rem}
   .oc p{margin:0;font-size:0.88rem;color:var(--mgrey)}
 
   /* STOIC AI DOCTRINE */
